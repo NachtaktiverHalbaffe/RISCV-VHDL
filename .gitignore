@@ -1,0 +1,15 @@
+.cache.dat
+.xrf
+ps
+work
+qis
+*.lck
+msimSimulationReplay.sh
+hdl/generated
+CVS
+*.bak
+quartus
+*.info
+*.$rec
+transcript
+

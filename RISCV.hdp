@@ -1,0 +1,11 @@
+[hdl]
+RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hdl
+[hds]
+RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hds
+[hds_settings]
+default_library = RISCV_lib
+version = 2
+[library_type]
+RISCV_lib = regular
+[shared]
+others = $HDS_TEAM_HOME/shared.hdp
