@@ -8,8 +8,24 @@
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
 LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE iee.numeric_std.all;
+USE ieee.std_logic_1164.all;
+USE iee.numeric_std.all;
 ENTITY DC_base IS
+  Generic(
+    -- Width of program counter (in RISCV doch named "XLEN")
+  PC_WIDTH: positive;
+  REGISTER_WIDTH: positive);
+  port(
+    OP_CODE: in  std_logic_vector(31 downto 0);
+    NEXT_PC_IN: in std_logic_vector(PC_WIDTH-1 downto 0);
+    NEXT_PC_OUT: in std_logic_vector(PC_WIDTH-1 downto 0);
+    -- Quellregister
+    rs1,rs2: out std_logic_vector(REGISTER_WIDTH-1 downto 0);
+    -- immediate
+    imm: out std_logic_vector(REGISTER_WIDTH-1 downto 0);
+    -- Zielregister
+    rd: out std_logic_vector(REGISTER_WIDTH-1 downto 0)
+    -- Later: also static branch adress
+);
 END ENTITY DC_base;
 
