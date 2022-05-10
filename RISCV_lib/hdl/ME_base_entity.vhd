@@ -7,15 +7,14 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE iee.numeric_std.all;
-ENTITY ME_base IS
-    Generic(
-  REGISTER_WIDTH: positive);
-  port(
-    ALU_out: in std_logic_vector(REGISTER_WIDTH-1 downto 0);
-    ME_out: out std_logic_vector(REGISTER_WIDTH-1 downto 0)
-    );
-END ENTITY ME_base;
-
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity ME_base is
+  generic (
+    REGISTER_WIDTH : positive);
+  port (
+    ALU_out : in std_logic_vector(REGISTER_WIDTH - 1 downto 0);
+    ME_out  : out std_logic_vector(REGISTER_WIDTH - 1 downto 0)
+  );
+end entity ME_base;
