@@ -1,0 +1,2 @@
+DEFAULT_FILE atom pc_reg/struct.bd
+DEFAULT_ARCHITECTURE atom struct
