@@ -16,15 +16,7 @@ PACKAGE constants IS
   ------------------------------------------
   constant WORD_WIDTH: integer := 32;
   
-  ------------------------------------------
-  -- ISA
-  ------------------------------------------ 
-  constant NOP: bit_vector :=b"00000" ;
-  ------------------------------------------
-  -- Types
-  ------------------------------------------
-  -- word in memory
-  subtype word is std_logic_vector(WORD_WIDTH-1 downto 0);
-  
+
+
 END constants;
 
