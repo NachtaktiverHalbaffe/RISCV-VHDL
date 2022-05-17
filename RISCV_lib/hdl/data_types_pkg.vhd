@@ -25,9 +25,10 @@ package data_types is
   ------------------------------------------
 
   -- Determines the operation for alu
-  type alu_mode is (alu_add, alu_sub,
-    alu_sll, alu_srl, alu_sra, alu_sll, alu_srl,
-    alu_and, alu_sub, alu_xor,
+  type alu_mode_type is (
+    alu_add, alu_sub,
+    alu_sll, alu_srl, alu_sra, 
+    alu_and, alu_or, alu_xor,
     alu_slt, alu_sltu,
     alu_jal, alu_jalr, alu_bew, alu_bne, alu_blt, alu_bge, alu_bltu, alu_bgeu
   );
@@ -36,4 +37,6 @@ package data_types is
 
   -- Determines rf
   type rf_storage is array(1 to REG_NUM) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+  
+  type imm_type is (R_Type, I_Type,S_Type, B_Type, U_Type, J_Type);
 end data_types;

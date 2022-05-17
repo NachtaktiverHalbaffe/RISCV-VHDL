@@ -10,21 +10,21 @@
 library ieee; use ieee.std_logic_1164.all;
 library RISCV_lib; use RISCV_lib.all;
 
-ARCHITECTURE behav OF IM IS
+ARCHITECTURE behav OF im IS
 
 BEGIN
   
-  rom: process(PC) is
+  rom: process(if_pc) is
   begin
-    case to_integer(unsigned(PC)) is
+    case to_integer(unsigned(if_pc)) is
     when 0 => 
-      OP_Code <= b"00";
+      if_op_Code <= b"00";
     when 1 => 
-      OP_Code <= b"00";
+      if_op_Code <= b"00";
     when 2 => 
-      OP_Code <= b"00";
+      if_op_Code <= b"00";
     when others => 
-      OP_Code <= null;
+      if_op_Code <= null;
   end case;
   end process rom;
   

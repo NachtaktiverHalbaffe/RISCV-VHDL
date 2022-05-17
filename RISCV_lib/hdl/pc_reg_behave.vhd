@@ -15,7 +15,7 @@ BEGIN
     ex_reg: process(clk, res_n) is
     begin
         if res_n = '0' then
-            if_pc <= '0';
+            if_pc <= (others => '0');
         else
             if clk'event and clk='1' then
                 if_pc <= next_pc;
