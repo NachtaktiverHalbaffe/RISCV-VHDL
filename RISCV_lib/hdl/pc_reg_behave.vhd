@@ -7,7 +7,20 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
+library ieee; use ieee.std_logic_1164.all;
+library RISCV_lib; use RISCV_lib.all;
+
 ARCHITECTURE behave OF pc_reg IS
 BEGIN
+    ex_reg: process(clk, res_n) is
+    begin
+        if res_n = '0' then
+            if_pc <= '0';
+        else
+            if clk'event and clk='1' then
+                if_pc <= next_pc;
+            end if;
+        end if;
+    end process ex_reg;
 END ARCHITECTURE behave;
 

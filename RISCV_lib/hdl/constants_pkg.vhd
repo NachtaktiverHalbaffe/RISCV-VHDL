@@ -15,6 +15,7 @@ PACKAGE constants IS
   -- CONSTANTS
   ------------------------------------------
   constant WORD_WIDTH: integer := 32;
+  constant REG_NUM: integer := 32;
   
 
 

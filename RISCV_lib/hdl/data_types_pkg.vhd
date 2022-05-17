@@ -33,4 +33,7 @@ package data_types is
   );
   -- Dtermines memory operation mode
   type mem_mode is (lb, lh, lw, lbu, lhu, sb, sh, sw);
+
+  -- Determines rf
+  type rf_storage is array(1 to REG_NUM) of std_logic_vector(WORD_WIDTH - 1 downto 0);
 end data_types;
