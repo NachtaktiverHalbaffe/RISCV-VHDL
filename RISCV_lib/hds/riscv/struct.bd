@@ -187,7 +187,7 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/riscv"
 )
 (vvPair
 variable "date"
-value "05/17/22"
+value "05/24/22"
 )
 (vvPair
 variable "day"
@@ -199,7 +199,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "17"
+value "24"
 )
 (vvPair
 variable "entity_name"
@@ -227,7 +227,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/17/22"
+value "05/24/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -239,7 +239,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:01:25"
+value "15:08:05"
 )
 (vvPair
 variable "group"
@@ -339,7 +339,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "18:01:25"
+value "15:08:05"
 )
 (vvPair
 variable "unit"
@@ -1359,8 +1359,9 @@ uid 324,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,17100,54500,18000"
-st "SIGNAL if_pc           : std_logic_vector(WORD_WIDTH-1 DOWNTO 0)"
+xt "22000,18000,54500,18900"
+st "SIGNAL if_pc           : std_logic_vector(WORD_WIDTH-1 DOWNTO 0)
+"
 )
 )
 *45 (Net
@@ -1378,8 +1379,9 @@ uid 334,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,20700,54500,21600"
-st "SIGNAL op_code         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,21600,54500,22500"
+st "SIGNAL op_code         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *46 (Net
@@ -1397,8 +1399,9 @@ uid 336,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,16200,54500,17100"
-st "SIGNAL if_op_code      : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,17100,54500,18000"
+st "SIGNAL if_op_code      : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *47 (Net
@@ -1416,8 +1419,9 @@ uid 368,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,22500,54500,23400"
-st "SIGNAL sel_rs1         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,23400,54500,24300"
+st "SIGNAL sel_rs1         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *48 (Net
@@ -1435,8 +1439,9 @@ uid 370,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,23400,54500,24300"
-st "SIGNAL sel_rs2         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,24300,54500,25200"
+st "SIGNAL sel_rs2         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *49 (Net
@@ -1455,7 +1460,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,8100,54500,9000"
-st "SIGNAL dec_rs1         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL dec_rs1         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *50 (Net
@@ -1474,7 +1480,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9000,54500,9900"
-st "SIGNAL dec_rs2         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL dec_rs2         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *51 (Net
@@ -1493,7 +1500,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,14400,54500,15300"
-st "SIGNAL ex_rs1          : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL ex_rs1          : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *52 (Blk
@@ -1592,7 +1600,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,11700,54500,12600"
-st "SIGNAL ex_alu_out      : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL ex_alu_out      : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *57 (Net
@@ -1610,7 +1619,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,4500,41500,5400"
-st "SIGNAL dec_alu_mode    : alu_mode_type"
+st "SIGNAL dec_alu_mode    : alu_mode_type
+"
 )
 )
 *58 (Net
@@ -1618,8 +1628,7 @@ uid 539,0
 lang 11
 decl (Decl
 n "ex_alu_mode"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
+t "alu_mode_type"
 o 15
 suid 41,0
 )
@@ -1628,8 +1637,9 @@ uid 540,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,10800,54500,11700"
-st "SIGNAL ex_alu_mode     : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,10800,41500,11700"
+st "SIGNAL ex_alu_mode     : alu_mode_type
+"
 )
 )
 *59 (Net
@@ -1647,7 +1657,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3600,39500,4500"
-st "SIGNAL clk             : std_logic"
+st "SIGNAL clk             : std_logic
+"
 )
 )
 *60 (Net
@@ -1666,7 +1677,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,5400,54500,6300"
-st "SIGNAL dec_imm         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL dec_imm         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *61 (Blk
@@ -1764,8 +1776,9 @@ uid 656,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,18000,45000,18900"
-st "SIGNAL me_out          : integer range 0 to 4"
+xt "22000,18900,45000,19800"
+st "SIGNAL me_out          : integer range 0 to 4
+"
 )
 )
 *66 (Net
@@ -1784,7 +1797,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,25200,54500,26100"
-st "SIGNAL wb_data         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL wb_data         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *67 (Net
@@ -1803,7 +1817,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,26100,54500,27000"
-st "SIGNAL wb_traget_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL wb_traget_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *68 (Net
@@ -1822,7 +1837,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9900,54500,10800"
-st "SIGNAL dec_target_reg  : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL dec_target_reg  : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *69 (Net
@@ -1840,8 +1856,9 @@ uid 714,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,15300,54500,16200"
-st "SIGNAL ex_target_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,16200,54500,17100"
+st "SIGNAL ex_target_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *70 (Net
@@ -1859,8 +1876,9 @@ uid 728,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,18900,54500,19800"
-st "SIGNAL me_target_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,19800,54500,20700"
+st "SIGNAL me_target_reg   : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *71 (Blk
@@ -1960,29 +1978,11 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,12600,54500,13500"
-st "SIGNAL ex_imm          : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL ex_imm          : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
 *76 (Net
-uid 867,0
-lang 11
-decl (Decl
-n "sig0"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 24
-suid 69,0
-)
-declText (MLText
-uid 868,0
-va (VaSet
-font "courier,8,0"
-)
-xt "22000,24300,54500,25200"
-st "SIGNAL sig0            : std_logic_vector(WORD_WIDTH-1 downto 0)"
-)
-)
-*77 (Net
 uid 897,0
 lang 11
 decl (Decl
@@ -1998,10 +1998,11 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,54500,3600"
-st "SIGNAL alu_in_2        : std_logic_vector(WORD_WIDTH-1 downto 0)"
+st "SIGNAL alu_in_2        : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
-*78 (Net
+*77 (Net
 uid 909,0
 lang 11
 decl (Decl
@@ -2016,10 +2017,11 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,7200,39500,8100"
-st "SIGNAL dec_mux_alu_sel : std_logic"
+st "SIGNAL dec_mux_alu_sel : std_logic
+"
 )
 )
-*79 (Net
+*78 (Net
 uid 921,0
 lang 11
 decl (Decl
@@ -2034,10 +2036,11 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,13500,39500,14400"
-st "SIGNAL ex_mux_alu_sel  : std_logic"
+st "SIGNAL ex_mux_alu_sel  : std_logic
+"
 )
 )
-*80 (Net
+*79 (Net
 uid 1160,0
 lang 11
 decl (Decl
@@ -2051,11 +2054,12 @@ uid 1161,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,21600,39500,22500"
-st "SIGNAL res_n           : std_logic"
+xt "22000,22500,39500,23400"
+st "SIGNAL res_n           : std_logic
+"
 )
 )
-*81 (Net
+*80 (Net
 uid 1558,0
 lang 11
 decl (Decl
@@ -2070,11 +2074,12 @@ uid 1559,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,19800,54500,20700"
-st "SIGNAL next_PC         : std_logic_vector(WORD_WIDTH-1 downto 0)"
+xt "22000,20700,54500,21600"
+st "SIGNAL next_PC         : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
 )
 )
-*82 (Net
+*81 (Net
 uid 1578,0
 lang 11
 decl (Decl
@@ -2089,10 +2094,11 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,6300,39000,7200"
-st "SIGNAL dec_imm_type    : imm_type"
+st "SIGNAL dec_imm_type    : imm_type
+"
 )
 )
-*83 (Blk
+*82 (Blk
 uid 1582,0
 shape (Rectangle
 uid 1583,0
@@ -2110,7 +2116,7 @@ uid 1584,0
 ps "CenterOffsetStrategy"
 stg "VerticalLayoutStrategy"
 textVec [
-*84 (Text
+*83 (Text
 uid 1585,0
 va (VaSet
 font "courier,8,1"
@@ -2120,7 +2126,7 @@ st "RISCV_lib"
 blo "25750,46350"
 tm "BdLibraryNameMgr"
 )
-*85 (Text
+*84 (Text
 uid 1586,0
 va (VaSet
 font "courier,8,1"
@@ -2130,7 +2136,7 @@ st "im"
 blo "25750,47250"
 tm "BlkNameMgr"
 )
-*86 (Text
+*85 (Text
 uid 1587,0
 va (VaSet
 font "courier,8,1"
@@ -2173,6 +2179,26 @@ ftype 10
 )
 viewiconposition 0
 )
+*86 (Net
+uid 1782,0
+lang 11
+decl (Decl
+n "ex_rs2"
+t "std_logic_vector"
+b "(WORD_WIDTH-1 downto 0)"
+o 24
+suid 87,0
+)
+declText (MLText
+uid 1783,0
+va (VaSet
+font "courier,8,0"
+)
+xt "22000,15300,54500,16200"
+st "SIGNAL ex_rs2          : std_logic_vector(WORD_WIDTH-1 downto 0)
+"
+)
+)
 *87 (Wire
 uid 161,0
 optionalChildren [
@@ -2202,7 +2228,7 @@ pts [
 ]
 )
 start &12
-end &83
+end &82
 sat 2
 eat 1
 sty 1
@@ -2239,7 +2265,7 @@ pts [
 "41000,46000"
 ]
 )
-start &83
+start &82
 end &16
 sat 2
 eat 1
@@ -2353,7 +2379,7 @@ blo "29000,55800"
 tm "WireNameMgr"
 )
 )
-on &81
+on &80
 )
 *93 (Wire
 uid 301,0
@@ -2735,8 +2761,8 @@ uid 538,0
 va (VaSet
 font "courier,8,0"
 )
-xt "93000,34100,108500,35000"
-st "ex_alu_mode : (WORD_WIDTH-1:0)"
+xt "93000,34100,99000,35000"
+st "ex_alu_mode"
 blo "93000,34800"
 tm "WireNameMgr"
 )
@@ -2964,7 +2990,7 @@ blo "66000,43800"
 tm "WireNameMgr"
 )
 )
-on &82
+on &81
 )
 *110 (Wire
 uid 637,0
@@ -3301,7 +3327,7 @@ blo "4000,47800"
 tm "WireNameMgr"
 )
 )
-on &81
+on &80
 )
 *119 (Wire
 uid 802,0
@@ -3369,13 +3395,13 @@ uid 876,0
 va (VaSet
 font "courier,8,0"
 )
-xt "85000,49100,97000,50000"
-st "sig0 : (WORD_WIDTH-1:0)"
+xt "85000,49100,98000,50000"
+st "ex_rs2 : (WORD_WIDTH-1:0)"
 blo "85000,49800"
 tm "WireNameMgr"
 )
 )
-on &76
+on &86
 )
 *121 (Wire
 uid 889,0
@@ -3413,7 +3439,7 @@ blo "90000,42800"
 tm "WireNameMgr"
 )
 )
-on &77
+on &76
 )
 *122 (Wire
 uid 901,0
@@ -3450,7 +3476,7 @@ blo "66000,40800"
 tm "WireNameMgr"
 )
 )
-on &78
+on &77
 )
 *123 (Wire
 uid 913,0
@@ -3488,7 +3514,7 @@ blo "87000,57800"
 tm "WireNameMgr"
 )
 )
-on &79
+on &78
 )
 *124 (Wire
 uid 1102,0
@@ -3524,7 +3550,7 @@ blo "6000,30800"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *125 (Wire
 uid 1112,0
@@ -3561,7 +3587,7 @@ blo "41800,32000"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *126 (Wire
 uid 1122,0
@@ -3597,7 +3623,7 @@ blo "53000,61800"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *127 (Wire
 uid 1132,0
@@ -3634,7 +3660,7 @@ blo "79800,33000"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *128 (Wire
 uid 1142,0
@@ -3671,7 +3697,7 @@ blo "127800,33000"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *129 (Wire
 uid 1152,0
@@ -3708,7 +3734,7 @@ blo "149800,33000"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *130 (Wire
 uid 1166,0
@@ -3723,7 +3749,7 @@ pts [
 "27000,42000"
 ]
 )
-end &83
+end &82
 sat 16
 eat 1
 st 0
@@ -3745,7 +3771,7 @@ blo "27800,40000"
 tm "WireNameMgr"
 )
 )
-on &80
+on &79
 )
 *131 (Wire
 uid 1570,0
@@ -3907,11 +3933,11 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "-4,3,2556,1413"
-viewArea "-30500,-5984,123742,77638"
+viewArea "-8017,1708,176022,101484"
 cachedDiagramExtent "-57000,0,174400,87400"
 hasePageBreakOrigin 1
 pageBreakOrigin "-69000,0"
-lastUid 1591,0
+lastUid 1785,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
@@ -4971,7 +4997,7 @@ tm "BdDeclarativeTextMgr"
 )
 commonDM (CommonDM
 ldm (LogicalDM
-suid 86,0
+suid 87,0
 usingSuid 1
 emptyRow *163 (LEmptyRow
 )
@@ -5155,8 +5181,7 @@ lang 11
 m 4
 decl (Decl
 n "ex_alu_mode"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
+t "alu_mode_type"
 o 15
 suid 41,0
 )
@@ -5293,20 +5318,6 @@ port (LogicalPort
 lang 11
 m 4
 decl (Decl
-n "sig0"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 24
-suid 69,0
-)
-)
-uid 925,0
-)
-*197 (LeafLogPort
-port (LogicalPort
-lang 11
-m 4
-decl (Decl
 n "alu_in_2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
@@ -5316,7 +5327,7 @@ suid 72,0
 )
 uid 927,0
 )
-*198 (LeafLogPort
+*197 (LeafLogPort
 port (LogicalPort
 lang 11
 m 4
@@ -5329,7 +5340,7 @@ suid 74,0
 )
 uid 929,0
 )
-*199 (LeafLogPort
+*198 (LeafLogPort
 port (LogicalPort
 lang 11
 m 4
@@ -5342,7 +5353,7 @@ suid 76,0
 )
 uid 931,0
 )
-*200 (LeafLogPort
+*199 (LeafLogPort
 port (LogicalPort
 lang 11
 m 4
@@ -5355,7 +5366,7 @@ suid 83,0
 )
 uid 1162,0
 )
-*201 (LeafLogPort
+*200 (LeafLogPort
 port (LogicalPort
 lang 11
 m 4
@@ -5369,7 +5380,7 @@ suid 85,0
 )
 uid 1560,0
 )
-*202 (LeafLogPort
+*201 (LeafLogPort
 port (LogicalPort
 lang 11
 m 4
@@ -5381,6 +5392,20 @@ suid 86,0
 )
 )
 uid 1580,0
+)
+*202 (LeafLogPort
+port (LogicalPort
+lang 11
+m 4
+decl (Decl
+n "ex_rs2"
+t "std_logic_vector"
+b "(WORD_WIDTH-1 downto 0)"
+o 24
+suid 87,0
+)
+)
+uid 1784,0
 )
 ]
 )
@@ -5556,43 +5581,43 @@ uid 924,0
 litem &196
 pos 20
 dimension 20
-uid 926,0
+uid 928,0
 )
 *229 (MRCItem
 litem &197
 pos 21
 dimension 20
-uid 928,0
+uid 930,0
 )
 *230 (MRCItem
 litem &198
 pos 22
 dimension 20
-uid 930,0
+uid 932,0
 )
 *231 (MRCItem
 litem &199
 pos 23
 dimension 20
-uid 932,0
+uid 1163,0
 )
 *232 (MRCItem
 litem &200
 pos 24
 dimension 20
-uid 1163,0
+uid 1561,0
 )
 *233 (MRCItem
 litem &201
 pos 25
 dimension 20
-uid 1561,0
+uid 1581,0
 )
 *234 (MRCItem
 litem &202
 pos 26
 dimension 20
-uid 1581,0
+uid 1785,0
 )
 ]
 )
