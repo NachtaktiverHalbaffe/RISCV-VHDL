@@ -239,7 +239,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:04:05"
+value "18:13:37"
 )
 (vvPair
 variable "group"
@@ -351,7 +351,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "18:04:05"
+value "18:13:37"
 )
 (vvPair
 variable "unit"
@@ -1363,7 +1363,7 @@ decl (Decl
 n "if_pc"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 DOWNTO 0)"
-o 18
+o 19
 suid 12,0
 )
 declText (MLText
@@ -1383,7 +1383,7 @@ decl (Decl
 n "op_code"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 22
+o 23
 suid 13,0
 )
 declText (MLText
@@ -1403,7 +1403,7 @@ decl (Decl
 n "if_op_code"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 17
+o 18
 suid 14,0
 )
 declText (MLText
@@ -1461,7 +1461,7 @@ decl (Decl
 n "dec_rs1"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 7
+o 8
 suid 23,0
 )
 declText (MLText
@@ -1481,7 +1481,7 @@ decl (Decl
 n "dec_rs2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 8
+o 9
 suid 24,0
 )
 declText (MLText
@@ -1501,7 +1501,7 @@ decl (Decl
 n "ex_rs1"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 14
+o 15
 suid 30,0
 )
 declText (MLText
@@ -1601,7 +1601,7 @@ decl (Decl
 n "ex_alu_out"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 11
+o 12
 suid 36,0
 )
 declText (MLText
@@ -1620,7 +1620,7 @@ lang 11
 decl (Decl
 n "dec_alu_mode"
 t "alu_mode_type"
-o 3
+o 4
 suid 39,0
 )
 declText (MLText
@@ -1639,7 +1639,7 @@ lang 11
 decl (Decl
 n "ex_alu_mode"
 t "alu_mode_type"
-o 10
+o 11
 suid 41,0
 )
 declText (MLText
@@ -1658,7 +1658,7 @@ lang 11
 decl (Decl
 n "clk"
 t "std_logic"
-o 2
+o 1
 suid 43,0
 )
 declText (MLText
@@ -1678,7 +1678,7 @@ decl (Decl
 n "dec_imm"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 4
+o 5
 suid 49,0
 )
 declText (MLText
@@ -1817,7 +1817,7 @@ decl (Decl
 n "dec_target_reg"
 t "std_logic_vector"
 b "(4 downto 0)"
-o 9
+o 10
 suid 61,0
 )
 declText (MLText
@@ -1836,7 +1836,7 @@ lang 11
 decl (Decl
 n "ex_target_reg"
 t "rf_storage_addr"
-o 16
+o 17
 suid 63,0
 )
 declText (MLText
@@ -1855,7 +1855,7 @@ lang 11
 decl (Decl
 n "me_target_reg"
 t "rf_storage_addr"
-o 20
+o 21
 suid 66,0
 )
 declText (MLText
@@ -1956,7 +1956,7 @@ decl (Decl
 n "ex_imm"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 12
+o 13
 suid 68,0
 )
 declText (MLText
@@ -1976,7 +1976,7 @@ decl (Decl
 n "alu_in_2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 1
+o 3
 suid 72,0
 )
 declText (MLText
@@ -1995,7 +1995,7 @@ lang 11
 decl (Decl
 n "dec_mux_alu_sel"
 t "std_logic"
-o 6
+o 7
 suid 74,0
 )
 declText (MLText
@@ -2014,7 +2014,7 @@ lang 11
 decl (Decl
 n "ex_mux_alu_sel"
 t "std_logic"
-o 13
+o 14
 suid 76,0
 )
 declText (MLText
@@ -2033,7 +2033,7 @@ lang 11
 decl (Decl
 n "res_n"
 t "std_logic"
-o 23
+o 2
 suid 83,0
 )
 declText (MLText
@@ -2053,7 +2053,7 @@ decl (Decl
 n "next_PC"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 21
+o 22
 suid 85,0
 )
 declText (MLText
@@ -2072,7 +2072,7 @@ lang 11
 decl (Decl
 n "dec_imm_type"
 t "imm_type"
-o 5
+o 6
 suid 86,0
 )
 declText (MLText
@@ -2173,7 +2173,7 @@ decl (Decl
 n "ex_rs2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 15
+o 16
 suid 87,0
 )
 declText (MLText
@@ -2193,7 +2193,7 @@ decl (Decl
 n "me_alu_out"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 19
+o 20
 suid 88,0
 )
 declText (MLText
@@ -5253,7 +5253,7 @@ decl (Decl
 n "if_pc"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 DOWNTO 0)"
-o 18
+o 19
 suid 12,0
 )
 )
@@ -5267,7 +5267,7 @@ decl (Decl
 n "op_code"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 22
+o 23
 suid 13,0
 )
 )
@@ -5281,7 +5281,7 @@ decl (Decl
 n "if_op_code"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 17
+o 18
 suid 14,0
 )
 )
@@ -5321,7 +5321,7 @@ decl (Decl
 n "dec_rs1"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 7
+o 8
 suid 23,0
 )
 )
@@ -5335,7 +5335,7 @@ decl (Decl
 n "dec_rs2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 8
+o 9
 suid 24,0
 )
 )
@@ -5349,7 +5349,7 @@ decl (Decl
 n "ex_rs1"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 14
+o 15
 suid 30,0
 )
 )
@@ -5363,7 +5363,7 @@ decl (Decl
 n "ex_alu_out"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 11
+o 12
 suid 36,0
 )
 )
@@ -5376,7 +5376,7 @@ m 4
 decl (Decl
 n "dec_alu_mode"
 t "alu_mode_type"
-o 3
+o 4
 suid 39,0
 )
 )
@@ -5389,7 +5389,7 @@ m 4
 decl (Decl
 n "ex_alu_mode"
 t "alu_mode_type"
-o 10
+o 11
 suid 41,0
 )
 )
@@ -5401,7 +5401,7 @@ lang 11
 decl (Decl
 n "clk"
 t "std_logic"
-o 2
+o 1
 suid 43,0
 )
 )
@@ -5415,7 +5415,7 @@ decl (Decl
 n "dec_imm"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 4
+o 5
 suid 49,0
 )
 )
@@ -5456,7 +5456,7 @@ decl (Decl
 n "dec_target_reg"
 t "std_logic_vector"
 b "(4 downto 0)"
-o 9
+o 10
 suid 61,0
 )
 )
@@ -5469,7 +5469,7 @@ m 4
 decl (Decl
 n "ex_target_reg"
 t "rf_storage_addr"
-o 16
+o 17
 suid 63,0
 )
 )
@@ -5482,7 +5482,7 @@ m 4
 decl (Decl
 n "me_target_reg"
 t "rf_storage_addr"
-o 20
+o 21
 suid 66,0
 )
 )
@@ -5496,7 +5496,7 @@ decl (Decl
 n "ex_imm"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 12
+o 13
 suid 68,0
 )
 )
@@ -5510,7 +5510,7 @@ decl (Decl
 n "alu_in_2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 1
+o 3
 suid 72,0
 )
 )
@@ -5523,7 +5523,7 @@ m 4
 decl (Decl
 n "dec_mux_alu_sel"
 t "std_logic"
-o 6
+o 7
 suid 74,0
 )
 )
@@ -5536,7 +5536,7 @@ m 4
 decl (Decl
 n "ex_mux_alu_sel"
 t "std_logic"
-o 13
+o 14
 suid 76,0
 )
 )
@@ -5548,7 +5548,7 @@ lang 11
 decl (Decl
 n "res_n"
 t "std_logic"
-o 23
+o 2
 suid 83,0
 )
 )
@@ -5562,7 +5562,7 @@ decl (Decl
 n "next_PC"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 21
+o 22
 suid 85,0
 )
 )
@@ -5575,7 +5575,7 @@ m 4
 decl (Decl
 n "dec_imm_type"
 t "imm_type"
-o 5
+o 6
 suid 86,0
 )
 )
@@ -5589,7 +5589,7 @@ decl (Decl
 n "ex_rs2"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 15
+o 16
 suid 87,0
 )
 )
@@ -5603,7 +5603,7 @@ decl (Decl
 n "me_alu_out"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
-o 19
+o 20
 suid 88,0
 )
 )
@@ -5661,139 +5661,139 @@ uid 72,0
 )
 *213 (MRCItem
 litem &181
-pos 0
+pos 2
 dimension 20
 uid 332,0
 )
 *214 (MRCItem
 litem &182
-pos 1
+pos 3
 dimension 20
 uid 440,0
 )
 *215 (MRCItem
 litem &183
-pos 2
+pos 4
 dimension 20
 uid 442,0
 )
 *216 (MRCItem
 litem &184
-pos 3
+pos 5
 dimension 20
 uid 444,0
 )
 *217 (MRCItem
 litem &185
-pos 4
+pos 6
 dimension 20
 uid 446,0
 )
 *218 (MRCItem
 litem &186
-pos 5
+pos 7
 dimension 20
 uid 448,0
 )
 *219 (MRCItem
 litem &187
-pos 6
+pos 8
 dimension 20
 uid 450,0
 )
 *220 (MRCItem
 litem &188
-pos 7
+pos 9
 dimension 20
 uid 542,0
 )
 *221 (MRCItem
 litem &189
-pos 8
+pos 10
 dimension 20
 uid 550,0
 )
 *222 (MRCItem
 litem &190
-pos 9
+pos 11
 dimension 20
 uid 552,0
 )
 *223 (MRCItem
 litem &191
-pos 10
+pos 12
 dimension 20
 uid 554,0
 )
 *224 (MRCItem
 litem &192
-pos 11
+pos 0
 dimension 20
 uid 598,0
 )
 *225 (MRCItem
 litem &193
-pos 12
+pos 13
 dimension 20
 uid 846,0
 )
 *226 (MRCItem
 litem &194
-pos 13
+pos 14
 dimension 20
 uid 854,0
 )
 *227 (MRCItem
 litem &195
-pos 14
+pos 15
 dimension 20
 uid 856,0
 )
 *228 (MRCItem
 litem &196
-pos 15
+pos 16
 dimension 20
 uid 858,0
 )
 *229 (MRCItem
 litem &197
-pos 16
+pos 17
 dimension 20
 uid 860,0
 )
 *230 (MRCItem
 litem &198
-pos 17
+pos 18
 dimension 20
 uid 862,0
 )
 *231 (MRCItem
 litem &199
-pos 18
+pos 19
 dimension 20
 uid 924,0
 )
 *232 (MRCItem
 litem &200
-pos 19
+pos 20
 dimension 20
 uid 928,0
 )
 *233 (MRCItem
 litem &201
-pos 20
+pos 21
 dimension 20
 uid 930,0
 )
 *234 (MRCItem
 litem &202
-pos 21
+pos 22
 dimension 20
 uid 932,0
 )
 *235 (MRCItem
 litem &203
-pos 22
+pos 1
 dimension 20
 uid 1163,0
 )
