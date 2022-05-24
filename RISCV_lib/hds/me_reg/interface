@@ -4,21 +4,29 @@ version 2
 dialect 11
 dmPackageRefs [
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "std_logic_1164"
 )
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "numeric_std"
 )
 (DmPackageRef
-library "RISV_lib"
+library "RISCV_lib"
 unitName "constants"
+)
+(DmPackageRef
+library "RISCV_lib"
+unitName "data_types"
+)
+(DmPackageRef
+library "RISCV_lib"
+unitName "isa"
 )
 ]
 libraryRefs [
-"ieee"
-"RISV_lib"
+"IEEE"
+"RISCV_lib"
 ]
 )
 version "27.1"
@@ -26,7 +34,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 11,0
+suid 29,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -72,10 +80,10 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 16
-suid 6,0
+suid 24,0
 )
 )
-uid 196,0
+uid 391,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -85,10 +93,10 @@ n "me_out"
 t "integer"
 b "range 0 to 4"
 o 19
-suid 7,0
+suid 25,0
 )
 )
-uid 198,0
+uid 393,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -98,10 +106,10 @@ n "me_target_reg"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 23
-suid 8,0
+suid 26,0
 )
 )
-uid 200,0
+uid 395,0
 )
 *17 (LogPort
 port (LogicalPort
@@ -110,10 +118,10 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 28
-suid 9,0
+suid 27,0
 )
 )
-uid 202,0
+uid 397,0
 )
 *18 (LogPort
 port (LogicalPort
@@ -124,10 +132,10 @@ n "wb_data"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 20
-suid 10,0
+suid 28,0
 )
 )
-uid 204,0
+uid 399,0
 )
 *19 (LogPort
 port (LogicalPort
@@ -138,10 +146,10 @@ n "wb_traget_reg"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 21
-suid 11,0
+suid 29,0
 )
 )
-uid 206,0
+uid 401,0
 )
 ]
 )
@@ -197,37 +205,37 @@ uid 106,0
 litem &14
 pos 0
 dimension 20
-uid 197,0
+uid 392,0
 )
 *26 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 199,0
+uid 394,0
 )
 *27 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 201,0
+uid 396,0
 )
 *28 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 203,0
+uid 398,0
 )
 *29 (MRCItem
 litem &18
 pos 4
 dimension 20
-uid 205,0
+uid 400,0
 )
 *30 (MRCItem
 litem &19
 pos 5
 dimension 20
-uid 207,0
+uid 402,0
 )
 ]
 )
@@ -550,7 +558,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "14:25:39"
+value "17:44:57"
 )
 (vvPair
 variable "group"
@@ -646,7 +654,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "14:25:39"
+value "17:44:57"
 )
 (vvPair
 variable "unit"
@@ -681,10 +689,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *64 (CptPort
-uid 166,0
+uid 361,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 167,0
+uid 362,0
 ro 180
 va (VaSet
 vasetType 1
@@ -693,11 +701,11 @@ fg "0,65535,0"
 xt "17625,5250,18375,6000"
 )
 tg (CPTG
-uid 168,0
+uid 363,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 169,0
+uid 364,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -710,7 +718,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 170,0
+uid 365,0
 va (VaSet
 font "courier,8,0"
 )
@@ -724,15 +732,15 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 16
-suid 6,0
+suid 24,0
 )
 )
 )
 *65 (CptPort
-uid 171,0
+uid 366,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 172,0
+uid 367,0
 ro 90
 va (VaSet
 vasetType 1
@@ -741,11 +749,11 @@ fg "0,65535,0"
 xt "14250,12625,15000,13375"
 )
 tg (CPTG
-uid 173,0
+uid 368,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 174,0
+uid 369,0
 va (VaSet
 font "courier,8,0"
 )
@@ -756,7 +764,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 175,0
+uid 370,0
 va (VaSet
 font "courier,8,0"
 )
@@ -771,15 +779,15 @@ n "me_out"
 t "integer"
 b "range 0 to 4"
 o 19
-suid 7,0
+suid 25,0
 )
 )
 )
 *66 (CptPort
-uid 176,0
+uid 371,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 177,0
+uid 372,0
 ro 90
 va (VaSet
 vasetType 1
@@ -788,11 +796,11 @@ fg "0,65535,0"
 xt "14250,40625,15000,41375"
 )
 tg (CPTG
-uid 178,0
+uid 373,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 179,0
+uid 374,0
 va (VaSet
 font "courier,8,0"
 )
@@ -803,7 +811,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 180,0
+uid 375,0
 va (VaSet
 font "courier,8,0"
 )
@@ -818,15 +826,15 @@ n "me_target_reg"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 23
-suid 8,0
+suid 26,0
 )
 )
 )
 *67 (CptPort
-uid 181,0
+uid 376,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 182,0
+uid 377,0
 ro 180
 va (VaSet
 vasetType 1
@@ -835,11 +843,11 @@ fg "0,65535,0"
 xt "15625,5250,16375,6000"
 )
 tg (CPTG
-uid 183,0
+uid 378,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 184,0
+uid 379,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -852,7 +860,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 185,0
+uid 380,0
 va (VaSet
 font "courier,8,0"
 )
@@ -866,15 +874,15 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 28
-suid 9,0
+suid 27,0
 )
 )
 )
 *68 (CptPort
-uid 186,0
+uid 381,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 187,0
+uid 382,0
 ro 90
 va (VaSet
 vasetType 1
@@ -883,11 +891,11 @@ fg "0,65535,0"
 xt "21000,12625,21750,13375"
 )
 tg (CPTG
-uid 188,0
+uid 383,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 189,0
+uid 384,0
 va (VaSet
 font "courier,8,0"
 )
@@ -899,7 +907,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 190,0
+uid 385,0
 va (VaSet
 font "courier,8,0"
 )
@@ -915,15 +923,15 @@ n "wb_data"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 20
-suid 10,0
+suid 28,0
 )
 )
 )
 *69 (CptPort
-uid 191,0
+uid 386,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 192,0
+uid 387,0
 ro 90
 va (VaSet
 vasetType 1
@@ -932,11 +940,11 @@ fg "0,65535,0"
 xt "21000,15625,21750,16375"
 )
 tg (CPTG
-uid 193,0
+uid 388,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 194,0
+uid 389,0
 va (VaSet
 font "courier,8,0"
 )
@@ -948,7 +956,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 195,0
+uid 390,0
 va (VaSet
 font "courier,8,0"
 )
@@ -964,7 +972,7 @@ n "wb_traget_reg"
 t "std_logic_vector"
 b "(WORD_WIDTH-1 downto 0)"
 o 21
-suid 11,0
+suid 29,0
 )
 )
 )
@@ -1396,12 +1404,14 @@ uid 50,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,14500,5400"
-st "LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-LIBRARY RISV_lib;
-USE RISV_lib.constants.all;"
+xt "0,900,15000,7200"
+st "LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+LIBRARY RISCV_lib;
+USE RISCV_lib.constants.all;
+USE RISCV_lib.data_types.all;
+USE RISCV_lib.isa.all;"
 tm "PackageList"
 )
 ]
@@ -1680,6 +1690,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 207,0
+lastUid 402,0
 activeModelName "Symbol:CDM"
 )
