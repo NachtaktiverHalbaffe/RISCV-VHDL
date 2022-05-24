@@ -45,6 +45,7 @@ begin
           when isa_xor_func3 => dec_alu_mode <= alu_xor;
           when isa_or_func3 => dec_alu_mode <= alu_or;
           when isa_and_func3 => dec_alu_mode <= alu_and;
+          when others => dec_alu_mode <= alu_add;
         end case;
         -- branch operations
       when isa_bra_op =>
@@ -55,7 +56,9 @@ begin
           when isa_bge_func3 => dec_alu_mode <= alu_bge;
           when isa_bltu_func3 => dec_alu_mode <= alu_bltu;
           when isa_bgeu_func3 => dec_alu_mode <= alu_bgeu;
+          when others => dec_alu_mode <= alu_add;
         end case;
+      when others => dec_alu_mode <= alu_add;
     end case;
   end process decode_alu;
 
@@ -112,8 +115,11 @@ begin
     end case;
   end process decode_mem;
 
-  decode_rf : process (op_code_sliced) is
+  decode_rf : process (op_code_sliced, op_code) is
   begin
+    dec_target_reg <= b"00000";
+    sel_rs1 <= b"00000";
+    sel_rs2 <= b"00000";
     case op_code_sliced is
         -- R-Type formatting
       when isa_arith_direct_op =>
@@ -133,7 +139,7 @@ begin
       when isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
       when others =>
-        dec_traget_reg <= b"00000";
+        dec_target_reg <= b"00000";
         sel_rs1 <= b"00000";
         sel_rs2 <= b"00000";
     end case;

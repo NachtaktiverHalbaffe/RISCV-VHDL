@@ -30,6 +30,7 @@ begin
     -- Addition/Substraktion
     ---------------------------------------------------------------
     c_word := (0 => c_in, others => '0');
+    compute_result := (others => '0');
 
     -- Computing half
     if ex_alu_mode = alu_add then
@@ -117,7 +118,7 @@ begin
       when alu_bge => null;
       when alu_bltu => null;
       when alu_bgeu => null;
-      
+      when others => compute_result := (others => '0'); 
     end case;
 
     -- Set flags

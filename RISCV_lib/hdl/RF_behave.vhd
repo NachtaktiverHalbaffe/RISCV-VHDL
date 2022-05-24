@@ -21,9 +21,11 @@ BEGIN
     begin
         if res_n = '0' then
             registers <= (others => (others => '0'));
-        elsif clk'event and clk = '1' then
+        else
+          if clk'event and clk = '1' then
             registers(to_integer(unsigned(wb_traget_reg)))  <= wb_data;
-            registers(1) <= (others => '0');
+            registers(0) <= (others => '0');
+          end if;
         end if;
     end process wb;
 

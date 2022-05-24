@@ -1,5 +1,7 @@
 [ModelSim]
 RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/work
+[QuartusQIS]
+RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/qis
 [hdl]
 RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hdl
 [hds]
