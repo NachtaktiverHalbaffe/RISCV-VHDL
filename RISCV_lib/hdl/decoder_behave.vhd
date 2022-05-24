@@ -24,7 +24,7 @@ begin
         -- arithmetic operations
       when isa_arith_direct_op | isa_arith_imm_op =>
         case func3 is
-          when isa_add_func3  =>
+          when isa_add_func3 =>
             if func7 = isa_add_func7 then
               dec_alu_mode <= alu_add;
             elsif func7 = isa_sub_func7 then
@@ -34,7 +34,7 @@ begin
             end if;
             -- shifting
           when isa_sll_func3 => dec_alu_mode <= alu_sll;
-          when isa_srl_func3 =>        
+          when isa_srl_func3 =>
             if func7 = isa_sra_func7 then
               dec_alu_mode <= alu_sra;
             else
@@ -42,7 +42,7 @@ begin
             end if;
           when isa_slt_func3 => dec_alu_mode <= alu_slt;
           when isa_sltu_func3 => dec_alu_mode <= alu_sltu;
-          -- logical operations
+            -- logical operations
           when isa_xor_func3 => dec_alu_mode <= alu_xor;
           when isa_or_func3 => dec_alu_mode <= alu_or;
           when isa_and_func3 => dec_alu_mode <= alu_and;
@@ -69,20 +69,26 @@ begin
         -- I-Type formatting
       when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_imm_type <= I_type;
+        dec_mux_alu_sel <= '1';
         -- S-Type formatting
       when isa_store_op =>
         dec_imm_type <= S_type;
+        dec_mux_alu_sel <= '1';
         -- B-Type formatting
       when isa_bra_op =>
         dec_imm_type <= B_type;
+        dec_mux_alu_sel <= '1';
         -- U-Type formatting
       when isa_lui_op | isa_auipc_op =>
         dec_imm_type <= U_type;
+        dec_mux_alu_sel <= '1';
         --   J-Type formatting
       when isa_jal_op =>
         dec_imm_type <= J_type;
+        dec_mux_alu_sel <= '1';
       when others =>
         dec_imm_type <= R_type;
+        dec_mux_alu_sel <= '0';
     end case;
   end process decode_imm;
 
@@ -128,7 +134,7 @@ begin
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
         -- U-Type/J-Type formatting
-      when  isa_jal_op | isa_lui_op | isa_auipc_op =>
+      when isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
       when others => null;
     end case;
