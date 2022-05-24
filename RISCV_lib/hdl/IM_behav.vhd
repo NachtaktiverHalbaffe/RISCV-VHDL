@@ -18,16 +18,19 @@ BEGIN
   begin
     case to_integer(unsigned(if_pc)) is
     when 0 => 
-      if_op_Code <= b"00";
+      if_op_Code <= b"000000000001 00000 000 00101 00100 11";  --ADDI x5, x0, 1
     when 1 => 
-      if_op_Code <= b"00";
+      if_op_Code <= b"000000000111 00000 000 00110 00100 11";  --ADDI x6, x0, 1
     when 2 => 
-      if_op_Code <= b"00";
+      if_op_Code <= b"0000000 00101 00110 000 00111 01100 11"; --ADD x7, x5, x6
     when others => 
-      if_op_Code <= b"00"; 
+      if_op_Code <= b"0000000 00111 00101 000 00111 01100 11"; --ADD x7, x7, x6 
   end case;
   end process rom;
   
   
 END ARCHITECTURE behav;
+
+
+
 
