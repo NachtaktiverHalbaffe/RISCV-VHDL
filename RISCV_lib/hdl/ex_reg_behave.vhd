@@ -9,5 +9,16 @@
 --
 ARCHITECTURE behave OF ex_reg IS
 BEGIN
+if_reg: process(clk, res_n) is
+begin
+    if res_n = '0' then
+        me_target_reg <= (others => '0');
+    else
+        if clk'event and clk='1' then
+            me_alu_out <= ex_alu_out;
+            me_target_reg <= ex_target_reg;
+        end if;
+    end if;
+end process if_reg;
 END ARCHITECTURE behave;
 
