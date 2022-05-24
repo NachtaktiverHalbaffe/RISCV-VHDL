@@ -29,8 +29,8 @@ package ISA is
 
   -- Shift operations
   constant isa_sll_func3 : std_logic_vector := b"001";
-  constant isa_srl_func3 : std_logic_vector := b"011";
-  constant isa_sra_func3 : std_logic_vector := b"011";
+  constant isa_srl_func3 : std_logic_vector := b"101";
+  constant isa_sra_func3 : std_logic_vector := b"101";
   constant isa_slt_func3 : std_logic_vector := b"010";
   constant isa_sltu_func3 : std_logic_vector := b"011";
   constant isa_sra_func7 : std_logic_vector := b"0100000";

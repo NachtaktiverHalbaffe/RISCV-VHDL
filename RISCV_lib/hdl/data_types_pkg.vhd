@@ -30,7 +30,7 @@ package data_types is
     alu_sll, alu_srl, alu_sra, 
     alu_and, alu_or, alu_xor,
     alu_slt, alu_sltu,
-    alu_jal, alu_jalr, alu_bew, alu_bne, alu_blt, alu_bge, alu_bltu, alu_bgeu
+    alu_jal, alu_jalr, alu_beq, alu_bne, alu_blt, alu_bge, alu_bltu, alu_bgeu
   );
   -- Dtermines memory operation mode
   type mem_mode is (lb, lh, lw, lbu, lhu, sb, sh, sw);

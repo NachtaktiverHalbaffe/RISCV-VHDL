@@ -24,7 +24,7 @@ begin
         -- arithmetic operations
       when isa_arith_direct_op | isa_arith_imm_op =>
         case func3 is
-          when isa_add_func3 | isa_sub_func3 =>
+          when isa_add_func3  =>
             if func7 = isa_add_func7 then
               dec_alu_mode <= alu_add;
             elsif func7 = isa_sub_func7 then
@@ -34,24 +34,18 @@ begin
             end if;
             -- shifting
           when isa_sll_func3 => dec_alu_mode <= alu_sll;
-          when isa_srl_func3 | isa_sra_func3 =>
-            if func7 = isa_srl_func7 then
-              dec_alu_mode <= alu_srl;
-            elsif func7 = isa_sra_func7 then
+          when isa_srl_func3 =>        
+            if func7 = isa_sra_func7 then
               dec_alu_mode <= alu_sra;
             else
-              null;
+              dec_alu_mode <= alu_srl;
             end if;
           when isa_slt_func3 => dec_alu_mode <= alu_slt;
           when isa_sltu_func3 => dec_alu_mode <= alu_sltu;
-          when others => null;
-        end case;
-        -- logical operations
-      when isa_log_op =>
-        case func3 is
+          -- logical operations
           when isa_xor_func3 => dec_alu_mode <= alu_xor;
           when isa_or_func3 => dec_alu_mode <= alu_or;
-          when isa_and_func => dec_alu_mode <= alu_and;
+          when isa_and_func3 => dec_alu_mode <= alu_and;
           when others => null;
         end case;
         -- branch operations
@@ -71,9 +65,9 @@ begin
 
   decode_imm : process (op_code_sliced, func3, func7) is
   begin
-    case op_code is
+    case op_code_sliced is
         -- I-Type formatting
-      when isa_arith_imm_op | isa_log_imm_op | isa_isa_load_op | isa_jalr_op =>
+      when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_imm_type <= I_type;
         -- S-Type formatting
       when isa_store_op =>
@@ -125,16 +119,16 @@ begin
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
         -- I-Type formatting
-      when isa_arith_imm_op | isa_log_imm_op | isa_load_op | isa_jalr_op =>
+      when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         -- S-Type/B-Type formatting
-      when isa_store_op | isa_br_op => null;
+      when isa_store_op | isa_bra_op => null;
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
         -- U-Type/J-Type formatting
-      when isa_bra_op | isa_jal_op | isa_lui_op | isa_auipc =>
+      when  isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
       when others => null;
     end case;
