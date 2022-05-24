@@ -17,10 +17,14 @@ BEGIN
     dec_rs1 <= registers(to_integer(unsigned(sel_rs1)));
     dec_rs2 <= registers(to_integer(unsigned(sel_rs2)));
 
-    wb: process(wb_data,wb_traget_reg) is
+    wb: process(clk, res_n) is
     begin
-        registers(to_integer(unsigned(wb_traget_reg)))  <= wb_data;
-        registers(1) <= (others => '0');
+        if res_n = '0' then
+            registers <= (others => (others => '0'));
+        elsif clk'event and clk = '1' then
+            registers(to_integer(unsigned(wb_traget_reg)))  <= wb_data;
+            registers(1) <= (others => '0');
+        end if;
     end process wb;
 
 END ARCHITECTURE behave;
