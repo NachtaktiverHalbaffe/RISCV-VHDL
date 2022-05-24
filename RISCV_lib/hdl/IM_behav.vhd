@@ -24,7 +24,7 @@ BEGIN
     when 2 => 
       if_op_Code <= b"00";
     when others => 
-      if_op_Code <= null;
+      if_op_Code <= b"00"; 
   end case;
   end process rom;
   

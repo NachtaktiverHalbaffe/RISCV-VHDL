@@ -11,16 +11,16 @@ library ieee; use ieee.std_logic_1164.all;
 library RISCV_lib; use RISCV_lib.all;
 
 ARCHITECTURE behave OF RF IS
-    signal registers: rf_storage;
+    signal registers: rf_storage_type;
 
 BEGIN
     dec_rs1 <= registers(to_integer(unsigned(sel_rs1)));
     dec_rs2 <= registers(to_integer(unsigned(sel_rs2)));
 
-    wb: process(wb_data,wb_target_reg) is
+    wb: process(wb_data,wb_traget_reg) is
     begin
-        registers(to_integer(unsigned(wb_target_reg)))  <= wb_data;
-        registers(to_integer(unsigned(0))) <= (others => '0');
+        registers(to_integer(unsigned(wb_traget_reg)))  <= wb_data;
+        registers(1) <= (others => '0');
     end process wb;
 
 END ARCHITECTURE behave;

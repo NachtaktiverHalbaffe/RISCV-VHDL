@@ -9,20 +9,22 @@
 --
 ARCHITECTURE behave OF Imm_Gen IS
 BEGIN
-    Imm_Gen: process(imm_type,op_code) is
+    Imm_Gen: process(dec_imm_type,op_code) is
     begin
-        case imm_type is
+        case dec_imm_type is
         when I_Type => 
-            dec_imm <= (others => opcode(31));
+            dec_imm <= (others => op_code(31));
             dec_imm <= op_code(31 downto 20);
-        when S_Type
-            dec_imm <= (others => opcode(31));
+        when S_Type =>
+            dec_imm <= (others => op_code(31));
             dec_imm <= op_code(31 downto 25) & op_code(11 downto 7);
-        when B_Type
-        when U_Type
-        when J_Type
+        --when B_Type=>;
+        --when U_Type=>;
+        --when J_Type=>;
         when others => 
-            dec_imm <=(others => '0')
+            dec_imm <=(others => '0');
+	end case;
+    end process Imm_Gen;
 
 END ARCHITECTURE behave;
 

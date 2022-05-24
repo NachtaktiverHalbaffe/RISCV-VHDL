@@ -36,7 +36,7 @@ package data_types is
   type mem_mode is (lb, lh, lw, lbu, lhu, sb, sh, sw);
 
   -- Determines rf
-  type rf_storage is array(1 to REG_NUM) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+  type rf_storage_type is array(1 to REG_NUM) of std_logic_vector(WORD_WIDTH - 1 downto 0);
   
   type imm_type is (R_Type, I_Type,S_Type, B_Type, U_Type, J_Type);
 end data_types;
