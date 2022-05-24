@@ -20,6 +20,7 @@ begin
 
   decode_alu : process (op_code_sliced, func3, func7) is
   begin
+    dec_alu_mode <= alu_add;
     case op_code_sliced is
         -- arithmetic operations
       when isa_arith_direct_op | isa_arith_imm_op =>
@@ -29,8 +30,6 @@ begin
               dec_alu_mode <= alu_add;
             elsif func7 = isa_sub_func7 then
               dec_alu_mode <= alu_sub;
-            else
-              null;
             end if;
             -- shifting
           when isa_sll_func3 => dec_alu_mode <= alu_sll;
@@ -46,7 +45,6 @@ begin
           when isa_xor_func3 => dec_alu_mode <= alu_xor;
           when isa_or_func3 => dec_alu_mode <= alu_or;
           when isa_and_func3 => dec_alu_mode <= alu_and;
-          when others => null;
         end case;
         -- branch operations
       when isa_bra_op =>
@@ -57,9 +55,7 @@ begin
           when isa_bge_func3 => dec_alu_mode <= alu_bge;
           when isa_bltu_func3 => dec_alu_mode <= alu_bltu;
           when isa_bgeu_func3 => dec_alu_mode <= alu_bgeu;
-          when others => null;
         end case;
-      when others => null;
     end case;
   end process decode_alu;
 
@@ -136,7 +132,10 @@ begin
         -- U-Type/J-Type formatting
       when isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
-      when others => null;
+      when others =>
+        dec_traget_reg <= b"00000";
+        sel_rs1 <= b"00000";
+        sel_rs2 <= b"00000";
     end case;
   end process decode_rf;
 
