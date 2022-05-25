@@ -12,7 +12,7 @@ library RISCV_lib; use RISCV_lib.all;
 
 ARCHITECTURE behave OF dec_reg IS
 BEGIN
-    if_reg: process(clk, res_n) is
+    dec_reg: process(clk, res_n) is
     begin
         if res_n = '0' then
             -- TODO how to reset?
@@ -29,5 +29,5 @@ BEGIN
                 ex_target_reg <= dec_target_reg; 
             end if;
         end if;
-    end process if_reg;
+    end process dec_reg;
 END ARCHITECTURE behave;

@@ -17,7 +17,7 @@ BEGIN
     dec_rs1 <= registers(to_integer(unsigned(sel_rs1)));
     dec_rs2 <= registers(to_integer(unsigned(sel_rs2)));
 
-    wb: process(clk, res_n) is
+    rf_wb: process(clk, res_n) is
     begin
         if res_n = '0' then
             registers <= (others => (others => '0'));
@@ -27,7 +27,7 @@ BEGIN
             registers(0) <= (others => '0');
           end if;
         end if;
-    end process wb;
+    end process rf_wb;
 
 END ARCHITECTURE behave;
 

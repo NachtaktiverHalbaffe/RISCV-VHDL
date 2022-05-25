@@ -27,9 +27,8 @@ BEGIN
         when J_Type =>
             dec_imm <= (others => op_code(31));
             dec_imm(19 downto 0) <= op_code(19 downto 12) & op_code(20) & op_code(30 downto 21) & '0';
-        when others => 
+        when R_Type => 
             dec_imm <=(others => '0');
-            report "ERROR: Unknown Immediate type";
 	end case;
     end process Imm_Gen;
 

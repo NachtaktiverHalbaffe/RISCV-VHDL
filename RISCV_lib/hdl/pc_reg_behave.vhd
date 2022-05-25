@@ -12,7 +12,7 @@ library RISCV_lib; use RISCV_lib.all;
 
 ARCHITECTURE behave OF pc_reg IS
 BEGIN
-    ex_reg: process(clk, res_n) is
+    pc_reg: process(clk, res_n) is
     begin
         if res_n = '0' then
             if_pc <= (others => '0');
@@ -21,6 +21,6 @@ BEGIN
                 if_pc <= next_pc;
             end if;
         end if;
-    end process ex_reg;
+    end process pc_reg;
 END ARCHITECTURE behave;
 
