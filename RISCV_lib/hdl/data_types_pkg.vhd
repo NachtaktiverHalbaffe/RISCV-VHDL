@@ -45,4 +45,6 @@ package data_types is
   -- Sets the forwarding mode of an forwarding multiplexer
   type fwd_sel is (fwd_reg_data, fwd_alu_data, fwd_return_data);
 
+  type im_rom_type is array(natural range <>) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+
 end data_types;
