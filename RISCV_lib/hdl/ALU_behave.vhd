@@ -11,8 +11,8 @@ architecture behave of ALU is
 
 begin
 
-  arith : process (ex_alu_mode, ex_rs1, alu_in_2) is
-    -- for adding/subtracting
+  arith : process (ex_alu_mode, alu_in_1, alu_in_2) is
+-- for adding/subtracting
     variable au_l, au_f : word;
     variable au_h : std_logic_vector(word'left + 1 downto word'left);
     variable au_c, au_v : std_logic;
@@ -31,7 +31,7 @@ begin
     temp_result := (others => '0');
     ex_alu_out <= (others => '0');
     -- Store input signals in variables for caluculation
-    x := ex_rs1;
+    x := alu_in_1;
     y := alu_in_2;
 
     -- Performing add/sub-operation because its always needed

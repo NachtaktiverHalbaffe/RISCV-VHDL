@@ -7,7 +7,14 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
-ARCHITECTURE behav OF mux_memory IS
-BEGIN
-END ARCHITECTURE behav;
-
+architecture behav of mux_memory is
+begin
+  process (me_mem_mode, me_load_data, me_alu_out) is
+  begin
+    if me_mem_mode = mem_nls then
+      me_me_out <= me_alu_out;
+    else
+      me_me_out <= me_load_data;
+    end if;
+  end process;
+end architecture behav;
