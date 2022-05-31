@@ -52,5 +52,6 @@ package data_types is
     fwd_return_data);
 
   type im_rom_type is array(natural range <>) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+  type mem_storage_type is array(0 to MEM_SIZE - 1) of std_logic_vector(BYTE_WIDTH - 1 downto 0);
 
 end data_types;
