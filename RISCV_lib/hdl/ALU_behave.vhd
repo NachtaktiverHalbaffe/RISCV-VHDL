@@ -12,10 +12,6 @@ architecture behave of ALU is
 begin
 
   arith : process (ex_alu_mode, ex_rs1, alu_in_2) is
-    -- Carry for carry-ripple-add
-    variable c_in : std_logic;
-    variable c_word : word;
-
     -- for adding/subtracting
     variable au_l, au_f : word;
     variable au_h : std_logic_vector(word'left + 1 downto word'left);
@@ -29,10 +25,11 @@ begin
     ---------------------------------------------------------------
     -- Addition/Substraction
     ---------------------------------------------------------------
-    -- Reset variables
-    c_word := (0 => c_in, others => '0');
+    -- Reset variables and signals
+
     compute_result := (others => '0');
     temp_result := (others => '0');
+    ex_alu_out <= (others => '0');
     -- Store input signals in variables for caluculation
     x := ex_rs1;
     y := alu_in_2;
@@ -41,7 +38,7 @@ begin
     if ex_alu_mode = alu_add then
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) +
-        unsigned('0' & y(y'left - 1 downto y'right)) + unsigned(c_word));
+        unsigned('0' & y(y'left - 1 downto y'right)));
       au_h := std_logic_vector(
         unsigned('0' & x(x'left downto x'left)) +
         unsigned('0' & y(y'left downto y'left)) +
@@ -49,7 +46,7 @@ begin
     else
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) -
-        unsigned('0' & y(y'left - 1 downto y'right)) - unsigned(c_word));
+        unsigned('0' & y(y'left - 1 downto y'right)));
       au_h := std_logic_vector(
         unsigned('0' & x(x'left downto x'left)) -
         unsigned('0' & y(y'left downto y'left)) -
