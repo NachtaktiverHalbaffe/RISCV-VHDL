@@ -27,15 +27,17 @@ begin
     variable x, y : word;
   begin
     ---------------------------------------------------------------
-    -- Addition/Substraktion
+    -- Addition/Substraction
     ---------------------------------------------------------------
+    -- Reset variables
     c_word := (0 => c_in, others => '0');
     compute_result := (others => '0');
+    temp_result := (others => '0');
     -- Store input signals in variables for caluculation
     x := ex_rs1;
     y := alu_in_2;
 
-    -- Computing half
+    -- Performing add/sub-operation because its always needed
     if ex_alu_mode = alu_add then
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) +
@@ -54,13 +56,12 @@ begin
         unsigned('0' & au_l(au_l'left downto au_l'left)));
     end if;
 
-    -- Set flags and sum
     au_c := au_h(au_h'left);
     au_v := au_h(au_h'left) xor au_l(au_l'left);
     au_f := au_h(au_h'right) & au_l(au_l'left - 1 downto au_l'right);
 
     ---------------------------------------------------------------
-    -- compute output and flags
+    -- Perform ALU operation
     ---------------------------------------------------------------
     case ex_alu_mode is
       when alu_add | alu_sub =>
@@ -124,7 +125,9 @@ begin
       when others => compute_result := (others => '0');
     end case;
 
+    ---------------------------------------------------------------
     -- Set flags
+    ---------------------------------------------------------------
     n := compute_result(compute_result'left);
     if compute_result = x"00000000" then
       z := '1';
@@ -132,6 +135,10 @@ begin
       z := '0';
     end if;
 
+    ---------------------------------------------------------------
+    -- Set output signals
+    ---------------------------------------------------------------
     ex_alu_out <= compute_result;
+
   end process arith;
 end architecture behave;
