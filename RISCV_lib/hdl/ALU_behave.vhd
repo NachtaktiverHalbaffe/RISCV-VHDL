@@ -12,7 +12,7 @@ architecture behave of ALU is
 begin
 
   arith : process (ex_alu_mode, ex_rs1, alu_in_2) is
-    -- Carry for 
+    -- Carry for carry-ripple-add
     variable c_in : std_logic;
     variable c_word : word;
 
@@ -22,33 +22,36 @@ begin
     variable au_c, au_v : std_logic;
     -- flags
     variable n, z, v, c : std_logic;
-
-    variable compute_result : word;
-    variable temp_result: word;
+    -- input/output signals
+    variable compute_result, temp_result : word;
+    variable x, y : word;
   begin
     ---------------------------------------------------------------
     -- Addition/Substraktion
     ---------------------------------------------------------------
     c_word := (0 => c_in, others => '0');
     compute_result := (others => '0');
+    -- Store input signals in variables for caluculation
+    x := ex_rs1;
+    y := alu_in_2;
 
     -- Computing half
     if ex_alu_mode = alu_add then
       au_l := std_logic_vector(
-      unsigned('0' & ex_rs1(ex_rs1'left - 1 downto ex_rs1'right)) +
-      unsigned('0' & alu_in_2(alu_in_2'left - 1 downto alu_in_2'right)) + unsigned(c_word));
+        unsigned('0' & x(x'left - 1 downto x'right)) +
+        unsigned('0' & y(y'left - 1 downto y'right)) + unsigned(c_word));
       au_h := std_logic_vector(
-      unsigned('0' & ex_rs1(ex_rs1'left downto ex_rs1'left)) +
-      unsigned('0' & alu_in_2(alu_in_2'left downto alu_in_2'left)) +
-      unsigned('0' & au_l(au_l'left downto au_l'left)));
-      else
+        unsigned('0' & x(x'left downto x'left)) +
+        unsigned('0' & y(y'left downto y'left)) +
+        unsigned('0' & au_l(au_l'left downto au_l'left)));
+    else
       au_l := std_logic_vector(
-      unsigned('0' & ex_rs1(ex_rs1'left - 1 downto ex_rs1'right)) -
-      unsigned('0' & alu_in_2(alu_in_2'left - 1 downto alu_in_2'right)) - unsigned(c_word));
+        unsigned('0' & x(x'left - 1 downto x'right)) -
+        unsigned('0' & y(y'left - 1 downto y'right)) - unsigned(c_word));
       au_h := std_logic_vector(
-      unsigned('0' & ex_rs1(ex_rs1'left downto ex_rs1'left)) -
-      unsigned('0' & alu_in_2(alu_in_2'left downto alu_in_2'left)) -
-      unsigned('0' & au_l(au_l'left downto au_l'left)));
+        unsigned('0' & x(x'left downto x'left)) -
+        unsigned('0' & y(y'left downto y'left)) -
+        unsigned('0' & au_l(au_l'left downto au_l'left)));
     end if;
 
     -- Set flags and sum
@@ -64,37 +67,37 @@ begin
         compute_result := au_f;
         c := au_c;
         v := au_v;
-          --   shift operations
-          when alu_sll =>
-          compute_result := ex_rs1(ex_rs1'left - 1 downto ex_rs1'right) & '0';
-        c := ex_rs1(ex_rs1'left);
-        v := ex_rs1(ex_rs1'left) xor ex_rs1(ex_rs1'left - 1);
-      when alu_srl => ex_alu_out <= ex_rs1;
-        compute_result := '0' & ex_rs1(ex_rs1'left downto ex_rs1'right + 1);
-        c := ex_rs1(ex_rs1'right);
-        v := ex_rs1(ex_rs1'left) xor '0';
+        --   shift operations
+      when alu_sll =>
+        compute_result := x(x'left - 1 downto x'right) & '0';
+        c := x(x'left);
+        v := x(x'left) xor x(x'left - 1);
+      when alu_srl => ex_alu_out <= x;
+        compute_result := '0' & x(x'left downto x'right + 1);
+        c := x(x'right);
+        v := x(x'left) xor '0';
       when alu_sra =>
-        compute_result := ex_rs1(ex_rs1'left) & ex_rs1(ex_rs1'left downto ex_rs1'right + 1);
-        c := ex_rs1(ex_rs1'right);
-        v := ex_rs1(ex_rs1'left) xor ex_rs1(ex_rs1'left);
+        compute_result := x(x'left) & x(x'left downto x'right + 1);
+        c := x(x'right);
+        v := x(x'left) xor x(x'left);
         --   logical operations
       when alu_and =>
-        compute_result := ex_rs1 and alu_in_2;
+        compute_result := x and y;
         c := '0';
         v := '0';
       when alu_or =>
-        compute_result := ex_rs1 or alu_in_2;
+        compute_result := x or y;
         c := '0';
         v := '0';
       when alu_xor =>
-        compute_result := ex_rs1 xor alu_in_2;
+        compute_result := x xor y;
         c := '0';
         v := '0';
         --  Set less
       when alu_slt =>
         c := '0';
         v := '0';
-        temp_result :=  std_logic_vector(signed(ex_rs1) - signed(alu_in_2));
+        temp_result := std_logic_vector(signed(x) - signed(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
         else
@@ -103,7 +106,7 @@ begin
       when alu_sltu => null;
         c := '0';
         v := '0';
-        temp_result := std_logic_vector(unsigned(ex_rs1) - unsigned(alu_in_2));
+        temp_result := std_logic_vector(unsigned(x) - unsigned(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
         else
@@ -118,7 +121,7 @@ begin
       when alu_bge => null;
       when alu_bltu => null;
       when alu_bgeu => null;
-      when others => compute_result := (others => '0'); 
+      when others => compute_result := (others => '0');
     end case;
 
     -- Set flags
@@ -128,7 +131,7 @@ begin
     else
       z := '0';
     end if;
-    
+
     ex_alu_out <= compute_result;
   end process arith;
 end architecture behave;
