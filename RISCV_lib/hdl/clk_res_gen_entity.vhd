@@ -1,4 +1,4 @@
--- VHDL Entity RISCV_lib.riscv.interface
+-- VHDL Entity RISCV_lib.clk_res_gen.interface
 --
 -- Created:
 --          by - flxbrggr.meyer (pc084)
@@ -10,13 +10,13 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
 USE IEEE.numeric_std.all;
 
-ENTITY riscv IS
+ENTITY clk_res_gen IS
    PORT( 
-      clk   : IN     std_logic;
-      res_n : IN     std_logic
+      clk   : OUT    std_logic;
+      res_n : OUT    std_logic
    );
 
 -- Declarations
 
-END riscv ;
+END clk_res_gen ;
 
