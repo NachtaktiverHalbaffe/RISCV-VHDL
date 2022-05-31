@@ -77,7 +77,7 @@ begin
       when isa_bra_op =>
         dec_imm_type <= B_type;
         dec_mux_alu_sel <= '1';
-        -- U-Type formatting
+        -- U-Type formattingmem_mode
       when isa_lui_op | isa_auipc_op =>
         dec_imm_type <= U_type;
         dec_mux_alu_sel <= '1';
@@ -93,25 +93,24 @@ begin
 
   decode_mem : process (op_code_sliced, func3) is
   begin
-    -- TODO implement signal assignment for memory stage
     case op_code_sliced is
       when isa_store_op =>
         case func3 is
-          when isa_sb_func3 => null;-- mem_mode <= sb
-          when isa_sh_func3 => null;-- mem_mode <= sh
-          when isa_sw_func3 => null;-- mem_mode <= sw
-          when others => null;
+          when isa_sb_func3 => dec_mem_mode <= mem_sb;
+          when isa_sh_func3 => dec_mem_mode <= mem_sh;
+          when isa_sw_func3 => dec_mem_mode <= mem_sw;
+          when others => dec_mem_mode <= mem_nls;
         end case;
       when isa_load_op =>
         case func3 is
-          when isa_lb_func3 => null;-- mem_mode <= lb
-          when isa_lh_func3 => null;-- mem_mode <= lh
-          when isa_lw_func3 => null;-- mem_mode <= lw
-          when isa_lbu_func3 => null;-- mem_mode <= lbu
-          when isa_lhu_func3 => null;-- mem_mode <= lhu
-          when others => null;
+          when isa_lb_func3 => dec_mem_mode <= mem_lb;
+          when isa_lh_func3 => dec_mem_mode <= mem_lh;
+          when isa_lw_func3 => dec_mem_mode <= mem_lw;
+          when isa_lbu_func3 => dec_mem_mode <= mem_lbu;
+          when isa_lhu_func3 => dec_mem_mode <= mem_lhu;
+          when others => dec_mem_mode <= mem_nls;
         end case;
-      when others => null;
+      when others => dec_mem_mode <= mem_nls;
     end case;
   end process decode_mem;
 

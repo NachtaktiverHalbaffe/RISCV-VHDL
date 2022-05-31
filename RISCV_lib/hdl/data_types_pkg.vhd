@@ -19,9 +19,9 @@ package data_types is
   ------------------------------------------
   -- word in memory
   subtype word is std_logic_vector(WORD_WIDTH - 1 downto 0);
-  type rf_storage_type is array(0 to REG_NUM-1) of std_logic_vector(WORD_WIDTH - 1 downto 0);
-  type imm_type is (R_Type, I_Type,S_Type, B_Type, U_Type, J_Type);
-    
+  type rf_storage_type is array(0 to REG_NUM - 1) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+  type imm_type is (R_Type, I_Type, S_Type, B_Type, U_Type, J_Type);
+
   ------------------------------------------
   -- Operation Modes
   ------------------------------------------
@@ -29,13 +29,13 @@ package data_types is
   -- Determines the operation for alu
   type alu_mode_type is (
     alu_add, alu_sub,
-    alu_sll, alu_srl, alu_sra, 
+    alu_sll, alu_srl, alu_sra,
     alu_and, alu_or, alu_xor,
     alu_slt, alu_sltu,
     alu_jal, alu_jalr, alu_beq, alu_bne, alu_blt, alu_bge, alu_bltu, alu_bgeu
   );
   -- Dtermines memory operation mode
-  type mem_mode is (lb, lh, lw, lbu, lhu, sb, sh, sw);
+  type mem_mode is (mem_lb, mem_lh, mem_lw, mem_lbu, mem_lhu, mem_sb, mem_sh, mem_sw, mem_nls);
 
   ------------------------------------------
   -- Adress types
@@ -43,6 +43,6 @@ package data_types is
   -- Determines rf
   subtype rf_storage_addr is std_logic_vector(4 downto 0);
   -- Sets the forwarding mode of an forwarding multiplexer
-  type fwd_sel is (fwd_reg_data, fwd_alu_data, fwd_return_data); 
+  type fwd_sel is (fwd_reg_data, fwd_alu_data, fwd_return_data);
 
 end data_types;
