@@ -15,13 +15,15 @@ use RISCV_lib.constants.all;
 package data_types is
 
   ------------------------------------------
-  -- Types
+  -- Data types
   ------------------------------------------
   -- word in memory
   subtype word is std_logic_vector(WORD_WIDTH - 1 downto 0);
-
+  type rf_storage_type is array(0 to REG_NUM-1) of std_logic_vector(WORD_WIDTH - 1 downto 0);
+  type imm_type is (R_Type, I_Type,S_Type, B_Type, U_Type, J_Type);
+    
   ------------------------------------------
-  -- Signals
+  -- Operation Modes
   ------------------------------------------
 
   -- Determines the operation for alu
@@ -35,8 +37,12 @@ package data_types is
   -- Dtermines memory operation mode
   type mem_mode is (lb, lh, lw, lbu, lhu, sb, sh, sw);
 
+  ------------------------------------------
+  -- Adress types
+  ------------------------------------------
   -- Determines rf
-  type rf_storage_type is array(0 to REG_NUM-1) of std_logic_vector(WORD_WIDTH - 1 downto 0);
   subtype rf_storage_addr is std_logic_vector(4 downto 0);
-  type imm_type is (R_Type, I_Type,S_Type, B_Type, U_Type, J_Type);
+  -- Sets the forwarding mode of an forwarding multiplexer
+  type fwd_sel is (fwd_reg_data, fwd_alu_data, fwd_return_data); 
+
 end data_types;

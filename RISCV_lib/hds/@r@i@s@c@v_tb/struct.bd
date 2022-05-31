@@ -4,11 +4,11 @@ version 2
 dialect 11
 dmPackageRefs [
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "std_logic_1164"
 )
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "numeric_std"
 )
 ]
@@ -33,7 +33,7 @@ uid 325,0
 )
 ]
 libraryRefs [
-"ieee"
+"IEEE"
 ]
 )
 version "32.1"
@@ -84,7 +84,7 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/RISCV_tb"
 )
 (vvPair
 variable "date"
-value "05/24/22"
+value "05/31/22"
 )
 (vvPair
 variable "day"
@@ -96,7 +96,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "24"
+value "31"
 )
 (vvPair
 variable "entity_name"
@@ -124,7 +124,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/24/22"
+value "05/31/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -136,7 +136,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:11:38"
+value "12:09:55"
 )
 (vvPair
 variable "group"
@@ -248,7 +248,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "18:11:38"
+value "12:09:55"
 )
 (vvPair
 variable "unit"
@@ -708,8 +708,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,34500,3600"
-st "SIGNAL clk   : std_logic
-"
+st "SIGNAL clk   : std_logic"
 )
 )
 *17 (Net
@@ -727,8 +726,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3600,34500,4500"
-st "SIGNAL res_n : std_logic
-"
+st "SIGNAL res_n : std_logic"
 )
 )
 *18 (Blk
@@ -987,9 +985,9 @@ va (VaSet
 font "courier,8,0"
 )
 xt "0,900,14500,3600"
-st "LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;"
+st "LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;"
 tm "PackageList"
 )
 ]
@@ -1070,12 +1068,12 @@ tm "BdCompilerDirectivesTextMgr"
 ]
 associable 1
 )
-windowSize "144,49,1159,739"
-viewArea "6653,-1077,53381,29662"
+windowSize "-4,3,2564,1413"
+viewArea "-31499,-1100,88096,63517"
 cachedDiagramExtent "0,0,69000,51000"
 hasePageBreakOrigin 1
 pageBreakOrigin "0,0"
-lastUid 354,0
+lastUid 393,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
