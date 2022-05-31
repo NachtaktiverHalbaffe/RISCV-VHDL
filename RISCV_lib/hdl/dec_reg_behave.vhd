@@ -24,7 +24,7 @@ begin
       ex_rs1 <= (others => '0');
       ex_rs2 <= (others => '0');
       ex_target_reg <= (others => '0');
-      ex_mux_alu_sel <= 0;
+      ex_mux_alu_sel <= '0';
       ex_imm <= (others => '0');
       -- Forwarding
       ex_mux_fw_rs1_sel <= fwd_reg_data;
@@ -44,7 +44,7 @@ begin
         -- Forwarding
         ex_mux_fw_rs1_sel <= dec_mux_fw_rs1_sel;
         ex_mux_fw_rs2_sel <= dec_mux_fw_rs2_sel;
-        ex_mux_fw_mem_sel <= ex_mux_fw_mem_sel;
+        ex_mux_fw_mem_sel <= dec_mux_fw_mem_sel;
       end if;
     end if;
   end process dec_reg;

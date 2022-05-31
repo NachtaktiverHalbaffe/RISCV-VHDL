@@ -9,10 +9,10 @@
 --
 architecture behav of mux_fw_memory is
 begin
-  process (ex_mux_fw_mem_sel, me_rs2_fwd wb_data) is
+  process (me_mux_fw_mem_sel, me_rs2_fwd, wb_data) is
   begin
-    case ex_mux_fw_rs2_sel is
-      when fwd_reg_data | fwd_alu_data => me_store_data_fwd <= ex_rs2_fwd;
+    case me_mux_fw_mem_sel is
+      when fwd_reg_data | fwd_alu_data => me_store_data_fwd <= me_rs2_fwd;
       when fwd_return_data => me_store_data_fwd <= wb_data;
     end case;
   end process;
