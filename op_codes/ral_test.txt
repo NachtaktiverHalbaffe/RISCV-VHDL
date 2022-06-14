@@ -1,0 +1,4 @@
+add r1 := r0,0
+add r8 := r0,100
+ldd r1 := (r8,0)
+add r2 := r1,r1
