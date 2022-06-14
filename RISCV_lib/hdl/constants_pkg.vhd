@@ -18,6 +18,8 @@ PACKAGE constants IS
   constant BYTE_WIDTH: integer := 8;
   constant REG_NUM: integer := 32;
   constant MEM_SIZE: integer := 1024;
+  
+  constant NOP: std_logic_vector := b"0000000_00000_00000_000_00000_01100_11"; 
 
   
 

@@ -20,6 +20,7 @@ ENTITY if_reg IS
       if_op_code : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
       next_PC    : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
       res_n      : IN     std_logic;
+      stall      : IN     std_logic;
       op_code    : OUT    word
    );
 

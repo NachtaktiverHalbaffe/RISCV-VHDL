@@ -16,10 +16,12 @@ USE RISCV_lib.isa.all;
 
 ENTITY pc_reg IS
    PORT( 
-      clk     : IN     std_logic;
-      next_PC : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
-      res_n   : IN     std_logic;
-      if_pc   : OUT    std_logic_vector (WORD_WIDTH-1 DOWNTO 0)
+      clk      : IN     std_logic;
+      next_PC  : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
+      res_n    : IN     std_logic;
+      stall    : IN     std_logic;
+      if_pc    : OUT    std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
+      if_stall : OUT    std_logic
    );
 
 -- Declarations

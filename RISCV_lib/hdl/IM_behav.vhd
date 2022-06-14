@@ -36,9 +36,9 @@ BEGIN
   begin
     word_pc_int := to_integer(unsigned(if_pc))/4;
     if word_pc_int < rom_content'right then
-      if_op_code <= rom_content(  to_integer(unsigned(if_pc))/4 );
+      if_im_out <= rom_content(  to_integer(unsigned(if_pc))/4 );
     else
-      if_op_code <= b"0000000_00000_00000_000_00000_01100_11"; --NOP
+      if_im_out <= b"0000000_00000_00000_000_00000_01100_11"; --NOP
     end if;
   end process rom;
 

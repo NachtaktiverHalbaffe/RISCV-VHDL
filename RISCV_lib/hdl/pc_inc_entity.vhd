@@ -16,8 +16,9 @@ USE RISCV_lib.isa.all;
 
 ENTITY pc_inc IS
    PORT( 
-      if_pc   : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
-      next_PC : OUT    std_logic_vector (WORD_WIDTH-1 DOWNTO 0)
+      if_pc    : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
+      if_stall : IN     std_logic;
+      next_PC  : OUT    std_logic_vector (WORD_WIDTH-1 DOWNTO 0)
    );
 
 -- Declarations
