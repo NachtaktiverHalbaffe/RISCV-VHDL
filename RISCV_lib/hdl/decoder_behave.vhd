@@ -144,4 +144,64 @@ begin
     end case;
   end process decode_rf;
 
+  forwarding : process (op_code) is
+  begin
+
+    ----------------------------------------------------------
+    -- RAW
+    ----------------------------------------------------------
+    -- rs1
+    if op_code(11 downto 7) = ex_target_reg then
+      dec_mux_fw_rs1_sel <= fwd_alu_data;
+    elsif op_code(11 downto 7) = me_target_reg then
+      dec_mux_fw_rs1_sel <= fwd_return_data;
+    else
+      dec_mux_fw_rs1_sel <= fwd_reg_data;
+    end if;
+    -- rs2
+    if op_code(24 downto 20) = ex_target_reg then
+      dec_mux_fw_rs2_sel <= fwd_alu_data;
+    elsif op_code(24 downto 20) = me_target_reg then
+      dec_mux_fw_rs2_sel <= fwd_return_data;
+    else
+      dec_mux_fw_rs2_sel <= fwd_reg_data;
+    end if;
+
+    ----------------------------------------------------------
+    -- Store after Load
+    ----------------------------------------------------------
+    -- rs1
+    if op_code(11 downto 7) = me_target_reg and op_code(6 downto 0) = isa_store_op then
+      dec_mux_fw_rs1_sel <= fwd_alu_data;
+    else
+      dec_mux_fw_rs1_sel <= fwd_reg_data;
+    end if;
+    -- rs2
+    if op_code(24 downto 20) = me_target_reg and op_code(6 downto 0) = isa_store_op then
+      dec_mux_fw_rs2_sel <= fwd_alu_data;
+    else
+      dec_mux_fw_rs2_sel <= fwd_reg_data;
+    end if;
+
+    ----------------------------------------------------------
+    -- RAL
+    ----------------------------------------------------------
+    -- TODO refactor
+    if op_code(11 downto 7) = me_target_reg and op_code(6 downto 0) = isa_load_op then
+      stall <= '1';
+    else
+      stall <= '0';
+      dec_mux_fw_rs1_sel <= fwd_reg_data;
+    end if;
+    -- rs2
+    if op_code(24 downto 20) = me_target_reg and op_code(6 downto 0) = isa_load_op then
+      stall <= '1';
+      dec_mux_fw_rs2_sel <= fwd_alu_data;
+    else
+      stall <= '0';
+      dec_mux_fw_rs2_sel <= fwd_reg_data;
+    end if;
+
+  end process forwarding;
+
 end architecture behave;
