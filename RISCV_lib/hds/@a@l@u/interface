@@ -4,21 +4,29 @@ version 2
 dialect 11
 dmPackageRefs [
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "std_logic_1164"
 )
 (DmPackageRef
-library "ieee"
+library "IEEE"
 unitName "numeric_std"
 )
 (DmPackageRef
-library "RISV_lib"
+library "RISCV_lib"
 unitName "constants"
+)
+(DmPackageRef
+library "RISCV_lib"
+unitName "data_types"
+)
+(DmPackageRef
+library "RISCV_lib"
+unitName "isa"
 )
 ]
 libraryRefs [
-"ieee"
-"RISV_lib"
+"IEEE"
+"RISCV_lib"
 ]
 )
 version "27.1"
@@ -26,7 +34,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 4,0
+suid 32,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -69,54 +77,50 @@ tm "EolColHdrMgr"
 port (LogicalPort
 lang 11
 decl (Decl
-n "alu_in_2"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 26
-suid 1,0
+n "alu_in_1"
+t "word"
+o 34
+suid 29,0
 )
 )
-uid 71,0
+uid 486,0
 )
 *15 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
-n "ex_alu_mode"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 15
-suid 2,0
+n "alu_in_2"
+t "word"
+o 3
+suid 30,0
 )
 )
-uid 73,0
+uid 488,0
 )
 *16 (LogPort
+port (LogicalPort
+lang 11
+decl (Decl
+n "ex_alu_mode"
+t "alu_mode_type"
+o 11
+suid 31,0
+)
+)
+uid 490,0
+)
+*17 (LogPort
 port (LogicalPort
 lang 11
 m 1
 decl (Decl
 n "ex_alu_out"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 13
-suid 3,0
+t "word"
+o 12
+suid 32,0
 )
 )
-uid 75,0
-)
-*17 (LogPort
-port (LogicalPort
-lang 11
-decl (Decl
-n "ex_rs1"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 10
-suid 4,0
-)
-)
-uid 77,0
+uid 492,0
 )
 ]
 )
@@ -172,25 +176,25 @@ uid 99,0
 litem &14
 pos 0
 dimension 20
-uid 72,0
+uid 487,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 74,0
+uid 489,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 76,0
+uid 491,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 78,0
+uid 493,0
 )
 ]
 )
@@ -461,7 +465,7 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/ALU"
 )
 (vvPair
 variable "date"
-value "05/10/22"
+value "05/31/22"
 )
 (vvPair
 variable "day"
@@ -473,7 +477,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "10"
+value "31"
 )
 (vvPair
 variable "entity_name"
@@ -501,7 +505,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/10/22"
+value "05/31/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -509,11 +513,11 @@ value "meyer"
 )
 (vvPair
 variable "graphical_source_host"
-value "pc085"
+value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:55:24"
+value "14:52:08"
 )
 (vvPair
 variable "group"
@@ -521,7 +525,7 @@ value "meyer"
 )
 (vvPair
 variable "host"
-value "pc085"
+value "pc084"
 )
 (vvPair
 variable "language"
@@ -530,6 +534,22 @@ value "VHDL"
 (vvPair
 variable "library"
 value "RISCV_lib"
+)
+(vvPair
+variable "library_downstream_ModelSimCompiler"
+value "$HDS_PROJECT_DIR/RISCV_lib/work"
+)
+(vvPair
+variable "library_downstream_QISDataPrep"
+value "$HDS_PROJECT_DIR/RISCV_lib/qis"
+)
+(vvPair
+variable "library_downstream_QISPARInvoke"
+value "$HDS_PROJECT_DIR/RISCV_lib/qis"
+)
+(vvPair
+variable "library_downstream_QISPGMInvoke"
+value "$HDS_PROJECT_DIR/RISCV_lib/qis"
 )
 (vvPair
 variable "mm"
@@ -609,7 +629,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "17:55:24"
+value "14:52:08"
 )
 (vvPair
 variable "unit"
@@ -644,204 +664,205 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 51,0
+uid 466,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 52,0
+uid 467,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "14250,10625,15000,11375"
+xt "117250,43625,118000,44375"
 )
 tg (CPTG
-uid 53,0
+uid 468,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 54,0
+uid 469,0
 va (VaSet
 font "courier,8,0"
 )
-xt "16000,10550,20000,11450"
-st "alu_in_2"
-blo "16000,11250"
+xt "119000,43550,123000,44450"
+st "alu_in_1"
+blo "119000,44250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 55,0
+uid 470,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,1800,76000,2700"
-st "alu_in_2    : IN     std_logic_vector (WORD_WIDTH-1 downto 0) ;"
+xt "44000,1800,58500,2700"
+st "alu_in_1    : IN     word  ;
+"
+)
+thePort (LogicalPort
+lang 11
+decl (Decl
+n "alu_in_1"
+t "word"
+o 34
+suid 29,0
+)
+)
+)
+*61 (CptPort
+uid 471,0
+ps "OnEdgeStrategy"
+shape (Triangle
+uid 472,0
+ro 90
+va (VaSet
+vasetType 1
+fg "0,65535,0"
+)
+xt "117250,53625,118000,54375"
+)
+tg (CPTG
+uid 473,0
+ps "CptPortTextPlaceStrategy"
+stg "VerticalLayoutStrategy"
+f (Text
+uid 474,0
+va (VaSet
+font "courier,8,0"
+)
+xt "119000,53550,123000,54450"
+st "alu_in_2"
+blo "119000,54250"
+tm "CptPortNameMgr"
+)
+)
+dt (MLText
+uid 475,0
+va (VaSet
+font "courier,8,0"
+)
+xt "44000,2700,58500,3600"
+st "alu_in_2    : IN     word  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "alu_in_2"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 26
-suid 1,0
+t "word"
+o 3
+suid 30,0
 )
 )
 )
-*61 (CptPort
-uid 56,0
+*62 (CptPort
+uid 476,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 57,0
+uid 477,0
 ro 180
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "18625,5250,19375,6000"
+xt "121625,42983,122375,43733"
 )
 tg (CPTG
-uid 58,0
+uid 478,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 59,0
+uid 479,0
 ro 270
 va (VaSet
 font "courier,8,0"
 )
-xt "18550,7000,19450,13000"
+xt "121550,44733,122450,50733"
 st "ex_alu_mode"
 ju 2
-blo "19250,7000"
+blo "122250,44733"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 60,0
+uid 480,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,2700,76000,3600"
-st "ex_alu_mode : IN     std_logic_vector (WORD_WIDTH-1 downto 0) ;"
+xt "44000,3600,63000,4500"
+st "ex_alu_mode : IN     alu_mode_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "ex_alu_mode"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 15
-suid 2,0
+t "alu_mode_type"
+o 11
+suid 31,0
 )
 )
 )
-*62 (CptPort
-uid 61,0
+*63 (CptPort
+uid 481,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 62,0
+uid 482,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "24000,8625,24750,9375"
+xt "128000,47625,128750,48375"
 )
 tg (CPTG
-uid 63,0
+uid 483,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 64,0
+uid 484,0
 va (VaSet
 font "courier,8,0"
 )
-xt "17500,8550,23000,9450"
+xt "121500,47550,127000,48450"
 st "ex_alu_out"
 ju 2
-blo "23000,9250"
+blo "127000,48250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 65,0
+uid 485,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,4500,75000,5400"
-st "ex_alu_out  : OUT    std_logic_vector (WORD_WIDTH-1 downto 0)"
+xt "44000,4500,57500,5400"
+st "ex_alu_out  : OUT    word 
+"
 )
 thePort (LogicalPort
 lang 11
 m 1
 decl (Decl
 n "ex_alu_out"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 13
-suid 3,0
-)
-)
-)
-*63 (CptPort
-uid 66,0
-ps "OnEdgeStrategy"
-shape (Triangle
-uid 67,0
-ro 90
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-)
-xt "14250,8625,15000,9375"
-)
-tg (CPTG
-uid 68,0
-ps "CptPortTextPlaceStrategy"
-stg "VerticalLayoutStrategy"
-f (Text
-uid 69,0
-va (VaSet
-font "courier,8,0"
-)
-xt "16000,8550,19000,9450"
-st "ex_rs1"
-blo "16000,9250"
-tm "CptPortNameMgr"
-)
-)
-dt (MLText
-uid 70,0
-va (VaSet
-font "courier,8,0"
-)
-xt "44000,3600,76000,4500"
-st "ex_rs1      : IN     std_logic_vector (WORD_WIDTH-1 downto 0) ;"
-)
-thePort (LogicalPort
-lang 11
-decl (Decl
-n "ex_rs1"
-t "std_logic_vector"
-b "(WORD_WIDTH-1 downto 0)"
-o 10
-suid 4,0
+t "word"
+o 12
+suid 32,0
 )
 )
 )
 ]
-shape (Rectangle
-uid 9,0
+shape (Alu
+uid 465,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "15000,6000,24000,14000"
+xt "118000,42000,128000,55000"
 )
+oxt "15000,6000,24000,14000"
 biTextGroup (BiTextGroup
 uid 10,0
 ps "CenterOffsetStrategy"
@@ -851,18 +872,18 @@ uid 11,0
 va (VaSet
 font "courier,8,1"
 )
-xt "17250,9100,21750,10000"
+xt "120750,47600,125250,48500"
 st "RISCV_lib"
-blo "17250,9800"
+blo "120750,48300"
 )
 second (Text
 uid 12,0
 va (VaSet
 font "courier,8,1"
 )
-xt "17250,10000,18750,10900"
+xt "120750,48500,122250,49400"
 st "ALU"
-blo "17250,10700"
+blo "120750,49200"
 )
 )
 gi *64 (GenericInterface
@@ -875,7 +896,7 @@ uid 15,0
 va (VaSet
 font "courier,8,0"
 )
-xt "-7500,6000,3000,6900"
+xt "-7000,8500,3500,9400"
 st "Generic Declarations"
 )
 header "Generic Declarations"
@@ -1258,12 +1279,14 @@ uid 50,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,14500,5400"
-st "LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-LIBRARY RISV_lib;
-USE RISV_lib.constants.all;"
+xt "0,900,15000,7200"
+st "LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+LIBRARY RISCV_lib;
+USE RISCV_lib.constants.all;
+USE RISCV_lib.data_types.all;
+USE RISCV_lib.isa.all;"
 tm "PackageList"
 )
 ]
@@ -1542,6 +1565,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 135,0
+lastUid 493,0
 activeModelName "Symbol:CDM"
 )

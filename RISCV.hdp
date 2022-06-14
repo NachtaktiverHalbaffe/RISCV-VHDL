@@ -1,9 +1,14 @@
+[ModelSim]
+RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/work
+[QuartusQIS]
+RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/qis
 [hdl]
 RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hdl
 [hds]
 RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hds
 [hds_settings]
 default_library = RISCV_lib
+design_root = RISCV_lib.RISCV_tb(struct)@r@i@s@c@v_tb/struct.bd
 version = 2
 [library_type]
 RISCV_lib = regular

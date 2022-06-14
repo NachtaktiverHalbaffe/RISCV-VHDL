@@ -9,5 +9,13 @@
 --
 ARCHITECTURE behave OF mux_alu IS
 BEGIN
+    MUX: process(ex_mux_alu_sel, ex_rs2_fwd, ex_imm) is
+    begin
+        if ex_mux_alu_sel = '0' then
+            alu_in_2 <= ex_rs2_fwd;
+        else
+            alu_in_2 <= ex_imm; 
+        end if;
+    end process MUX;
 END ARCHITECTURE behave;
 

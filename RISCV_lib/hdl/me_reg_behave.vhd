@@ -7,7 +7,23 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
-ARCHITECTURE behave OF me_reg IS
-BEGIN
-END ARCHITECTURE behave;
+library ieee;
+use ieee.std_logic_1164.all;
+library RISCV_lib;
+use RISCV_lib.all;
 
+architecture behave of me_reg is
+begin
+  me_reg : process (clk, res_n) is
+  begin
+    if res_n = '0' then
+      wb_data <= (others => '0');
+      wb_traget_reg <= (others => '0');
+    else
+      if clk'event and clk = '1' then
+        wb_data <= me_me_out;
+        wb_traget_reg <= me_target_reg;
+      end if;
+    end if;
+  end process me_reg;
+end architecture behave;
