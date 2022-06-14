@@ -12,15 +12,14 @@ use ieee.std_logic_1164.all;
 library RISCV_lib;
 use RISCV_lib.constants.all;
 
-ARCHITECTURE behav OF mux_nop IS
+architecture behav of mux_nop is
 begin
-  process (if_im_out, if_stall) is
+  process (if_im_out, if_stall, dec_stba_valid, ex_dbta_valid) is
   begin
-    if if_stall = '1' then
+    if if_stall = '1' or dec_stba_valid = '1' or ex_dbta_valid = '1' then
       if_op_code <= NOP;
     else
       if_op_code <= if_im_out;
     end if;
   end process;
 end architecture behav;
-
