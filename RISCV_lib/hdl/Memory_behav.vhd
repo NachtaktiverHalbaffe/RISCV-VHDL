@@ -34,7 +34,7 @@ BEGIN
                 me_load_data(WORD_WIDTH-1 downto 16) <= (others => me_load_data(15));
 
             when mem_lw =>
-                me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))+3))
+                me_load_data(31 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))+3))
                                             &(memory_file(to_integer(unsigned(me_alu_out))+2))
                                             &(memory_file(to_integer(unsigned(me_alu_out))+1))
                                             &(memory_file(to_integer(unsigned(me_alu_out))));

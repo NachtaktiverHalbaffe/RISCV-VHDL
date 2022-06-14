@@ -53,5 +53,14 @@ package data_types is
 
   type im_rom_type is array(natural range <>) of std_logic_vector(WORD_WIDTH - 1 downto 0);
   type mem_storage_type is array(0 to MEM_SIZE - 1) of std_logic_vector(BYTE_WIDTH - 1 downto 0);
+  type op_code_mnemonics is (
+    mne_lui, mne_auipc, --U-type
+    mne_jal,    -- J-Type
+    mne_beq,mne_bne,mne_blt,mne_bge,mne_bltu,mne_bgeu,    --B-type
+    mne_add,mne_sub,mne_sll,mne_slt,mne_sltu,mne_xor,mne_srl,mne_sra,mne_or,mne_and,    --R-type
+    mne_lb,mne_lh,mne_lw,mne_lbu,mne_lhu,mne_addi,mne_slti,mne_sltiu,mne_xori,mne_ori,mne_andi,mne_slli,mne_srli,mne_srai,mne_jalr,   --I-type
+    mne_sb,mne_sh,mne_sw    --S-type
+  );
+
 
 end data_types;
