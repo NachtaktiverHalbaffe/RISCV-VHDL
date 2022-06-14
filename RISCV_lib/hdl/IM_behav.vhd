@@ -42,7 +42,7 @@ BEGIN
     end if;
   end process rom;
 
-  translate: process(if_op_code) is
+  /*translate: process(if_op_code) is
     variable sliced_opcode  : std_logic_vector(6 downto 0);
     variable sliced_rd      : std_logic_vector(4 downto 0);
     variable sliced_func3   : std_logic_vector(2 downto 0);
@@ -152,6 +152,6 @@ BEGIN
     end case;
 
       
-  end process translate;
+  end process translate;*/
 
 END ARCHITECTURE behav;

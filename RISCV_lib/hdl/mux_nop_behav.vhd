@@ -10,7 +10,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 library RISCV_lib;
-use RISCV_lib.all;
+use RISCV_lib.constants.all;
 
 ARCHITECTURE behav OF mux_nop IS
 begin
@@ -19,7 +19,7 @@ begin
     if if_stall = '1' then
       if_op_code <= NOP;
     else
-      if_op_code <= im_out;
+      if_op_code <= if_im_out;
     end if;
   end process;
 end architecture behav;
