@@ -12,6 +12,7 @@ architecture behave of decoder is
   signal op_code_sliced : std_logic_vector(6 downto 0);
   signal func3 : std_logic_vector(2 downto 0);
   signal func7 : std_logic_vector(6 downto 0);
+  signal rs1, rs2 : std_logic_vector(4 downto 0);
 begin
 
   op_code_sliced <= op_code(6 downto 0);
@@ -125,15 +126,21 @@ begin
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
+        rs1 <= op_code(19 downto 15);
+        rs2 <= op_code(24 downto 20);
         -- I-Type formatting
       when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
+        rs1 <= op_code(19 downto 0);
+        rs2 <= (others => '0');
         -- S-Type/B-Type formatting
       when isa_store_op | isa_bra_op => null;
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
+        rs1 <= op_code(19 downto 15);
+        rs2 <= op_code(24 downto 20);
         -- U-Type/J-Type formatting
       when isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
@@ -141,27 +148,29 @@ begin
         dec_target_reg <= b"00000";
         sel_rs1 <= b"00000";
         sel_rs2 <= b"00000";
+        rs1 <= b"00000";
+        rs2 <= b"00000";
     end case;
   end process decode_rf;
 
-  forwarding : process (op_code) is
+  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg) is
   begin
 
     ----------------------------------------------------------
     -- RAW
     ----------------------------------------------------------
     -- rs1
-    if op_code(11 downto 7) = ex_target_reg then
+    if rs1 = ex_target_reg then
       dec_mux_fw_rs1_sel <= fwd_alu_data;
-    elsif op_code(11 downto 7) = me_target_reg then
+    elsif rs1 = me_target_reg then
       dec_mux_fw_rs1_sel <= fwd_return_data;
     else
       dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
-    if op_code(24 downto 20) = ex_target_reg then
+    if rs2 = ex_target_reg then
       dec_mux_fw_rs2_sel <= fwd_alu_data;
-    elsif op_code(24 downto 20) = me_target_reg then
+    elsif rs2 = me_target_reg then
       dec_mux_fw_rs2_sel <= fwd_return_data;
     else
       dec_mux_fw_rs2_sel <= fwd_reg_data;
@@ -171,13 +180,13 @@ begin
     -- Store after Load
     ----------------------------------------------------------
     -- rs1
-    if op_code(11 downto 7) = me_target_reg and op_code(6 downto 0) = isa_store_op then
+    if rs1 = me_target_reg and op_code_sliced = isa_store_op then
       dec_mux_fw_rs1_sel <= fwd_alu_data;
     else
       dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
-    if op_code(24 downto 20) = me_target_reg and op_code(6 downto 0) = isa_store_op then
+    if rs1 = me_target_reg and op_code_sliced = isa_store_op then
       dec_mux_fw_rs2_sel <= fwd_alu_data;
     else
       dec_mux_fw_rs2_sel <= fwd_reg_data;
@@ -186,15 +195,15 @@ begin
     ----------------------------------------------------------
     -- RAL
     ----------------------------------------------------------
-    -- TODO refactor
-    if op_code(11 downto 7) = me_target_reg and op_code(6 downto 0) = isa_load_op then
+    -- rs1
+    if rs1 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
-    if op_code(24 downto 20) = me_target_reg and op_code(6 downto 0) = isa_load_op then
+    if rs2 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
       dec_mux_fw_rs2_sel <= fwd_alu_data;
     else
