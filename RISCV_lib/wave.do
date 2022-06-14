@@ -2,9 +2,9 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /riscv_tb/U_0/clk
 add wave -noupdate /riscv_tb/U_0/res_n
-add wave -noupdate -group {IF Signale} /riscv_tb/U_0/if_pc
-add wave -noupdate -group {IF Signale} /riscv_tb/U_0/next_PC
-add wave -noupdate -group {IF Signale} /riscv_tb/U_0/if_op_code
+add wave -noupdate -expand -group {IF Signale} /riscv_tb/U_0/if_pc
+add wave -noupdate -expand -group {IF Signale} /riscv_tb/U_0/next_PC
+add wave -noupdate -expand -group {IF Signale} /riscv_tb/U_0/if_op_code
 add wave -noupdate -group {DEC Signale} /riscv_tb/U_0/dec_alu_mode
 add wave -noupdate -group {DEC Signale} /riscv_tb/U_0/dec_imm
 add wave -noupdate -group {DEC Signale} /riscv_tb/U_0/dec_imm_type
@@ -36,10 +36,13 @@ add wave -noupdate -group ALU /riscv_tb/U_0/U_7/arith/compute_result
 add wave -noupdate -group ALU /riscv_tb/U_0/U_7/arith/temp_result
 add wave -noupdate -group ALU /riscv_tb/U_0/U_7/arith/x
 add wave -noupdate -group ALU /riscv_tb/U_0/U_7/arith/y
-add wave -noupdate -group {ME Signale} /riscv_tb/U_0/U_10/me_alu_out
-add wave -noupdate -group {ME Signale} /riscv_tb/U_0/U_10/me_target_reg
+add wave -noupdate -expand -group {ME Signale} /riscv_tb/U_0/U_12/me_mem_mode
+add wave -noupdate -expand -group {ME Signale} /riscv_tb/U_0/U_12/me_store_data_fwd
+add wave -noupdate -expand -group {ME Signale} /riscv_tb/U_0/U_12/me_alu_out
+add wave -noupdate -expand -group {ME Signale} /riscv_tb/U_0/U_10/me_target_reg
 add wave -noupdate -group {WB Signale} /riscv_tb/U_0/U_10/wb_data
 add wave -noupdate -group {WB Signale} /riscv_tb/U_0/U_10/wb_traget_reg
+add wave -noupdate /riscv_tb/U_0/U_12/memory_file
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {601 ns} 0}
 quietly wave cursor active 1

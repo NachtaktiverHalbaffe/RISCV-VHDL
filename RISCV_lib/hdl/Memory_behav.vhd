@@ -49,17 +49,17 @@ BEGIN
                 me_load_data(WORD_WIDTH-1 downto 16) <= (others => '0');
 
             when mem_sb =>
-                memory_file(to_integer(unsigned(me_alu_out))) <= me_alu_out(7 downto 0);
+                memory_file(to_integer(unsigned(me_alu_out))) <= me_store_data_fwd(7 downto 0);
 
             when mem_sh =>
-                memory_file(to_integer(unsigned(me_alu_out))) <= me_alu_out(7 downto 0);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_alu_out(15 downto 8);
+                memory_file(to_integer(unsigned(me_alu_out))) <= me_store_data_fwd(7 downto 0);
+                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_store_data_fwd(15 downto 8);
 
             when mem_sw =>
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_alu_out(7 downto 0);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_alu_out(15 downto 8);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_alu_out(23 downto 16);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_alu_out(31 downto 24);
+                memory_file(to_integer(unsigned(me_alu_out))+0) <= me_store_data_fwd(7 downto 0);
+                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_store_data_fwd(15 downto 8);
+                memory_file(to_integer(unsigned(me_alu_out))+2) <= me_store_data_fwd(23 downto 16);
+                memory_file(to_integer(unsigned(me_alu_out))+3) <= me_store_data_fwd(31 downto 24);
 
             when mem_nls =>
                 me_load_data <= (others => '0');
