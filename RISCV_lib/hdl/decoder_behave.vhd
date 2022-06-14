@@ -132,7 +132,7 @@ begin
       when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
-        rs1 <= op_code(19 downto 0);
+        rs1 <= op_code(19 downto 15);
         rs2 <= (others => '0');
         -- S-Type/B-Type formatting
       when isa_store_op | isa_bra_op => null;
@@ -198,6 +198,7 @@ begin
     -- rs1
     if rs1 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
+      dec_mux_fw_rs1_sel <= fwd_return_data;
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
@@ -205,7 +206,7 @@ begin
     -- rs2
     if rs2 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
-      dec_mux_fw_rs2_sel <= fwd_alu_data;
+      dec_mux_fw_rs2_sel <= fwd_return_data;
     else
       stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_reg_data;
