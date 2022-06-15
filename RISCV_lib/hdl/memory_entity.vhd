@@ -17,8 +17,8 @@ USE RISCV_lib.isa.all;
 ENTITY Memory IS
    PORT( 
       clk               : IN     std_logic;
-      me_alu_out        : IN     word;
-      me_mem_mode       : IN     mem_mode;
+      ex_alu_out        : IN     word;
+      ex_mem_mode       : IN     mem_mode;
       me_store_data_fwd : IN     word;
       res_n             : IN     std_logic;
       me_load_data      : OUT    word

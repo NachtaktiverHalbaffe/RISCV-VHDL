@@ -23,43 +23,43 @@ BEGIN
             --memory_file <= (others => (others => '0'));
         else
           if clk'event and clk = '1' then
-            case me_mem_mode is
+            case ex_mem_mode is
             when mem_lb =>
-                me_load_data(7 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))));
+                me_load_data(7 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))));
                 me_load_data(WORD_WIDTH-1 downto 8) <= (others => me_load_data(7));
 
             when mem_lh =>
-                me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))+1))
-                                            &(memory_file(to_integer(unsigned(me_alu_out))));
+                me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))+1))
+                                            &(memory_file(to_integer(unsigned(ex_alu_out))));
                 me_load_data(WORD_WIDTH-1 downto 16) <= (others => me_load_data(15));
 
             when mem_lw =>
-                me_load_data(31 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))+3))
-                                            &(memory_file(to_integer(unsigned(me_alu_out))+2))
-                                            &(memory_file(to_integer(unsigned(me_alu_out))+1))
-                                            &(memory_file(to_integer(unsigned(me_alu_out))));
+                me_load_data(31 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))+3))
+                                            &(memory_file(to_integer(unsigned(ex_alu_out))+2))
+                                            &(memory_file(to_integer(unsigned(ex_alu_out))+1))
+                                            &(memory_file(to_integer(unsigned(ex_alu_out))));
 
             when mem_lbu =>
-                me_load_data(7 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))));
+                me_load_data(7 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))));
                 me_load_data(WORD_WIDTH-1 downto 8) <= (others => '0');
 
             when mem_lhu =>
-                me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(me_alu_out))+1))
-                                            &(memory_file(to_integer(unsigned(me_alu_out))));
+                me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))+1))
+                                            &(memory_file(to_integer(unsigned(ex_alu_out))));
                 me_load_data(WORD_WIDTH-1 downto 16) <= (others => '0');
 
             when mem_sb =>
-                memory_file(to_integer(unsigned(me_alu_out))) <= me_store_data_fwd(7 downto 0);
+                memory_file(to_integer(unsigned(ex_alu_out))) <= me_store_data_fwd(7 downto 0);
 
             when mem_sh =>
-                memory_file(to_integer(unsigned(me_alu_out))) <= me_store_data_fwd(7 downto 0);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_store_data_fwd(15 downto 8);
+                memory_file(to_integer(unsigned(ex_alu_out))) <= me_store_data_fwd(7 downto 0);
+                memory_file(to_integer(unsigned(ex_alu_out))+1) <= me_store_data_fwd(15 downto 8);
 
             when mem_sw =>
-                memory_file(to_integer(unsigned(me_alu_out))+0) <= me_store_data_fwd(7 downto 0);
-                memory_file(to_integer(unsigned(me_alu_out))+1) <= me_store_data_fwd(15 downto 8);
-                memory_file(to_integer(unsigned(me_alu_out))+2) <= me_store_data_fwd(23 downto 16);
-                memory_file(to_integer(unsigned(me_alu_out))+3) <= me_store_data_fwd(31 downto 24);
+                memory_file(to_integer(unsigned(ex_alu_out))+0) <= me_store_data_fwd(7 downto 0);
+                memory_file(to_integer(unsigned(ex_alu_out))+1) <= me_store_data_fwd(15 downto 8);
+                memory_file(to_integer(unsigned(ex_alu_out))+2) <= me_store_data_fwd(23 downto 16);
+                memory_file(to_integer(unsigned(ex_alu_out))+3) <= me_store_data_fwd(31 downto 24);
 
             when mem_nls =>
                 me_load_data <= (others => '0');

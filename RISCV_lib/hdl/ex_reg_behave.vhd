@@ -15,9 +15,7 @@ begin
       -- ALU
       me_alu_out <= (others => '0');
       -- Memory operations
-      me_mux_fw_mem_sel <= fwd_reg_data;
       me_mem_mode <= mem_nls;
-      me_rs2_fwd <= (others => '0');
       --   Registers
       me_target_reg <= (others => '0');
     else
@@ -25,9 +23,7 @@ begin
         -- ALU
         me_alu_out <= ex_alu_out;
         -- Memory operations
-        me_mux_fw_mem_sel <= ex_mux_fw_mem_sel;
         me_mem_mode <= ex_mem_mode;
-        me_rs2_fwd <= ex_rs2_fwd;
         -- Registers
         me_target_reg <= ex_target_reg;
       end if;

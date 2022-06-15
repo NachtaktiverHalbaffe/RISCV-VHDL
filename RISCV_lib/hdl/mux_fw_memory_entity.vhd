@@ -16,9 +16,9 @@ USE RISCV_lib.isa.all;
 
 ENTITY mux_fw_memory IS
    PORT( 
-      me_mux_fw_mem_sel : IN     fwd_sel;
-      me_rs2_fwd        : IN     word;
-      wb_data           : IN     word;
+      ex_mux_fw_mem_sel : IN     fwd_sel;
+      ex_rs2_fwd        : IN     word;
+      me_me_out         : IN     word;
       me_store_data_fwd : OUT    word
    );
 

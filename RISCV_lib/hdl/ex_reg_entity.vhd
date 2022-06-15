@@ -20,13 +20,10 @@ ENTITY ex_reg IS
       ex_alu_out        : IN     word;
       ex_mem_mode       : IN     mem_mode;
       ex_mux_fw_mem_sel : IN     fwd_sel;
-      ex_rs2_fwd        : IN     word;
       ex_target_reg     : IN     rf_storage_addr;
       res_n             : IN     std_logic;
       me_alu_out        : OUT    word;
       me_mem_mode       : OUT    mem_mode;
-      me_mux_fw_mem_sel : OUT    fwd_sel;
-      me_rs2_fwd        : OUT    word;
       me_target_reg     : OUT    rf_storage_addr
    );
 
