@@ -14,8 +14,22 @@ ARCHITECTURE behave OF RF IS
     signal registers: rf_storage_type;
 
 BEGIN
-    dec_rs1 <= registers(to_integer(unsigned(sel_rs1)));
-    dec_rs2 <= registers(to_integer(unsigned(sel_rs2)));
+    
+    rf_read: process(all) is
+    begin
+      dec_rs1 <= registers(to_integer(unsigned(sel_rs1)));
+      dec_rs2 <= registers(to_integer(unsigned(sel_rs2)));
+
+      if to_integer(unsigned(wb_traget_reg)) /= 0 then
+        if sel_rs1 = wb_traget_reg then
+          dec_rs1 <= wb_data;
+        end if;
+        if sel_rs2 = wb_traget_reg then
+          dec_rs2 <= wb_data;
+        end if;
+      end if;
+    end process rf_read;
+  
 
     rf_wb: process(clk, res_n) is
     begin

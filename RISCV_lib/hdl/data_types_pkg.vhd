@@ -59,7 +59,8 @@ package data_types is
     mne_beq,mne_bne,mne_blt,mne_bge,mne_bltu,mne_bgeu,    --B-type
     mne_add,mne_sub,mne_sll,mne_slt,mne_sltu,mne_xor,mne_srl,mne_sra,mne_or,mne_and,    --R-type
     mne_lb,mne_lh,mne_lw,mne_lbu,mne_lhu,mne_addi,mne_slti,mne_sltiu,mne_xori,mne_ori,mne_andi,mne_slli,mne_srli,mne_srai,mne_jalr,   --I-type
-    mne_sb,mne_sh,mne_sw    --S-type
+    mne_sb,mne_sh,mne_sw,    --S-type
+    mne_NOP   --Aliase
   );
 
 

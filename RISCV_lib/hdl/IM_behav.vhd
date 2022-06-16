@@ -30,7 +30,7 @@ BEGIN
       x"00000013",
       x"00002083",
       x"00108133",
-      others => (others =>'0')
+      others => NOP
     );
   begin
     word_pc_int := to_integer(unsigned(if_pc))/4;
@@ -41,7 +41,7 @@ BEGIN
     end if;
   end process rom;
 
-  /*translate: process(if_op_code) is
+  translate: process(if_im_out) is
     variable sliced_opcode  : std_logic_vector(6 downto 0);
     variable sliced_rd      : std_logic_vector(4 downto 0);
     variable sliced_func3   : std_logic_vector(2 downto 0);
@@ -50,12 +50,12 @@ BEGIN
     variable sliced_func7   : std_logic_vector(6 downto 0);
 
   begin
-    sliced_func7 := if_op_code(31 downto 25);
-    sliced_rs2 := if_op_code(24 downto 20);
-    sliced_rs1 := if_op_code(19 downto 15);
-    sliced_func3 := if_op_code(14 downto 12); 
-    sliced_rd := if_op_code(11 downto 7); 
-    sliced_opcode := if_op_code(6 downto 0);
+    sliced_func7 := if_im_out(31 downto 25);
+    sliced_rs2 := if_im_out(24 downto 20);
+    sliced_rs1 := if_im_out(19 downto 15);
+    sliced_func3 := if_im_out(14 downto 12); 
+    sliced_rd := if_im_out(11 downto 7); 
+    sliced_opcode := if_im_out(6 downto 0);
     
     case sliced_opcode is
     when b"0010111" =>
@@ -112,7 +112,12 @@ BEGIN
     when b"0010011" =>
       report "I-type";
       case sliced_func3 is
-      when b"000" => op_code_mnemonic <=  mne_addi;
+      when b"000" => 
+        if if_im_out = 32x"13" then
+          op_code_mnemonic <=  mne_NOP;
+        else
+          op_code_mnemonic <=  mne_addi;
+        end if;
       when b"010" => op_code_mnemonic <=  mne_slti;
       when b"011" => op_code_mnemonic <= mne_sltiu;
       when b"100" => op_code_mnemonic <=  mne_xori;
@@ -151,6 +156,6 @@ BEGIN
     end case;
 
       
-  end process translate;*/
+  end process translate;
 
 END ARCHITECTURE behav;
