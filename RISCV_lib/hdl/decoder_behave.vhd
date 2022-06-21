@@ -161,6 +161,10 @@ begin
   forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode, me_mem_mode) is
   begin
     insert_nop <= false;
+    stall <= '0';
+    dec_mux_fw_rs1_sel <= fwd_reg_data;
+    dec_mux_fw_rs2_sel <= fwd_reg_data;
+    dec_mux_fw_mem_sel <= fwd_reg_data;
     ----------------------------------------------------------
     -- RAW
     ----------------------------------------------------------
@@ -169,16 +173,12 @@ begin
       dec_mux_fw_rs1_sel <= fwd_alu_data;
     elsif rs1 = me_target_reg then
       dec_mux_fw_rs1_sel <= fwd_return_data;
-    else
-      dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
-    if rs2 = ex_target_reg then
+    if rs2 = ex_target_reg   then
       dec_mux_fw_rs2_sel <= fwd_alu_data;
-    elsif rs2 = me_target_reg then
+    elsif rs2 = me_target_reg  then
       dec_mux_fw_rs2_sel <= fwd_return_data;
-    else
-      dec_mux_fw_rs2_sel <= fwd_reg_data;
     end if;
 
     ----------------------------------------------------------
@@ -187,14 +187,10 @@ begin
     -- rs1
     if rs1 = me_target_reg and op_code_sliced = isa_store_op then
       dec_mux_fw_rs1_sel <= fwd_alu_data;
-    else
-      dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
     if rs1 = me_target_reg and op_code_sliced = isa_store_op then
       dec_mux_fw_rs2_sel <= fwd_alu_data;
-    else
-      dec_mux_fw_rs2_sel <= fwd_reg_data;
     end if;
 
     ----------------------------------------------------------
@@ -202,31 +198,32 @@ begin
     ----------------------------------------------------------
     -- rs1
     -- Detects the load in execute stage => stall
-    if rs1 = ex_target_reg and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
+    if rs1 = ex_target_reg and rs1 /= b"00000" and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       insert_nop <= true;
     -- Detects Load in memory stage => set forwarding signal
     elsif rs1 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_return_data;
-    else
-      stall <= '0';
-      dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
     -- Detects the load in execute stage => stall
-    if rs2 = ex_target_reg and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
+    if rs2 = ex_target_reg and rs2 /= b"00000" and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       insert_nop <= true;
     -- Detects Load in memory stage => set forwarding signal
     elsif rs2 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
       stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_return_data;
-    else
-      stall <= '0';
+    end if;
+    
+    if rs1 = b"00000" then
+      dec_mux_fw_rs1_sel <= fwd_reg_data;
+    end if;
+    if rs2 = b"00000" then
       dec_mux_fw_rs2_sel <= fwd_reg_data;
     end if;
-
+    
   end process forwarding;
 
 end architecture behave;
