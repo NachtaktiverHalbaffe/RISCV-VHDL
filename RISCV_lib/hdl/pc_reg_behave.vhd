@@ -18,7 +18,9 @@ BEGIN
             if_pc <= (others => '0');
         else
             if clk'event and clk='1' then
+              if stall='0' then
                 if_pc <= next_pc;
+              end if;
             end if;
         end if;
     end process pc_reg;

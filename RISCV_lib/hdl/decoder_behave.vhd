@@ -12,6 +12,8 @@ architecture behave of decoder is
   signal op_code_sliced : std_logic_vector(6 downto 0);
   signal func3 : std_logic_vector(2 downto 0);
   signal func7 : std_logic_vector(6 downto 0);
+  signal rs1, rs2 : std_logic_vector(4 downto 0);
+  signal insert_nop : boolean;
 begin
 
   op_code_sliced <= op_code(6 downto 0);
@@ -77,7 +79,7 @@ begin
       when isa_bra_op =>
         dec_imm_type <= B_type;
         dec_mux_alu_sel <= '1';
-        -- U-Type formatting
+        -- U-Type formattingmem_mode
       when isa_lui_op | isa_auipc_op =>
         dec_imm_type <= U_type;
         dec_mux_alu_sel <= '1';
@@ -93,29 +95,28 @@ begin
 
   decode_mem : process (op_code_sliced, func3) is
   begin
-    -- TODO implement signal assignment for memory stage
     case op_code_sliced is
       when isa_store_op =>
         case func3 is
-          when isa_sb_func3 => null;-- mem_mode <= sb
-          when isa_sh_func3 => null;-- mem_mode <= sh
-          when isa_sw_func3 => null;-- mem_mode <= sw
-          when others => null;
+          when isa_sb_func3 => dec_mem_mode <= mem_sb;
+          when isa_sh_func3 => dec_mem_mode <= mem_sh;
+          when isa_sw_func3 => dec_mem_mode <= mem_sw;
+          when others => dec_mem_mode <= mem_nls;
         end case;
       when isa_load_op =>
         case func3 is
-          when isa_lb_func3 => null;-- mem_mode <= lb
-          when isa_lh_func3 => null;-- mem_mode <= lh
-          when isa_lw_func3 => null;-- mem_mode <= lw
-          when isa_lbu_func3 => null;-- mem_mode <= lbu
-          when isa_lhu_func3 => null;-- mem_mode <= lhu
-          when others => null;
+          when isa_lb_func3 => dec_mem_mode <= mem_lb;
+          when isa_lh_func3 => dec_mem_mode <= mem_lh;
+          when isa_lw_func3 => dec_mem_mode <= mem_lw;
+          when isa_lbu_func3 => dec_mem_mode <= mem_lbu;
+          when isa_lhu_func3 => dec_mem_mode <= mem_lhu;
+          when others => dec_mem_mode <= mem_nls;
         end case;
-      when others => null;
+      when others => dec_mem_mode <= mem_nls;
     end case;
   end process decode_mem;
 
-  decode_rf : process (op_code_sliced, op_code) is
+  decode_rf : process (op_code_sliced, op_code, insert_nop) is
   begin
     dec_target_reg <= b"00000";
     sel_rs1 <= b"00000";
@@ -126,15 +127,20 @@ begin
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
+        rs1 <= op_code(19 downto 15);
+        rs2 <= op_code(24 downto 20);
         -- I-Type formatting
       when isa_arith_imm_op | isa_load_op | isa_jalr_op =>
         dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
+        rs1 <= op_code(19 downto 15);
+        rs2 <= (others => '0');
         -- S-Type/B-Type formatting
       when isa_store_op | isa_bra_op => null;
-        dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
+        rs1 <= op_code(19 downto 15);
+        rs2 <= op_code(24 downto 20);
         -- U-Type/J-Type formatting
       when isa_jal_op | isa_lui_op | isa_auipc_op =>
         dec_target_reg <= op_code(11 downto 7);
@@ -142,7 +148,89 @@ begin
         dec_target_reg <= b"00000";
         sel_rs1 <= b"00000";
         sel_rs2 <= b"00000";
+        rs1 <= b"00000";
+        rs2 <= b"00000";
     end case;
+
+    if insert_nop then
+      dec_target_reg <= b"00000";
+    end if;
+
   end process decode_rf;
+
+  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode, me_mem_mode) is
+  begin
+    insert_nop <= false;
+    stall <= '0';
+    dec_mux_fw_rs1_sel <= fwd_reg_data;
+    dec_mux_fw_rs2_sel <= fwd_reg_data;
+    dec_mux_fw_mem_sel <= fwd_reg_data;
+    ----------------------------------------------------------
+    -- RAW
+    ----------------------------------------------------------
+    -- rs1
+    if rs1 = ex_target_reg then
+      dec_mux_fw_rs1_sel <= fwd_alu_data;
+    elsif rs1 = me_target_reg then
+      dec_mux_fw_rs1_sel <= fwd_return_data;
+    end if;
+    -- rs2
+    if rs2 = ex_target_reg then
+      dec_mux_fw_rs2_sel <= fwd_alu_data;
+    elsif rs2 = me_target_reg then
+      dec_mux_fw_rs2_sel <= fwd_return_data;
+    end if;
+
+    ----------------------------------------------------------
+    -- Store after Load
+    ----------------------------------------------------------
+    -- Detects the store in decode stage
+    if (rs1 = ex_target_reg or rs2 = ex_target_reg) and op_code_sliced = isa_store_op then
+      -- Detects the load in execute stage
+      if (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
+        dec_mux_fw_mem_sel <= fwd_return_data;
+      end if;
+    end if;
+
+    ----------------------------------------------------------
+    -- RAL
+    ----------------------------------------------------------
+    -- rs1
+    -- Detects the load in execute stage => stall
+    if rs1 = ex_target_reg and rs1 /= b"00000" and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '1';
+        insert_nop <= true;
+      end if;
+      -- Detects Load in memory stage => set forwarding signal
+    elsif rs1 = me_target_reg and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '0';
+        dec_mux_fw_rs1_sel <= fwd_return_data;
+      end if;
+    end if;
+    -- rs2
+    -- Detects the load in execute stage => stall
+    if rs2 = ex_target_reg and rs2 /= b"00000" and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '1';
+        insert_nop <= true;
+      end if;
+      -- Detects Load in memory stage => set forwarding signal
+    elsif rs2 = me_target_reg and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '0';
+        dec_mux_fw_rs2_sel <= fwd_return_data;
+      end if;
+    end if;
+
+    if rs1 = b"00000" then
+      dec_mux_fw_rs1_sel <= fwd_reg_data;
+    end if;
+    if rs2 = b"00000" then
+      dec_mux_fw_rs2_sel <= fwd_reg_data;
+    end if;
+
+  end process forwarding;
 
 end architecture behave;

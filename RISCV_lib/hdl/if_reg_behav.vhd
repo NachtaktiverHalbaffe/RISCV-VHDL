@@ -12,13 +12,15 @@ library RISCV_lib; use RISCV_lib.all;
 
 ARCHITECTURE behav OF if_reg IS
 BEGIN
-    if_reg: process(clk, res_n) is
+    if_reg: process(clk, res_n, stall) is
     begin
         if res_n = '0' then
             op_code <= (others => '0');
         else
             if clk'event and clk='1' then
+              if stall = '0' then
                 op_code <= if_op_code;
+              end if;
             end if;
         end if;
     end process if_reg;

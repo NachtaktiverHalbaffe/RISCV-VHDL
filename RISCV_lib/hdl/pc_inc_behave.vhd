@@ -12,6 +12,9 @@ library RISCV_lib; use RISCV_lib.all;
 
 ARCHITECTURE behave OF pc_inc IS
 BEGIN
-    next_PC <= std_logic_vector(unsigned(if_pc)+4);
+  inc_pc: process(if_pc) is
+  begin
+      next_PC <= std_logic_vector(unsigned(if_pc)+4);
+  end process inc_pc;
 END ARCHITECTURE behave;
 
