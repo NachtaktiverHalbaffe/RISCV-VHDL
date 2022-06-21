@@ -17,7 +17,7 @@ USE RISCV_lib.isa.all;
 ENTITY mux_nop IS
    PORT( 
       if_im_out  : IN     std_logic_vector (WORD_WIDTH-1 DOWNTO 0);
-      if_stall   : IN     std_logic;
+      stall      : IN     std_logic;
       if_op_code : OUT    std_logic_vector (WORD_WIDTH-1 DOWNTO 0)
    );
 

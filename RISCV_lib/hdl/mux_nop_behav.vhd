@@ -16,7 +16,7 @@ ARCHITECTURE behav OF mux_nop IS
 begin
   process (if_im_out, if_stall) is
   begin
-    if if_stall = '1' then
+    if stall = '1' then
       if_op_code <= NOP;
     else
       if_op_code <= if_im_out;
