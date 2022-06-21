@@ -14,9 +14,9 @@ use RISCV_lib.constants.all;
 
 ARCHITECTURE behav OF mux_nop IS
 begin
-  process (if_im_out, if_stall) is
+  process (if_im_out) is
   begin
-    if stall = '1' then
+    if false then
       if_op_code <= NOP;
     else
       if_op_code <= if_im_out;

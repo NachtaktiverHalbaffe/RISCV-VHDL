@@ -16,11 +16,11 @@ BEGIN
     begin
         if res_n = '0' then
             if_pc <= (others => '0');
-            if_stall <= '0';
         else
             if clk'event and clk='1' then
+              if stall='0' then
                 if_pc <= next_pc;
-                if_stall <= stall;
+              end if;
             end if;
         end if;
     end process pc_reg;
