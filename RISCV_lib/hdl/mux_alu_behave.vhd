@@ -7,15 +7,14 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
-ARCHITECTURE behave OF mux_alu IS
-BEGIN
-    MUX: process(ex_mux_alu_sel, ex_rs2_fwd, ex_imm) is
-    begin
-        if ex_mux_alu_sel = '0' then
-            alu_in_2 <= ex_rs2_fwd;
-        else
-            alu_in_2 <= ex_imm; 
-        end if;
-    end process MUX;
-END ARCHITECTURE behave;
-
+architecture behave of mux_alu is
+begin
+  MUX : process (ex_mux_alu_sel, ex_rs2_fwd, ex_imm) is
+  begin
+    if ex_mux_alu_sel = '0' then
+      alu_in_2 <= ex_rs2_fwd;
+      else
+      alu_in_2 <= ex_imm;
+    end if;
+  end process MUX;
+end architecture behave;
