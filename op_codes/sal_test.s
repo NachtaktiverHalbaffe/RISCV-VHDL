@@ -7,12 +7,11 @@ __start:
   NOP
   NOP
   NOP
-  NOP
-  sw x3,4(x0)
-  NOP
-  NOP
-  NOP
-  NOP
   lw x1,4(x0)
+  sw x1,4(x0)
+  NOP
+  NOP
+  NOP
+  NOP
   sw x3,4(x3)
   ecall
