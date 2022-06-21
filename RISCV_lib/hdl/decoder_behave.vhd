@@ -199,6 +199,7 @@ begin
     if rs1 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
       dec_mux_fw_rs1_sel <= fwd_return_data;
+      dec_target_reg <= b"00000";
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
@@ -207,6 +208,7 @@ begin
     if rs2 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
       dec_mux_fw_rs2_sel <= fwd_return_data;
+      dec_target_reg <= b"00000";
     else
       stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_reg_data;
