@@ -19,9 +19,9 @@ begin
   end process jmp_target;
 
   --   Validates if branch executes 
-  jmp_valid : process (sbta_mode) is
+  jmp_valid : process (sbpu_mode) is
   begin
-    if sbda_mode = '1' then
+    if sbpu_mode = '1' then
       dec_sbta_valid <= '1';
     else
       dec_sbta_valid <= '0';
