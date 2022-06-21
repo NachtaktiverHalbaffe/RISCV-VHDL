@@ -201,20 +201,26 @@ begin
     -- RAL
     ----------------------------------------------------------
     -- rs1
+    -- Detects the load in execute stage => stall
     if rs1 = ex_target_reg and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       insert_nop <= true;
+    -- Detects Load in memory stage => set forwarding signal
     elsif rs1 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
+      stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_return_data;
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
+    -- Detects the load in execute stage => stall
     if rs2 = ex_target_reg and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       insert_nop <= true;
+    -- Detects Load in memory stage => set forwarding signal
     elsif rs2 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
+      stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_return_data;
     else
       stall <= '0';
