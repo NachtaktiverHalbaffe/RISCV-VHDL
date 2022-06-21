@@ -152,7 +152,7 @@ begin
     end case;
   end process decode_rf;
 
-  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg) is
+  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode) is
   begin
 
     ----------------------------------------------------------
@@ -195,7 +195,7 @@ begin
     -- RAL
     ----------------------------------------------------------
     -- rs1
-    if rs1 = me_target_reg and op_code_sliced = isa_load_op then
+    if rs1 = ex_target_reg and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       dec_mux_fw_rs1_sel <= fwd_return_data;
       dec_target_reg <= b"00000";
@@ -204,7 +204,7 @@ begin
       dec_mux_fw_rs1_sel <= fwd_reg_data;
     end if;
     -- rs2
-    if rs2 = me_target_reg and op_code_sliced = isa_load_op then
+    if rs2 = ex_target_reg and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
       dec_mux_fw_rs2_sel <= fwd_return_data;
       dec_target_reg <= b"00000";
