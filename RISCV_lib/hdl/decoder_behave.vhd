@@ -136,7 +136,6 @@ begin
         rs2 <= (others => '0');
         -- S-Type/B-Type formatting
       when isa_store_op | isa_bra_op => null;
-        dec_target_reg <= op_code(11 downto 7);
         sel_rs1 <= op_code(19 downto 15);
         sel_rs2 <= op_code(24 downto 20);
         rs1 <= op_code(19 downto 15);
