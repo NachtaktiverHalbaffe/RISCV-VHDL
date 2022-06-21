@@ -16,7 +16,7 @@ begin
   begin
     if ex_dbpu_addr_sel = '0' then
       addr <= ex_next_PC;
-    else
+      else
       addr <= ex_rs1;
     end if;
   end process mux_addr;
@@ -24,22 +24,21 @@ begin
   -- Calculates jump target of branch
   jmp_target : process (ex_imm, addr, ex_sbta, ex_dbpu_mode) is
   begin
-    if ex_dbpu_mode = '1' then
-      -- Calculate dynamic adress
-      ex_jmp_target <= std_logic_vector(to_unsigned(to_integer(unsigned(addr)) + to_integer(unsigned(ex_imm)), 32));
-    else
-      -- Use adress from SBPU
-      ex_jmp_target <= ex_sbta;
-    end if;
-
+    -- if ex_dbpu_mode = '1' then
+    -- Calculate dynamic adress
+    -- ex_jmp_target <= std_logic_vector(to_unsigned(to_integer(unsigned(addr)) + to_integer(unsigned(ex_imm)), 32));
+    -- else
+    -- Use adress from SBPU
+    ex_jmp_target <= ex_sbta;
+    -- end if;
   end process jmp_target;
 
-  --   Validates if branch executes 
+  --  Validates if branch executes 
   jmp_valid : process (ex_alu_out) is
   begin
-    if ex_alu_out(ex_alu_out'low) = '1' then
+    if ex_alu_out(ex_alu_out'low) = '1' and ex_dbpu_mode = '1' then
       ex_dbta_valid <= '1';
-    else
+      else
       ex_dbta_valid <= '0';
     end if;
   end process jmp_valid;
