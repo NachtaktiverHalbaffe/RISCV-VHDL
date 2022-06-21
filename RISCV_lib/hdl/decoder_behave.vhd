@@ -197,23 +197,31 @@ begin
     ----------------------------------------------------------
     -- rs1
     -- Detects the load in execute stage => stall
-    if rs1 = ex_target_reg and rs1 /= b"00000" and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
-      stall <= '1';
-      insert_nop <= true;
+    if rs1 = ex_target_reg and rs1 /= b"00000" and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '1';
+        insert_nop <= true;
+      end if;
       -- Detects Load in memory stage => set forwarding signal
-    elsif rs1 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
-      stall <= '0';
-      dec_mux_fw_rs1_sel <= fwd_return_data;
+    elsif rs1 = me_target_reg and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '0';
+        dec_mux_fw_rs1_sel <= fwd_return_data;
+      end if;
     end if;
     -- rs2
     -- Detects the load in execute stage => stall
-    if rs2 = ex_target_reg and rs2 /= b"00000" and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
-      stall <= '1';
-      insert_nop <= true;
+    if rs2 = ex_target_reg and rs2 /= b"00000" and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '1';
+        insert_nop <= true;
+      end if;
       -- Detects Load in memory stage => set forwarding signal
-    elsif rs2 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
-      stall <= '0';
-      dec_mux_fw_rs2_sel <= fwd_return_data;
+    elsif rs2 = me_target_reg and op_code_sliced /= isa_store_op then
+      if ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu then
+        stall <= '0';
+        dec_mux_fw_rs2_sel <= fwd_return_data;
+      end if;
     end if;
 
     if rs1 = b"00000" then
