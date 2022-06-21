@@ -158,7 +158,7 @@ begin
 
   end process decode_rf;
 
-  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode) is
+  forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode, me_mem_mode) is
   begin
     insert_nop <= false;
     ----------------------------------------------------------
