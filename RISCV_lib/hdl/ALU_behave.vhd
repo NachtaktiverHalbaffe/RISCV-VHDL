@@ -9,10 +9,6 @@
 --
 architecture behave of ALU is
 begin
-end architecture behave;
-
-begin
-
 arith : process (ex_alu_mode, alu_in_1, alu_in_2) is
   -- for adding/subtracting
   variable au_l, au_f : word;
@@ -60,7 +56,7 @@ begin
   au_f := au_h(au_h'right) & au_l(au_l'left - 1 downto au_l'right);
 
   -- signed substraction because branches could need signed substraction
-  temp_result := std_logic_vector(signed(x(31) & x) - signed(y(31) & y));
+  temp_result := std_logic_vector(signed(x) - signed(y));
   ---------------------------------------------------------------
   -- Perform ALU operation
   ---------------------------------------------------------------
@@ -118,13 +114,13 @@ begin
     when alu_jal => null;
     when alu_jalr => null;
     when alu_beq =>
-      if to_integer(to_signed(temp_result)) = 0 then
+      if to_integer(signed(temp_result)) = 0 then
         compute_result := X"00000001";
       else
         compute_result := X"00000000";
       end if;
     when alu_bne =>
-      if to_integer(to_signed(temp_result)) = 0 then
+      if to_integer(signed(temp_result)) = 0 then
         compute_result := X"00000000";
       else
         compute_result := X"00000001";
