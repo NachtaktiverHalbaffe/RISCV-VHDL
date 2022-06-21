@@ -45,6 +45,11 @@ begin
         ex_mux_fw_rs1_sel <= dec_mux_fw_rs1_sel;
         ex_mux_fw_rs2_sel <= dec_mux_fw_rs2_sel;
         ex_mux_fw_mem_sel <= dec_mux_fw_mem_sel;
+        -- BPU
+        ex_sbta <= dec_jmp_target;
+        ex_dbpu_mode <= dec_dbpu_mode;
+        ex_dbpu_addr_sel <= dec_dbpu_addr_sel;
+        ex_next_PC <= dec_next_PC;
       end if;
     end if;
   end process dec_reg;
