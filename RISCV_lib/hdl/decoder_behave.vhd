@@ -13,7 +13,7 @@ architecture behave of decoder is
   signal func3 : std_logic_vector(2 downto 0);
   signal func7 : std_logic_vector(6 downto 0);
   signal rs1, rs2 : std_logic_vector(4 downto 0);
-  signal insert_nop: boolean;
+  signal insert_nop : boolean;
 begin
 
   op_code_sliced <= op_code(6 downto 0);
@@ -151,11 +151,11 @@ begin
         rs1 <= b"00000";
         rs2 <= b"00000";
     end case;
-    
+
     if insert_nop then
       dec_target_reg <= b"00000";
     end if;
-    
+
   end process decode_rf;
 
   forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg, ex_mem_mode) is
@@ -203,8 +203,9 @@ begin
     -- rs1
     if rs1 = ex_target_reg and(ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
-      dec_mux_fw_rs1_sel <= fwd_return_data;
       insert_nop <= true;
+    elsif rs1 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
+      dec_mux_fw_rs1_sel <= fwd_return_data;
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
@@ -212,8 +213,9 @@ begin
     -- rs2
     if rs2 = ex_target_reg and (ex_mem_mode = mem_lw or ex_mem_mode = mem_lb or ex_mem_mode = mem_lh or ex_mem_mode = mem_lbu or ex_mem_mode = mem_lhu) then
       stall <= '1';
-      dec_mux_fw_rs2_sel <= fwd_return_data;
       insert_nop <= true;
+    elsif rs2 = me_target_reg and (me_mem_mode = mem_lw or me_mem_mode = mem_lb or me_mem_mode = mem_lh or me_mem_mode = mem_lbu or me_mem_mode = mem_lhu) then
+      dec_mux_fw_rs2_sel <= fwd_return_data;
     else
       stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_reg_data;
