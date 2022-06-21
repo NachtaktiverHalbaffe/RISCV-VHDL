@@ -13,6 +13,7 @@ architecture behave of decoder is
   signal func3 : std_logic_vector(2 downto 0);
   signal func7 : std_logic_vector(6 downto 0);
   signal rs1, rs2 : std_logic_vector(4 downto 0);
+  signal insert_nop: boolean;
 begin
 
   op_code_sliced <= op_code(6 downto 0);
@@ -115,7 +116,7 @@ begin
     end case;
   end process decode_mem;
 
-  decode_rf : process (op_code_sliced, op_code) is
+  decode_rf : process (op_code_sliced, op_code, insert_nop) is
   begin
     dec_target_reg <= b"00000";
     sel_rs1 <= b"00000";
@@ -150,11 +151,16 @@ begin
         rs1 <= b"00000";
         rs2 <= b"00000";
     end case;
+    
+    if insert_nop then
+      dec_target_reg <= b"00000";
+    end if;
+    
   end process decode_rf;
 
   forwarding : process (op_code_sliced, rs1, rs2, ex_target_reg, me_target_reg) is
   begin
-
+    insert_nop <= false;
     ----------------------------------------------------------
     -- RAW
     ----------------------------------------------------------
@@ -198,7 +204,7 @@ begin
     if rs1 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
       dec_mux_fw_rs1_sel <= fwd_return_data;
-      dec_target_reg <= b"00000";
+      insert_nop <= true;
     else
       stall <= '0';
       dec_mux_fw_rs1_sel <= fwd_reg_data;
@@ -207,7 +213,7 @@ begin
     if rs2 = me_target_reg and op_code_sliced = isa_load_op then
       stall <= '1';
       dec_mux_fw_rs2_sel <= fwd_return_data;
-      dec_target_reg <= b"00000";
+      insert_nop <= true;
     else
       stall <= '0';
       dec_mux_fw_rs2_sel <= fwd_reg_data;
