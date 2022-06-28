@@ -26,7 +26,7 @@ BEGIN
             case ex_mem_mode is
             when mem_lb =>
                 me_load_data(7 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))));
-                me_load_data(WORD_WIDTH-1 downto 8) <= (others => me_load_data(7));
+                me_load_data(WORD_WIDTH-1 downto 8) <= (others => memory_file(to_integer(unsigned(ex_alu_out)))(7));
 
             when mem_lh =>
                 me_load_data(15 downto 0) <= (memory_file(to_integer(unsigned(ex_alu_out))+1))
