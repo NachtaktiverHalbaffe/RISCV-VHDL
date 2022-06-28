@@ -11,15 +11,9 @@ architecture behav of SBPU is
 
 begin
   -- Calculates jump target of branch
-  jmp_target : process (dec_imm, dec_next_PC, dec_alu_mode) is
-    variable jmp_target : integer range 0 to 1024;
-  begin
-    if dec_alu_mode = alu_jal then
-      jmp_target := to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC)) + 4;
-    else
-      jmp_target := to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC));
-    end if;
-    dec_jmp_target <= std_logic_vector(to_unsigned(jmp_target, 32));
+  jmp_target : process (dec_imm, dec_next_PC) is
+  begin  
+    dec_jmp_target <=  std_logic_vector(to_unsigned(to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC)) -4,32));
   end process jmp_target;
 
   --   Validates if branch executes 

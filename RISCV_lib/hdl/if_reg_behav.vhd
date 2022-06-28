@@ -20,6 +20,7 @@ BEGIN
             if clk'event and clk='1' then
               if stall = '0' then
                 op_code <= if_op_code;
+                dec_next_PC <= next_PC;
               end if;
             end if;
         end if;

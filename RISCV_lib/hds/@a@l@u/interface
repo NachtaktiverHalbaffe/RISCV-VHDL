@@ -34,7 +34,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 44,0
+suid 48,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -80,10 +80,10 @@ decl (Decl
 n "alu_in_1"
 t "word"
 o 3
-suid 41,0
+suid 45,0
 )
 )
-uid 639,0
+uid 690,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -92,35 +92,35 @@ decl (Decl
 n "alu_in_2"
 t "word"
 o 4
-suid 42,0
+suid 46,0
 )
 )
-uid 641,0
+uid 692,0
 )
 *16 (LogPort
-port (LogicalPort
-lang 11
-m 1
-decl (Decl
-n "alu_out"
-t "word"
-o 59
-suid 43,0
-)
-)
-uid 643,0
-)
-*17 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
 n "ex_alu_mode"
 t "alu_mode_type"
 o 17
-suid 44,0
+suid 47,0
 )
 )
-uid 645,0
+uid 694,0
+)
+*17 (LogPort
+port (LogicalPort
+lang 11
+m 1
+decl (Decl
+n "ex_alu_out"
+t "word"
+o 18
+suid 48,0
+)
+)
+uid 696,0
 )
 ]
 )
@@ -176,25 +176,25 @@ uid 99,0
 litem &14
 pos 0
 dimension 20
-uid 640,0
+uid 691,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 642,0
+uid 693,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 644,0
+uid 695,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 646,0
+uid 697,0
 )
 ]
 )
@@ -517,7 +517,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "10:57:52"
+value "16:24:14"
 )
 (vvPair
 variable "group"
@@ -629,7 +629,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "10:57:52"
+value "16:24:14"
 )
 (vvPair
 variable "unit"
@@ -664,10 +664,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 619,0
+uid 670,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 620,0
+uid 671,0
 ro 90
 va (VaSet
 vasetType 1
@@ -676,11 +676,11 @@ fg "0,65535,0"
 xt "117250,43625,118000,44375"
 )
 tg (CPTG
-uid 621,0
+uid 672,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 622,0
+uid 673,0
 va (VaSet
 font "courier,8,0"
 )
@@ -691,7 +691,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 623,0
+uid 674,0
 va (VaSet
 font "courier,8,0"
 )
@@ -705,15 +705,15 @@ decl (Decl
 n "alu_in_1"
 t "word"
 o 3
-suid 41,0
+suid 45,0
 )
 )
 )
 *61 (CptPort
-uid 624,0
+uid 675,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 625,0
+uid 676,0
 ro 90
 va (VaSet
 vasetType 1
@@ -722,11 +722,11 @@ fg "0,65535,0"
 xt "117250,53625,118000,54375"
 )
 tg (CPTG
-uid 626,0
+uid 677,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 627,0
+uid 678,0
 va (VaSet
 font "courier,8,0"
 )
@@ -737,7 +737,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 628,0
+uid 679,0
 va (VaSet
 font "courier,8,0"
 )
@@ -751,63 +751,15 @@ decl (Decl
 n "alu_in_2"
 t "word"
 o 4
-suid 42,0
+suid 46,0
 )
 )
 )
 *62 (CptPort
-uid 629,0
+uid 680,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 630,0
-ro 90
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-)
-xt "128000,47625,128750,48375"
-)
-tg (CPTG
-uid 631,0
-ps "CptPortTextPlaceStrategy"
-stg "RightVerticalLayoutStrategy"
-f (Text
-uid 632,0
-va (VaSet
-font "courier,8,0"
-)
-xt "123500,47550,127000,48450"
-st "alu_out"
-ju 2
-blo "127000,48250"
-tm "CptPortNameMgr"
-)
-)
-dt (MLText
-uid 633,0
-va (VaSet
-font "courier,8,0"
-)
-xt "44000,4500,57500,5400"
-st "alu_out     : OUT    word 
-"
-)
-thePort (LogicalPort
-lang 11
-m 1
-decl (Decl
-n "alu_out"
-t "word"
-o 59
-suid 43,0
-)
-)
-)
-*63 (CptPort
-uid 634,0
-ps "OnEdgeStrategy"
-shape (Triangle
-uid 635,0
+uid 681,0
 ro 180
 va (VaSet
 vasetType 1
@@ -816,11 +768,11 @@ fg "0,65535,0"
 xt "121625,42983,122375,43733"
 )
 tg (CPTG
-uid 636,0
+uid 682,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 637,0
+uid 683,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -833,7 +785,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 638,0
+uid 684,0
 va (VaSet
 font "courier,8,0"
 )
@@ -847,7 +799,55 @@ decl (Decl
 n "ex_alu_mode"
 t "alu_mode_type"
 o 17
-suid 44,0
+suid 47,0
+)
+)
+)
+*63 (CptPort
+uid 685,0
+ps "OnEdgeStrategy"
+shape (Triangle
+uid 686,0
+ro 90
+va (VaSet
+vasetType 1
+fg "0,65535,0"
+)
+xt "128000,47625,128750,48375"
+)
+tg (CPTG
+uid 687,0
+ps "CptPortTextPlaceStrategy"
+stg "RightVerticalLayoutStrategy"
+f (Text
+uid 688,0
+va (VaSet
+font "courier,8,0"
+)
+xt "121500,47550,127000,48450"
+st "ex_alu_out"
+ju 2
+blo "127000,48250"
+tm "CptPortNameMgr"
+)
+)
+dt (MLText
+uid 689,0
+va (VaSet
+font "courier,8,0"
+)
+xt "44000,4500,57500,5400"
+st "ex_alu_out  : OUT    word 
+"
+)
+thePort (LogicalPort
+lang 11
+m 1
+decl (Decl
+n "ex_alu_out"
+t "word"
+o 18
+suid 48,0
 )
 )
 )
@@ -1565,6 +1565,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 646,0
+lastUid 697,0
 activeModelName "Symbol:CDM"
 )

@@ -78,10 +78,11 @@ begin
       when isa_jal_op =>
         dec_alu_mode <= alu_jal;
         sbpu_mode <= '1';
+        dec_dbpu_addr_sel <= '1';
       when isa_jalr_op =>
         if func3 = isa_jalr_func3 then
           dec_alu_mode <= alu_jalr;
-          sbpu_mode <= '1';
+          dec_dbpu_mode <= '1';
           dec_dbpu_addr_sel <= '1';
         end if;
       when others => dec_alu_mode <= alu_add;
