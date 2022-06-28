@@ -18,13 +18,15 @@ BEGIN
  rom: process(if_pc) is
     variable word_pc_int : integer := 0;
     constant rom_content: im_rom_type(0 to 1023) := (
-      NOP,
-      NOP,
+      x"00000013",
+      x"00000013",
       x"00800193",
-      x"008000ef",
+      x"00018663",
       x"00900213",
+      x"0080006f",
       x"00218193",
-      x"00008067",
+      x"00000013",
+      x"00000013",
       others => NOP
     );
   begin

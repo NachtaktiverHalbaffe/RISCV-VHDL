@@ -9,7 +9,6 @@ __start:
   j end
 srt: 
   addi x3,x3,2
-  ret
 end: 
   nop
   ecall
