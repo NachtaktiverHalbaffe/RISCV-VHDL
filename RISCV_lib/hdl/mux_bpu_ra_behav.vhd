@@ -10,9 +10,9 @@
 architecture behav of mux_bpu_ra is
 begin
 
-  process (alu_out, ex_jmp_target, mux_bpu_ra_select) is
+  process (alu_out, ex_jmp_target, ex_sbta_valid) is
   begin
-    if mux_bpu_ra_select = '1' then
+    if ex_sbta_valid = '1' then
       ex_alu_out <= ex_jmp_target;
     else
       ex_alu_out <= alu_out;

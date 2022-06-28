@@ -27,13 +27,13 @@ begin
 
     compute_result := (others => '0');
     temp_result := (others => '0');
-    alu_out <= (others => '0');
+    ex_alu_out <= (others => '0');
     -- Store input signals in variables for caluculation
     x := alu_in_1;
     y := alu_in_2;
 
     -- Performing add/sub-operation because its always needed
-    if ex_alu_mode = alu_add then
+    if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr  or ex_alu_mode= alu_jal then
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) +
         unsigned('0' & y(y'left - 1 downto y'right)));
@@ -70,7 +70,7 @@ begin
         compute_result := x(x'left - 1 downto x'right) & '0';
         c := x(x'left);
         v := x(x'left) xor x(x'left - 1);
-      when alu_srl => alu_out <= x;
+      when alu_srl => ex_alu_out <= x;
         compute_result := '0' & x(x'left downto x'right + 1);
         c := x(x'right);
         v := x(x'left) xor '0';
@@ -127,8 +127,8 @@ begin
     -- Process branch checks
     ---------------------------------------------------------------
     case ex_alu_mode is
-      when alu_jal => null;
-      when alu_jalr => null;
+      when alu_jalr |alu_jal =>  
+        compute_result := std_logic_vector(to_unsigned(to_integer(unsigned(au_f))+ 4,32));
       when alu_beq =>
         if z = '0' then
           compute_result := X"00000001";
@@ -165,13 +165,13 @@ begin
         else
           compute_result := X"00000000";
         end if;
-      when others => compute_result := (others => '0');
+      when others => compute_result := compute_result;
     end case;
 
     ---------------------------------------------------------------
     -- Set output signals
     ---------------------------------------------------------------
-    alu_out <= compute_result;
+    ex_alu_out <= compute_result;
 
   end process arith;
 end architecture behave;

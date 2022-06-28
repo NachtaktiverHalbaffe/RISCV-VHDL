@@ -34,7 +34,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 4,0
+suid 8,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -80,10 +80,10 @@ decl (Decl
 n "alu_out"
 t "word"
 o 59
-suid 1,0
+suid 5,0
 )
 )
-uid 151,0
+uid 203,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -93,10 +93,10 @@ decl (Decl
 n "ex_alu_out"
 t "word"
 o 18
-suid 2,0
+suid 6,0
 )
 )
-uid 153,0
+uid 205,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -105,22 +105,22 @@ decl (Decl
 n "ex_jmp_target"
 t "word"
 o 49
-suid 3,0
+suid 7,0
 )
 )
-uid 155,0
+uid 207,0
 )
 *17 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
-n "mux_bpu_ra_select"
+n "ex_sbta_valid"
 t "std_logic"
-o 60
-suid 4,0
+o 59
+suid 8,0
 )
 )
-uid 157,0
+uid 209,0
 )
 ]
 )
@@ -176,25 +176,25 @@ uid 71,0
 litem &14
 pos 0
 dimension 20
-uid 152,0
+uid 204,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 154,0
+uid 206,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 156,0
+uid 208,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 158,0
+uid 210,0
 )
 ]
 )
@@ -517,7 +517,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "10:57:52"
+value "13:52:33"
 )
 (vvPair
 variable "group"
@@ -629,7 +629,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "10:57:52"
+value "13:52:33"
 )
 (vvPair
 variable "unit"
@@ -664,10 +664,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 131,0
+uid 183,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 132,0
+uid 184,0
 ro 90
 va (VaSet
 vasetType 1
@@ -676,11 +676,11 @@ fg "0,65535,0"
 xt "180250,29625,181000,30375"
 )
 tg (CPTG
-uid 133,0
+uid 185,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 134,0
+uid 186,0
 va (VaSet
 font "courier,8,0"
 )
@@ -691,12 +691,12 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 135,0
+uid 187,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,1800,61500,2700"
-st "alu_out           : IN     word  ;
+xt "44000,1800,59500,2700"
+st "alu_out       : IN     word  ;
 "
 )
 thePort (LogicalPort
@@ -705,15 +705,15 @@ decl (Decl
 n "alu_out"
 t "word"
 o 59
-suid 1,0
+suid 5,0
 )
 )
 )
 *61 (CptPort
-uid 136,0
+uid 188,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 137,0
+uid 189,0
 ro 90
 va (VaSet
 vasetType 1
@@ -722,11 +722,11 @@ fg "0,65535,0"
 xt "189000,31625,189750,32375"
 )
 tg (CPTG
-uid 138,0
+uid 190,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 139,0
+uid 191,0
 va (VaSet
 font "courier,8,0"
 )
@@ -738,12 +738,12 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 140,0
+uid 192,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,4500,60500,5400"
-st "ex_alu_out        : OUT    word 
+xt "44000,4500,58500,5400"
+st "ex_alu_out    : OUT    word 
 "
 )
 thePort (LogicalPort
@@ -753,15 +753,15 @@ decl (Decl
 n "ex_alu_out"
 t "word"
 o 18
-suid 2,0
+suid 6,0
 )
 )
 )
 *62 (CptPort
-uid 141,0
+uid 193,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 142,0
+uid 194,0
 ro 90
 va (VaSet
 vasetType 1
@@ -770,11 +770,11 @@ fg "0,65535,0"
 xt "180250,34625,181000,35375"
 )
 tg (CPTG
-uid 143,0
+uid 195,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 144,0
+uid 196,0
 va (VaSet
 font "courier,8,0"
 )
@@ -785,12 +785,12 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 145,0
+uid 197,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,2700,61500,3600"
-st "ex_jmp_target     : IN     word  ;
+xt "44000,2700,59500,3600"
+st "ex_jmp_target : IN     word  ;
 "
 )
 thePort (LogicalPort
@@ -799,60 +799,59 @@ decl (Decl
 n "ex_jmp_target"
 t "word"
 o 49
-suid 3,0
+suid 7,0
 )
 )
 )
 *63 (CptPort
-uid 146,0
+uid 198,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 147,0
-ro 180
+uid 199,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "186625,28749,187375,29499"
+xt "184625,35333,185375,36083"
 )
 tg (CPTG
-uid 148,0
+uid 200,0
 ps "CptPortTextPlaceStrategy"
-stg "RightVerticalLayoutStrategy"
+stg "VerticalLayoutStrategy"
 f (Text
-uid 149,0
+uid 201,0
 ro 270
 va (VaSet
 font "courier,8,0"
 )
-xt "186550,30499,187450,39499"
-st "mux_bpu_ra_select"
-ju 2
-blo "187250,30499"
+xt "184550,27333,185450,34333"
+st "ex_sbta_valid"
+blo "185250,34333"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 150,0
+uid 202,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,3600,64000,4500"
-st "mux_bpu_ra_select : IN     std_logic  ;
+xt "44000,3600,62000,4500"
+st "ex_sbta_valid : IN     std_logic  ;
 "
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
-n "mux_bpu_ra_select"
+n "ex_sbta_valid"
 t "std_logic"
-o 60
-suid 4,0
+o 59
+suid 8,0
 )
 )
 )
 ]
 shape (Mux
+uid 182,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
@@ -1564,6 +1563,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 158,0
+lastUid 210,0
 activeModelName "Symbol:CDM"
 )
