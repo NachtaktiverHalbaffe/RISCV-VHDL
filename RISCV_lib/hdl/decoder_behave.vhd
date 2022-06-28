@@ -118,7 +118,7 @@ begin
     end case;
   end process decode_imm;
 
-  decode_mem : process (op_code_sliced, func3) is
+  decode_mem : process (op_code_sliced, func3, ex_dbta_valid, insert_nop) is
   begin
     case op_code_sliced is
       when isa_store_op =>
@@ -139,9 +139,14 @@ begin
         end case;
       when others => dec_mem_mode <= mem_nls;
     end case;
+    
+    if ex_dbta_valid = '1' or insert_nop then 
+      dec_mem_mode <= mem_nls;
+    end if;
+  
   end process decode_mem;
 
-  decode_rf : process (op_code_sliced, op_code, insert_nop) is
+  decode_rf : process (op_code_sliced, op_code, insert_nop,ex_dbta_valid ) is
   begin
     dec_target_reg <= b"00000";
     sel_rs1 <= b"00000";
@@ -177,7 +182,7 @@ begin
         rs2 <= b"00000";
     end case;
 
-    if insert_nop then
+    if insert_nop or ex_dbta_valid = '1' then
       dec_target_reg <= b"00000";
     end if;
 
