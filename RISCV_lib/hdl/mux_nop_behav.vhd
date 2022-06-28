@@ -14,9 +14,9 @@ use RISCV_lib.constants.all;
 
 architecture behav of mux_nop is
 begin
-  process (if_im_out, dec_stba_valid, ex_dbta_valid) is
+  process (if_im_out, dec_sbta_valid, ex_dbta_valid) is
   begin
-    if dec_stba_valid = '1' or ex_dbta_valid = '1' then
+    if dec_sbta_valid = '1' or ex_dbta_valid = '1' then
       if_op_code <= NOP;
     else
       if_op_code <= if_im_out;
