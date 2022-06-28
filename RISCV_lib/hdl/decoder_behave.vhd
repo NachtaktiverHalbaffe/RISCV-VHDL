@@ -23,6 +23,9 @@ begin
   decode_alu : process (op_code_sliced, func3, func7) is
   begin
     dec_alu_mode <= alu_add;
+    sbpu_mode <= '0';
+    dec_dbpu_mode <= '0';
+    dec_dbpu_addr_sel <= '0';
     case op_code_sliced is
         -- arithmetic operations
       when isa_arith_direct_op | isa_arith_imm_op =>
@@ -52,14 +55,35 @@ begin
         -- branch operations
       when isa_bra_op =>
         case func3 is
-          when isa_beq_func3 => dec_alu_mode <= alu_beq;
-          when isa_bne_func3 => dec_alu_mode <= alu_bne;
-          when isa_blt_func3 => dec_alu_mode <= alu_blt;
-          when isa_bge_func3 => dec_alu_mode <= alu_bge;
-          when isa_bltu_func3 => dec_alu_mode <= alu_bltu;
-          when isa_bgeu_func3 => dec_alu_mode <= alu_bgeu;
+          when isa_beq_func3 =>
+            dec_alu_mode <= alu_beq;
+            dec_dbpu_mode <= '1';
+          when isa_bne_func3 =>
+            dec_alu_mode <= alu_bne;
+            dec_dbpu_mode <= '1';
+          when isa_blt_func3 =>
+            dec_alu_mode <= alu_blt;
+            dec_dbpu_mode <= '1';
+          when isa_bge_func3 =>
+            dec_alu_mode <= alu_bge;
+            dec_dbpu_mode <= '1';
+          when isa_bltu_func3 =>
+            dec_alu_mode <= alu_bltu;
+            dec_dbpu_mode <= '1';
+          when isa_bgeu_func3 =>
+            dec_alu_mode <= alu_bgeu;
+            dec_dbpu_mode <= '1';
           when others => dec_alu_mode <= alu_add;
         end case;
+      when isa_jal_op =>
+        dec_alu_mode <= alu_jal;
+        sbpu_mode <= '1';
+      when isa_jalr_op =>
+        if func3 = isa_jalr_func3 then
+          dec_alu_mode <= alu_jalr;
+          sbpu_mode <= '1';
+          dec_dbpu_addr_sel <= '1';
+        end if;
       when others => dec_alu_mode <= alu_add;
     end case;
   end process decode_alu;

@@ -16,10 +16,8 @@ begin
   begin
     if dec_alu_mode = alu_jal then
       jmp_target := to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC)) + 4;
-      elsif dec_alu_mode /= alu_jalr then
+    else
       jmp_target := to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC));
-      else
-      jmp_target := to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC)) + to_integer(unsigned(dec_rs1));
     end if;
     dec_jmp_target <= std_logic_vector(to_unsigned(jmp_target, 32));
   end process jmp_target;
@@ -29,7 +27,7 @@ begin
   begin
     if sbpu_mode = '1' then
       dec_sbta_valid <= '1';
-      else
+    else
       dec_sbta_valid <= '0';
     end if;
   end process jmp_valid;
