@@ -11,7 +11,7 @@ architecture behav of SBPU is
 
 begin
   -- Calculates jump target of branch
-  jmp_target : process (dec_imm, dec_next_PC, dec_alu_mode, dec_rs1) is
+  jmp_target : process (dec_imm, dec_next_PC, dec_alu_mode) is
     variable jmp_target : integer range 0 to 1024;
   begin
     if dec_alu_mode = alu_jal then
