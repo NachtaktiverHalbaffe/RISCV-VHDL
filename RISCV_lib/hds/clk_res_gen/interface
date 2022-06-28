@@ -4,12 +4,8 @@ version 2
 dialect 11
 dmPackageRefs [
 (DmPackageRef
-library "IEEE"
+library "ieee"
 unitName "std_logic_1164"
-)
-(DmPackageRef
-library "IEEE"
-unitName "numeric_std"
 )
 ]
 libraryRefs [
@@ -21,7 +17,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 4,0
+suid 8,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -68,10 +64,10 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 3,0
+suid 7,0
 )
 )
-uid 178,0
+uid 252,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -81,10 +77,10 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 4,0
+suid 8,0
 )
 )
-uid 180,0
+uid 254,0
 )
 ]
 )
@@ -140,13 +136,13 @@ uid 71,0
 litem &14
 pos 0
 dimension 20
-uid 179,0
+uid 253,0
 )
 *22 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 181,0
+uid 255,0
 )
 ]
 )
@@ -417,7 +413,7 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/clk_res_gen"
 )
 (vvPair
 variable "date"
-value "05/31/22"
+value "06/21/22"
 )
 (vvPair
 variable "day"
@@ -429,7 +425,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "31"
+value "21"
 )
 (vvPair
 variable "entity_name"
@@ -457,7 +453,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/31/22"
+value "06/21/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -469,7 +465,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "12:09:54"
+value "15:39:28"
 )
 (vvPair
 variable "group"
@@ -505,7 +501,7 @@ value "$HDS_PROJECT_DIR/RISCV_lib/qis"
 )
 (vvPair
 variable "mm"
-value "05"
+value "06"
 )
 (vvPair
 variable "module_name"
@@ -513,11 +509,11 @@ value "clk_res_gen"
 )
 (vvPair
 variable "month"
-value "May"
+value "Jun"
 )
 (vvPair
 variable "month_long"
-value "May"
+value "June"
 )
 (vvPair
 variable "p"
@@ -581,7 +577,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "12:09:54"
+value "15:39:28"
 )
 (vvPair
 variable "unit"
@@ -616,10 +612,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *56 (CptPort
-uid 168,0
+uid 242,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 169,0
+uid 243,0
 ro 90
 va (VaSet
 vasetType 1
@@ -628,11 +624,11 @@ fg "0,65535,0"
 xt "23000,8625,23750,9375"
 )
 tg (CPTG
-uid 170,0
+uid 244,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 171,0
+uid 245,0
 va (VaSet
 font "courier,8,0"
 )
@@ -644,7 +640,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 172,0
+uid 246,0
 va (VaSet
 font "courier,8,0"
 )
@@ -659,15 +655,15 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 3,0
+suid 7,0
 )
 )
 )
 *57 (CptPort
-uid 173,0
+uid 247,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 174,0
+uid 248,0
 ro 90
 va (VaSet
 vasetType 1
@@ -676,11 +672,11 @@ fg "0,65535,0"
 xt "23000,12625,23750,13375"
 )
 tg (CPTG
-uid 175,0
+uid 249,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 176,0
+uid 250,0
 va (VaSet
 font "courier,8,0"
 )
@@ -692,7 +688,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 177,0
+uid 251,0
 va (VaSet
 font "courier,8,0"
 )
@@ -707,7 +703,7 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 4,0
+suid 8,0
 )
 )
 )
@@ -1138,10 +1134,10 @@ uid 50,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,14500,3600"
+xt "0,900,14500,2700"
 st "LIBRARY IEEE;
-USE IEEE.std_logic_1164.all;
-USE IEEE.numeric_std.all;"
+USE ieee.std_logic_1164.all;
+"
 tm "PackageList"
 )
 ]
@@ -1420,6 +1416,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 181,0
+lastUid 255,0
 activeModelName "Symbol:CDM"
 )
