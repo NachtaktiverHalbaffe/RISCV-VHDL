@@ -27,7 +27,7 @@ begin
 
     compute_result := (others => '0');
     temp_result := (others => '0');
-    ex_alu_out <= (others => '0');
+    alu_out <= (others => '0');
     -- Store input signals in variables for caluculation
     x := alu_in_1;
     y := alu_in_2;
@@ -70,7 +70,7 @@ begin
         compute_result := x(x'left - 1 downto x'right) & '0';
         c := x(x'left);
         v := x(x'left) xor x(x'left - 1);
-      when alu_srl => ex_alu_out <= x;
+      when alu_srl => alu_out <= x;
         compute_result := '0' & x(x'left downto x'right + 1);
         c := x(x'right);
         v := x(x'left) xor '0';
@@ -130,13 +130,13 @@ begin
       when alu_jal => null;
       when alu_jalr => null;
       when alu_beq =>
-        if z = 0 then
+        if z = '0' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
       when alu_bne =>
-        if z = 0 then
+        if z = '0' then
           compute_result := X"00000000";
         else
           compute_result := X"00000001";
@@ -171,7 +171,7 @@ begin
     ---------------------------------------------------------------
     -- Set output signals
     ---------------------------------------------------------------
-    ex_alu_out <= compute_result;
+    alu_out <= compute_result;
 
   end process arith;
 end architecture behave;
