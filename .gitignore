@@ -2,7 +2,8 @@
 .xrf
 ps
 work
-qis
+qis/incremental_db
+qis/db
 *.lck
 msimSimulationReplay.sh
 hdl/generated
