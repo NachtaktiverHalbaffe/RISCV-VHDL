@@ -6,7 +6,7 @@ __start:
   li x2, 7 
   li x3,1
   slli x3,x3,28
-  li x4, 100000
+  li x4, 99999999
   sw x2, 0(x3)
 loop:
   beq x4, x0, end
@@ -15,5 +15,6 @@ loop:
 end: 
   addi x2, x0,33
   sw x2, 0(x3)
+  li x4, 99999999
   j loop
   ecall
