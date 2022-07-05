@@ -7,6 +7,14 @@ dmPackageRefs [
 library "ieee"
 unitName "std_logic_1164"
 )
+(DmPackageRef
+library "RISCV_lib"
+unitName "constants"
+)
+(DmPackageRef
+library "RISCV_lib"
+unitName "data_types"
+)
 ]
 instances [
 (Instance
@@ -30,6 +38,7 @@ uid 325,0
 ]
 libraryRefs [
 "IEEE"
+"RISCV_lib"
 ]
 )
 version "32.1"
@@ -132,7 +141,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "11:59:43"
+value "12:48:55"
 )
 (vvPair
 variable "group"
@@ -244,7 +253,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "11:59:43"
+value "12:48:55"
 )
 (vvPair
 variable "unit"
@@ -812,8 +821,7 @@ uid 558,0
 lang 11
 decl (Decl
 n "hex_disp0"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 7,0
 )
@@ -822,8 +830,8 @@ uid 559,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,3600,46000,4500"
-st "SIGNAL hex_disp0 : std_logic_vector(6 downto 0)"
+xt "22000,3600,38500,4500"
+st "SIGNAL hex_disp0 : hex_disp_type"
 )
 )
 *23 (Net
@@ -831,8 +839,7 @@ uid 568,0
 lang 11
 decl (Decl
 n "hex_disp1"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 8,0
 )
@@ -841,8 +848,8 @@ uid 569,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,4500,46000,5400"
-st "SIGNAL hex_disp1 : std_logic_vector(6 downto 0)"
+xt "22000,4500,38500,5400"
+st "SIGNAL hex_disp1 : hex_disp_type"
 )
 )
 *24 (Net
@@ -850,8 +857,7 @@ uid 578,0
 lang 11
 decl (Decl
 n "hex_disp2"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 9,0
 )
@@ -860,8 +866,8 @@ uid 579,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,5400,46000,6300"
-st "SIGNAL hex_disp2 : std_logic_vector(6 downto 0)"
+xt "22000,5400,38500,6300"
+st "SIGNAL hex_disp2 : hex_disp_type"
 )
 )
 *25 (Net
@@ -869,8 +875,7 @@ uid 588,0
 lang 11
 decl (Decl
 n "hex_disp3"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 10,0
 )
@@ -879,8 +884,8 @@ uid 589,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,6300,46000,7200"
-st "SIGNAL hex_disp3 : std_logic_vector(6 downto 0)"
+xt "22000,6300,38500,7200"
+st "SIGNAL hex_disp3 : hex_disp_type"
 )
 )
 *26 (Wire
@@ -1205,9 +1210,12 @@ uid 43,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,14500,2700"
+xt "0,900,15000,5400"
 st "LIBRARY IEEE;
-USE ieee.std_logic_1164.all;"
+USE ieee.std_logic_1164.all;
+LIBRARY RISCV_lib;
+USE RISCV_lib.constants.all;
+USE RISCV_lib.data_types.all;"
 tm "PackageList"
 )
 ]
@@ -2424,8 +2432,7 @@ lang 11
 m 4
 decl (Decl
 n "hex_disp0"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 7,0
 )
@@ -2438,8 +2445,7 @@ lang 11
 m 4
 decl (Decl
 n "hex_disp1"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 8,0
 )
@@ -2452,8 +2458,7 @@ lang 11
 m 4
 decl (Decl
 n "hex_disp2"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 9,0
 )
@@ -2466,8 +2471,7 @@ lang 11
 m 4
 decl (Decl
 n "hex_disp3"
-t "std_logic_vector"
-b "(6 downto 0)"
+t "hex_disp_type"
 o 3
 suid 10,0
 )
