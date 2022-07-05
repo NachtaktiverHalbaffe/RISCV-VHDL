@@ -139,18 +139,20 @@ begin
         end case;
       when others => dec_mem_mode <= mem_nls;
     end case;
-    
-    if ex_dbta_valid = '1' or insert_nop then 
+
+    if ex_dbta_valid = '1' or insert_nop then
       dec_mem_mode <= mem_nls;
     end if;
-  
+
   end process decode_mem;
 
-  decode_rf : process (op_code_sliced, op_code, insert_nop,ex_dbta_valid ) is
+  decode_rf : process (op_code_sliced, op_code, insert_nop, ex_dbta_valid) is
   begin
     dec_target_reg <= b"00000";
     sel_rs1 <= b"00000";
     sel_rs2 <= b"00000";
+    rs1 <= b"00000";
+    rs2 <= b"00000";
     case op_code_sliced is
         -- R-Type formatting
       when isa_arith_direct_op =>
