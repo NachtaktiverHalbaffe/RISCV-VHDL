@@ -15,7 +15,7 @@ begin
     variable au_h : std_logic_vector(word'left + 1 downto word'left);
     variable au_c, au_v : std_logic;
     -- flags
-    variable n, z, v, c : std_logic;
+    variable n, z : std_logic;
     -- input/output signals
     variable compute_result, temp_result : word;
     variable x, y : word;
@@ -33,7 +33,7 @@ begin
     y := alu_in_2;
 
     -- Performing add/sub-operation because its always needed
-    if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr  or ex_alu_mode= alu_jal then
+    if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr or ex_alu_mode = alu_jal then
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) +
         unsigned('0' & y(y'left - 1 downto y'right)));
@@ -127,8 +127,8 @@ begin
     -- Process branch checks
     ---------------------------------------------------------------
     case ex_alu_mode is
-      when alu_jalr |alu_jal =>  
-        compute_result := std_logic_vector(to_unsigned(to_integer(unsigned(au_f))+ 4,32));
+      when alu_jalr | alu_jal =>
+        compute_result := std_logic_vector(to_unsigned(to_integer(unsigned(au_f)) + 4, 32));
       when alu_beq =>
         if z = '0' then
           compute_result := X"00000001";
