@@ -9,12 +9,16 @@
 --
 architecture behav of mux_memory is
 begin
-  process (me_mem_mode, me_load_data, me_alu_out) is
+  process (me_mem_mode, me_load_data, me_alu_out, io_data_out, addr_reserved) is
   begin
     if me_mem_mode = mem_nls then
       me_me_out <= me_alu_out;
     else
-      me_me_out <= me_load_data;
+      if addr_reserved = '1' then
+        me_me_out <= io_data_out;
+      else
+        me_me_out <= me_load_data;
+      end if;
     end if;
   end process;
 end architecture behav;
