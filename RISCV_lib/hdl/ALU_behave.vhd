@@ -31,6 +31,8 @@ begin
     -- Store input signals in variables for caluculation
     x := alu_in_1;
     y := alu_in_2;
+    c := '0';
+    v := '0';
 
     -- Performing add/sub-operation because its always needed
     if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr or ex_alu_mode = alu_jal then
@@ -63,7 +65,8 @@ begin
     case ex_alu_mode is
       when alu_add | alu_sub =>
         compute_result := au_f;
-        
+        c := au_c;
+        v := au_v;
         --   shift operations
       when alu_sll =>
         compute_result := std_logic_vector(shift_left(unsigned(x), to_integer(unsigned(y))));
@@ -107,7 +110,10 @@ begin
         else
           compute_result := X"00000000";
         end if;
-      when others => compute_result := au_f;
+      when others => 
+        compute_result := au_f;
+        c := au_c;
+        v := au_v;
     end case;
 
     ---------------------------------------------------------------
