@@ -21,6 +21,9 @@ PACKAGE constants IS
   
   constant NOP: std_logic_vector := x"00000013"; 
 
+  -- Reserved Mem Addresses 
+  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
+
   
 
 
