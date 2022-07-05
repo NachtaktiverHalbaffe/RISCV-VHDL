@@ -68,7 +68,7 @@ package data_types is
   -- IO Interface types
   ------------------------------------------
 
-  type hex_disp_type is array (3 downto 0) of std_logic_vector(6 downto 0);
+  subtype hex_disp_type is std_logic_vector(6 downto 0);
   subtype leds_red_type is std_logic_vector(9 downto 0);
   subtype leds_green_type is std_logic_vector(7 downto 0);
   subtype keys_type is std_logic_vector(3 downto 0);

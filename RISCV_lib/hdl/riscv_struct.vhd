@@ -327,7 +327,10 @@ ARCHITECTURE struct OF riscv IS
       me_store_data_fwd : IN     word;
       io_data_out       : OUT    word;
       addr_reserved     : OUT    std_logic;
-      hex_disp          : OUT    hex_disp_type 
+      hex_disp0         : OUT    hex_disp_type;
+      hex_disp1         : OUT    hex_disp_type;
+      hex_disp2         : OUT    hex_disp_type;
+      hex_disp3         : OUT    hex_disp_type 
       --leds_red          : OUT    leds_red; 
       --leds_green        : OUT    leds_green;
       --keys              : IN     keys;
@@ -588,7 +591,10 @@ BEGIN
          me_store_data_fwd => me_store_data_fwd,
          io_data_out       => me_io_data_out,
          addr_reserved     => me_addr_reserved,
-         hex_disp          => hex_disp
+         hex_disp0         => hex_disp0,
+         hex_disp1         => hex_disp1,
+         hex_disp2         => hex_disp2,
+         hex_disp3         => hex_disp3
       );
 
 END struct;

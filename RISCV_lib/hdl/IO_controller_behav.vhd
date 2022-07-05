@@ -10,7 +10,7 @@ ARCHITECTURE behave OF io_contoller IS
     signal io_hex_buffer: word;
 
     function seven_seg_encoder(input: integer) return std_logic_vector is 
-		variable result: std_logic_vector(hex_disp(0)'range);
+		variable result: std_logic_vector(hex_disp0'range);
 	begin
 		case input is
 			when 0 => result := "0111111";
@@ -39,15 +39,15 @@ BEGIN
     show_hex_disp: process(io_hex_buffer) is
     begin
 		if io_hex_buffer <= x"FFFF" then
-			hex_disp(0) <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(7 downto 0))));
-			hex_disp(1) <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(15 downto 8))));
-			hex_disp(2) <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(23 downto 16))));
-			hex_disp(3) <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(31 downto 24))));
+			hex_disp0 <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(7 downto 0))));
+			hex_disp1 <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(15 downto 8))));
+			hex_disp2 <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(23 downto 16))));
+			hex_disp3 <= seven_seg_encoder(to_integer(unsigned(io_hex_buffer(31 downto 24))));
 		else
-			hex_disp(0) <= seven_seg_encoder(16);
-			hex_disp(1) <= seven_seg_encoder(16);
-			hex_disp(2) <= seven_seg_encoder(16);
-			hex_disp(3) <= seven_seg_encoder(16);
+			hex_disp0 <= seven_seg_encoder(16);
+			hex_disp1 <= seven_seg_encoder(16);
+			hex_disp2 <= seven_seg_encoder(16);
+			hex_disp3 <= seven_seg_encoder(16);
 		end if;
     end process show_hex_disp;
 
@@ -83,7 +83,7 @@ BEGIN
 						io_hex_buffer(7 downto 0)<= me_store_data_fwd(7 downto 0);
 	
 					when mem_sh =>
-						io_hex_buffer(15 downto 0) <= me_store_data_fwd(15 downto 8);
+						io_hex_buffer(15 downto 0) <= me_store_data_fwd(15 downto 0);
 	
 					when mem_sw =>
 						io_hex_buffer <= me_store_data_fwd;

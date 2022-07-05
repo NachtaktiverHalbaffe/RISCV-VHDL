@@ -17,7 +17,10 @@ ENTITY riscv IS
    PORT( 
       clk         : IN     std_logic;
       res_n       : IN     std_logic;
-      hex_disp    : OUT    hex_disp_type 
+      hex_disp0   : OUT    hex_disp_type; 
+      hex_disp1   : OUT    hex_disp_type;
+      hex_disp2   : OUT    hex_disp_type;
+      hex_disp3   : OUT    hex_disp_type 
    );
 
 -- Declarations
