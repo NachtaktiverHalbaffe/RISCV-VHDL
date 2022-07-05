@@ -103,7 +103,7 @@ begin
         -- B-Type formatting
       when isa_bra_op =>
         dec_imm_type <= B_type;
-        dec_mux_alu_sel <= '1';
+        dec_mux_alu_sel <= '0';
         -- U-Type formattingmem_mode
       when isa_lui_op | isa_auipc_op =>
         dec_imm_type <= U_type;

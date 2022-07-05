@@ -13,7 +13,7 @@ begin
   -- Calculates jump target of branch
   jmp_target : process (dec_imm, dec_next_PC) is
   begin  
-    dec_jmp_target <=  std_logic_vector(to_unsigned(to_integer(unsigned(dec_imm)) + to_integer(unsigned(dec_next_PC)) -4,32));
+    dec_jmp_target <=  std_logic_vector(signed(dec_imm) + signed(dec_next_PC) -4);
   end process jmp_target;
 
   --   Validates if branch executes 
