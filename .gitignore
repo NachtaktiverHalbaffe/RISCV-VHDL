@@ -4,6 +4,10 @@ ps
 work
 incremental_db
 db
+*.summary
+*.rpt
+*.done 
+*.sof
 *.lck
 msimSimulationReplay.sh
 hdl/generated
