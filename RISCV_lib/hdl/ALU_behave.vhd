@@ -61,9 +61,9 @@ begin
         compute_result := au_f;
         --   shift operations
       when alu_sll =>
-        compute_result := x(x'left - 1 downto x'right) & '0';
+        compute_result := std_logic_vector(shift_left(unsigned(x), to_integer(unsigned(y))));
       when alu_srl => ex_alu_out <= x;
-        compute_result := '0' & x(x'left downto x'right + 1);
+        compute_result := std_logic_vector(shift_right(unsigned(x), to_integer(unsigned(y))));
       when alu_sra =>
         compute_result := x(x'left) & x(x'left downto x'right + 1);
         --   logical operations
