@@ -67,7 +67,8 @@ begin
         v := au_v;
         --   shift operations
       when alu_sll =>
-        compute_result := x(x'left - 1 downto x'right) & '0';
+        compute_result := (others => '0');
+        compute_result(31 downto to_integer(unsigned(y))) := x(x'left - to_integer(unsigned(y)) downto x'right);
         c := x(x'left);
         v := x(x'left) xor x(x'left - 1);
       when alu_srl => ex_alu_out <= x;

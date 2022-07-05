@@ -63,6 +63,10 @@ ARCHITECTURE struct OF riscv IS
    SIGNAL if_pc              : word;
    SIGNAL me_alu_out         : word;
    SIGNAL me_load_data       : word;
+   -- Output from io controller
+   SIGNAL me_io_data_out     : word;
+   SIGNAL me_addr_reserved   : std_logic;
+   --
    SIGNAL me_me_out          : word;
    SIGNAL me_mem_mode        : mem_mode;
    SIGNAL me_store_data_fwd  : word;
@@ -314,6 +318,22 @@ ARCHITECTURE struct OF riscv IS
       if_pc : OUT    word 
    );
    END COMPONENT;
+   COMPONENT io_contoller
+   PORT (
+      clk               : IN     std_logic;
+      res_n             : IN     std_logic;
+      ex_alu_out        : IN     word;
+      ex_mem_mode       : IN     mem_mode;
+      me_store_data_fwd : IN     word;
+      io_data_out       : OUT    word;
+      addr_reserved     : OUT    std_logic;
+      hex_disp          : OUT    hex_disp_type 
+      --leds_red          : OUT    leds_red; 
+      --leds_green        : OUT    leds_green;
+      --keys              : IN     keys;
+      --switches          : IN     switches 
+   );
+   END COMPONENT;
 
    -- Optional embedded configurations
    -- pragma synthesis_off
@@ -338,6 +358,7 @@ ARCHITECTURE struct OF riscv IS
    FOR ALL : mux_nop USE ENTITY RISCV_lib.mux_nop;
    FOR ALL : pc_inc USE ENTITY RISCV_lib.pc_inc;
    FOR ALL : pc_reg USE ENTITY RISCV_lib.pc_reg;
+   FOR ALL : io_contoller USE ENTITY RISCV_lib.io_contoller;
    -- pragma synthesis_on
 
 
@@ -557,6 +578,17 @@ BEGIN
          res_n => res_n,
          stall => stall,
          if_pc => if_pc
+      );
+   U_IO_CONT : io_contoller
+      PORT MAP (
+         clk               => clk,
+         res_n             => res_n,
+         ex_alu_out        => ex_alu_out,
+         ex_mem_mode       => ex_mem_mode,
+         me_store_data_fwd => me_store_data_fwd,
+         io_data_out       => me_io_data_out,
+         addr_reserved     => me_addr_reserved,
+         hex_disp          => hex_disp
       );
 
 END struct;

@@ -19,7 +19,11 @@ PACKAGE constants IS
   constant REG_NUM: integer := 32;
   constant MEM_SIZE: integer := 1024;
   
-  constant NOP: std_logic_vector := x"00000013"; 
+  -- Opcodes for insertion 
+  constant NOP: std_logic_vector := x"0000_0013"; 
+
+  -- Reserved Mem Addresses 
+  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
 
   
 

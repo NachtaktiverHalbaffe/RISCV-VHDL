@@ -8,11 +8,16 @@
 --
 LIBRARY IEEE;
 USE ieee.std_logic_1164.all;
+library RISCV_lib;
+use RISCV_lib.all;
+USE RISCV_lib.data_types.all;
+
 
 ENTITY riscv IS
    PORT( 
-      clk   : IN     std_logic;
-      res_n : IN     std_logic
+      clk         : IN     std_logic;
+      res_n       : IN     std_logic;
+      hex_disp    : OUT    hex_disp_type 
    );
 
 -- Declarations
