@@ -11,7 +11,7 @@ architecture behav of DBPU is
 begin
 
   -- Calculates jump target of branch
-  jmp_target : process (ex_imm, ex_alu_out,ex_sbta,ex_dbpu_addr_sel) is
+  jmp_target : process (ex_imm, ex_alu_out, ex_sbta, ex_dbpu_addr_sel) is
   begin
     if ex_dbpu_addr_sel = '1' then
       -- Calculate dynamic adress
@@ -23,13 +23,13 @@ begin
   end process jmp_target;
 
   --  Validates if branch executes 
-  jmp_valid : process (alu_out, ex_dbpu_mode, ex_alu_mode) is
+  jmp_valid : process (ex_alu_out, ex_dbpu_mode, ex_alu_mode) is
   begin
-    if alu_out(alu_out'low) = '1' and ex_dbpu_mode = '1' then
+    if ex_alu_out(ex_alu_out'low) = '1' and ex_dbpu_mode = '1' then
       ex_dbta_valid <= '1';
     elsif ex_dbpu_mode = '1' and ex_alu_mode = alu_jalr then
       ex_dbta_valid <= '1';
-      else
+    else
       ex_dbta_valid <= '0';
     end if;
   end process jmp_valid;
