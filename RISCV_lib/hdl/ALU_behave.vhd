@@ -13,7 +13,6 @@ begin
     -- for adding/subtracting
     variable au_l, au_f : word;
     variable au_h : std_logic_vector(word'left + 1 downto word'left);
-    variable au_c, au_v : std_logic;
     -- flags
     variable n, z : std_logic;
     -- input/output signals
@@ -50,9 +49,6 @@ begin
         unsigned('0' & y(y'left downto y'left)) -
         unsigned('0' & au_l(au_l'left downto au_l'left)));
     end if;
-
-    au_c := au_h(au_h'left);
-    au_v := au_h(au_h'left) xor au_l(au_l'left);
     au_f := au_h(au_h'right) & au_l(au_l'left - 1 downto au_l'right);
 
     -- signed substraction because branches could need signed substraction
@@ -63,38 +59,22 @@ begin
     case ex_alu_mode is
       when alu_add | alu_sub =>
         compute_result := au_f;
-        c := au_c;
-        v := au_v;
         --   shift operations
       when alu_sll =>
         compute_result := x(x'left - 1 downto x'right) & '0';
-        c := x(x'left);
-        v := x(x'left) xor x(x'left - 1);
       when alu_srl => ex_alu_out <= x;
         compute_result := '0' & x(x'left downto x'right + 1);
-        c := x(x'right);
-        v := x(x'left) xor '0';
       when alu_sra =>
         compute_result := x(x'left) & x(x'left downto x'right + 1);
-        c := x(x'right);
-        v := x(x'left) xor x(x'left);
         --   logical operations
       when alu_and =>
         compute_result := x and y;
-        c := '0';
-        v := '0';
       when alu_or =>
         compute_result := x or y;
-        c := '0';
-        v := '0';
       when alu_xor =>
         compute_result := x xor y;
-        c := '0';
-        v := '0';
         --  Set less
       when alu_slt =>
-        c := '0';
-        v := '0';
         temp_result := std_logic_vector(signed(x) - signed(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
@@ -102,8 +82,6 @@ begin
           compute_result := X"00000000";
         end if;
       when alu_sltu => null;
-        c := '0';
-        v := '0';
         temp_result := std_logic_vector(unsigned(x) - unsigned(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
