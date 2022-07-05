@@ -18,15 +18,19 @@ BEGIN
  rom: process(if_pc) is
     variable word_pc_int : integer := 0;
     constant rom_content: im_rom_type(0 to 1023) := (
-      x"00000013",
-      x"00000013",
-      x"00800193",
-      x"00019663",
-      x"00900213",
-      x"0080006f",
-      x"00218193",
-      x"00000013",
-      x"00000013",
+      NOP,
+      NOP,
+      x"00700113",
+      x"00100193",
+      x"01c19193",
+      x"00a00213",
+      x"0021a023",
+      x"00020663",
+      x"fff20213",
+      x"ff9ff06f",
+      x"02100113",
+      x"0021a023",
+      x"00000073",
       others => NOP
     );
   begin
@@ -38,14 +42,14 @@ BEGIN
     end if;
   end process rom;
 
-  --translate: process(if_im_out) is
+--   translate: process(if_im_out) is
 --    variable sliced_opcode  : std_logic_vector(6 downto 0);
 --    variable sliced_rd      : std_logic_vector(4 downto 0);
 --    variable sliced_func3   : std_logic_vector(2 downto 0);
 --    variable sliced_rs1     : std_logic_vector(4 downto 0);
 --    variable sliced_rs2     : std_logic_vector(4 downto 0);
 --    variable sliced_func7   : std_logic_vector(6 downto 0);
---
+
 --  begin
 --    sliced_func7 := if_im_out(31 downto 25);
 --    sliced_rs2 := if_im_out(24 downto 20);
@@ -53,20 +57,20 @@ BEGIN
 --    sliced_func3 := if_im_out(14 downto 12); 
 --    sliced_rd := if_im_out(11 downto 7); 
 --    sliced_opcode := if_im_out(6 downto 0);
---    
+   
 --    case sliced_opcode is
 --    when b"0010111" =>
 --      report "U-type";
 --      op_code_mnemonic <= mne_auipc;
---
+
 --    when b"0110111" =>
 --      report "U-type";
 --      op_code_mnemonic <= mne_lui;
---
---    when b"1100111" =>
---      report "J-type";
---      op_code_mnemonic <= mne_jal;
---
+
+--   --  when b"1100111" =>
+--   --    report "J-type";
+--   --    op_code_mnemonic <= mne_jal;
+
 --    when b"1100011" =>
 --      report "B-type";
 --      case sliced_func3 is
@@ -78,7 +82,7 @@ BEGIN
 --      when b"111" => op_code_mnemonic <= mne_bgeu;
 --      when others => report "ERROR: invalid opcode! Unknown func3 data for B-Type opcode";
 --      end case;
---        
+       
 --    when b"0110011" =>
 --      report "R-type";
 --      case sliced_func7 & sliced_func3 is
@@ -94,7 +98,7 @@ BEGIN
 --      when b"0000000_111" => op_code_mnemonic <=  mne_and;
 --      when others => report "ERROR: invalid opcode! Unknown func7 or func3 data for R-Type opcode";
 --      end case;
---
+
 --    when b"0000011" =>
 --      report "I-type";
 --      case sliced_func3 is
@@ -105,7 +109,7 @@ BEGIN
 --      when b"101" => op_code_mnemonic <= mne_lhu;
 --      when others => report "ERROR: invalid opcode! Unknown func3 data for I-Type opcode";
 --      end case;
---      
+     
 --    when b"0010011" =>
 --      report "I-type";
 --      case sliced_func3 is
@@ -132,15 +136,15 @@ BEGIN
 --      when others => report "ERROR: invalid opcode! Unknown func7 data for I-Type opcode";
 --      end case;
 
-    --when b"1100111" =>
-    --  report "I-type";
-    --  if sliced_func3 = b"000" then
-    --    op_code_mnemonic <=  mne_jalr;
-    --  else
-    --    report "ERROR: invalid opcode! Unknown func3 data for I-Type opcode";
-    --  end if;
+--     when b"1100111" =>
+--      report "I-type";
+--      if sliced_func3 = b"000" then
+--        op_code_mnemonic <=  mne_jalr;
+--      else
+--         op_code_mnemonic <= mne_jal;
+--      end if;
 
-   -- when b"0100011" =>
+--    when b"0100011" =>
 --      report "S-type";
 --      case sliced_func3 is
 --      when b"000" => op_code_mnemonic <=  mne_sb;
@@ -148,11 +152,11 @@ BEGIN
 --      when b"010" => op_code_mnemonic <=  mne_sw;
 --      when others => report "ERROR: invalid opcode! Unknown func3 data for S-Type opcode";
 --      end case;
---
+
 --    when others => report "ERROR: invalid opcode!";
 --    end case;
---
---      
+
+     
 --  end process translate;
 
 END ARCHITECTURE behav;
