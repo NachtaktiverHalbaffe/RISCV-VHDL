@@ -23,7 +23,7 @@ BEGIN
             memory_file <= (others => (others => '0'));
         else
           if clk'event and clk = '1' then
-            if to_integer(unsigned(ex_alu_out)) < MEM_SIZE-3 then -- for word access 
+            if unsigned(ex_alu_out) < MEM_SIZE-3 then -- for word access 
                 report "MEMORY: accessed";
                 case ex_mem_mode is
                 when mem_lb =>

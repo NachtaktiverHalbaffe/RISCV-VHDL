@@ -13,9 +13,9 @@ begin
     -- for adding/subtracting
     variable au_l, au_f : word;
     variable au_h : std_logic_vector(word'left + 1 downto word'left);
-    variable au_c, au_v : std_logic;
     -- flags
-    variable n, z, v, c : std_logic;
+    variable au_c, au_v : std_logic;
+    variable n, z,v,c : std_logic;
     -- input/output signals
     variable compute_result, temp_result : word;
     variable x, y : word;
@@ -31,9 +31,11 @@ begin
     -- Store input signals in variables for caluculation
     x := alu_in_1;
     y := alu_in_2;
+    c := '0';
+    v := '0';
 
     -- Performing add/sub-operation because its always needed
-    if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr  or ex_alu_mode= alu_jal then
+    if ex_alu_mode = alu_add or ex_alu_mode = alu_jalr or ex_alu_mode = alu_jal then
       au_l := std_logic_vector(
         unsigned('0' & x(x'left - 1 downto x'right)) +
         unsigned('0' & y(y'left - 1 downto y'right)));
@@ -50,7 +52,7 @@ begin
         unsigned('0' & y(y'left downto y'left)) -
         unsigned('0' & au_l(au_l'left downto au_l'left)));
     end if;
-
+    
     au_c := au_h(au_h'left);
     au_v := au_h(au_h'left) xor au_l(au_l'left);
     au_f := au_h(au_h'right) & au_l(au_l'left - 1 downto au_l'right);
@@ -67,18 +69,15 @@ begin
         v := au_v;
         --   shift operations
       when alu_sll =>
-        compute_result := (others => '0');
-        compute_result(31 downto to_integer(unsigned(y))) := x(x'left - to_integer(unsigned(y)) downto x'right);
+        compute_result := std_logic_vector(shift_left(unsigned(x), to_integer(unsigned(y))));
         c := x(x'left);
         v := x(x'left) xor x(x'left - 1);
       when alu_srl => ex_alu_out <= x;
-        compute_result := '0' & x(x'left downto x'right + 1);
+        compute_result := std_logic_vector(shift_right(unsigned(x), to_integer(unsigned(y))));
         c := x(x'right);
         v := x(x'left) xor '0';
       when alu_sra =>
         compute_result := x(x'left) & x(x'left downto x'right + 1);
-        c := x(x'right);
-        v := x(x'left) xor x(x'left);
         --   logical operations
       when alu_and =>
         compute_result := x and y;
@@ -94,24 +93,27 @@ begin
         v := '0';
         --  Set less
       when alu_slt =>
+        temp_result := std_logic_vector(signed(x) - signed(y));
         c := '0';
         v := '0';
-        temp_result := std_logic_vector(signed(x) - signed(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
       when alu_sltu => null;
+        temp_result := std_logic_vector(unsigned(x) - unsigned(y));
         c := '0';
         v := '0';
-        temp_result := std_logic_vector(unsigned(x) - unsigned(y));
         if temp_result(31) = '1' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
-      when others => compute_result := (others => '0');
+      when others => 
+        compute_result := au_f;
+        c := au_c;
+        v := au_v;
     end case;
 
     ---------------------------------------------------------------
@@ -128,40 +130,40 @@ begin
     -- Process branch checks
     ---------------------------------------------------------------
     case ex_alu_mode is
-      when alu_jalr |alu_jal =>  
-        compute_result := std_logic_vector(to_unsigned(to_integer(unsigned(au_f))+ 4,32));
+      when alu_jalr | alu_jal =>
+        compute_result := std_logic_vector(signed(au_f) + 4);
       when alu_beq =>
         if z = '0' then
-          compute_result := X"00000001";
-        else
           compute_result := X"00000000";
+        else
+          compute_result := X"00000001";
         end if;
       when alu_bne =>
         if z = '0' then
-          compute_result := X"00000000";
-        else
           compute_result := X"00000001";
+        else
+          compute_result := X"00000000";
         end if;
       when alu_blt =>
-        if n = '1' then
+        if n = '1' xor v='1' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
       when alu_bge =>
-        if n = '0' then
+        if n = '0' xor v='1' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
       when alu_bltu =>
-        if n = '1' then
+        if c = '1' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";
         end if;
       when alu_bgeu =>
-        if n = '0' then
+        if c = '0' then
           compute_result := X"00000001";
         else
           compute_result := X"00000000";

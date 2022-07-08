@@ -25,6 +25,9 @@ PACKAGE constants IS
   -- Reserved Mem Addresses 
   constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
 
+  -- Reserved Mem Addresses 
+  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
+
   
 
 
