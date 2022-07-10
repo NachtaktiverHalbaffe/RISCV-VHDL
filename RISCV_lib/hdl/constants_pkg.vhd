@@ -23,10 +23,13 @@ PACKAGE constants IS
   constant NOP: std_logic_vector := x"0000_0013"; 
 
   -- Reserved Mem Addresses 
-  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
+  constant HEX_DISP_ADDR    : std_logic_vector  := x"1000_0000";  
+  constant LEDS_RED_ADDR    : std_logic_vector  := x"1000_0004";  
+  constant LEDS_GREEN_ADDR  : std_logic_vector  := x"1000_0008";  
+  constant KEYS_ADDR        : std_logic_vector  := x"1000_000c";  
+  constant SWITCHES_ADDR    : std_logic_vector  := x"1000_0010";  
+  
 
-  -- Reserved Mem Addresses 
-  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
 
   
 

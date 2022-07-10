@@ -244,6 +244,9 @@ ARCHITECTURE struct OF riscv IS
       hex_disp1         : OUT    hex_disp_type ;
       hex_disp2         : OUT    hex_disp_type ;
       hex_disp3         : OUT    hex_disp_type ;
+      leds_red          : OUT    leds_red_type;
+      leds_green        : OUT    leds_green_type;
+      keys              : IN     keys_type;
       io_data_out       : OUT    word 
    );
    END COMPONENT;
@@ -334,25 +337,6 @@ ARCHITECTURE struct OF riscv IS
       if_pc : OUT    word 
    );
    END COMPONENT;
-   COMPONENT io_contoller
-   PORT (
-      clk               : IN     std_logic;
-      res_n             : IN     std_logic;
-      ex_alu_out        : IN     word;
-      ex_mem_mode       : IN     mem_mode;
-      me_store_data_fwd : IN     word;
-      io_data_out       : OUT    word;
-      addr_reserved     : OUT    std_logic;
-      hex_disp0         : OUT    hex_disp_type;
-      hex_disp1         : OUT    hex_disp_type;
-      hex_disp2         : OUT    hex_disp_type;
-      hex_disp3         : OUT    hex_disp_type 
-      --leds_red          : OUT    leds_red; 
-      --leds_green        : OUT    leds_green;
-      --keys              : IN     keys;
-      --switches          : IN     switches 
-   );
-   END COMPONENT;
 
    -- Optional embedded configurations
    -- pragma synthesis_off
@@ -378,7 +362,6 @@ ARCHITECTURE struct OF riscv IS
    FOR ALL : mux_nop USE ENTITY RISCV_lib.mux_nop;
    FOR ALL : pc_inc USE ENTITY RISCV_lib.pc_inc;
    FOR ALL : pc_reg USE ENTITY RISCV_lib.pc_reg;
-   FOR ALL : io_contoller USE ENTITY RISCV_lib.io_contoller;
    -- pragma synthesis_on
 
 
@@ -534,7 +517,10 @@ BEGIN
          hex_disp1         => hex_disp1,
          hex_disp2         => hex_disp2,
          hex_disp3         => hex_disp3,
-         io_data_out       => io_data_out
+         leds_red          => leds_red,
+         leds_green        => leds_green,
+         io_data_out       => io_data_out,
+         keys              => keys
       );
    U_10 : me_reg
       PORT MAP (
@@ -612,20 +598,6 @@ BEGIN
          res_n => res_n,
          stall => stall,
          if_pc => if_pc
-      );
-   U_IO_CONT : io_contoller
-      PORT MAP (
-         clk               => clk,
-         res_n             => res_n,
-         ex_alu_out        => ex_alu_out,
-         ex_mem_mode       => ex_mem_mode,
-         me_store_data_fwd => me_store_data_fwd,
-         io_data_out       => me_io_data_out,
-         addr_reserved     => me_addr_reserved,
-         hex_disp0         => hex_disp0,
-         hex_disp1         => hex_disp1,
-         hex_disp2         => hex_disp2,
-         hex_disp3         => hex_disp3
       );
 
 END struct;

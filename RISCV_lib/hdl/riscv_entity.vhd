@@ -14,12 +14,15 @@ USE RISCV_lib.data_types.all;
 
 ENTITY riscv IS
    PORT( 
-      clk       : IN     std_logic;
-      res_n     : IN     std_logic;
-      hex_disp0 : OUT    hex_disp_type;
-      hex_disp1 : OUT    hex_disp_type;
-      hex_disp2 : OUT    hex_disp_type;
-      hex_disp3 : OUT    hex_disp_type
+      clk         : IN     std_logic;
+      res_n       : IN     std_logic;
+      hex_disp0   : OUT    hex_disp_type;
+      hex_disp1   : OUT    hex_disp_type;
+      hex_disp2   : OUT    hex_disp_type;
+      hex_disp3   : OUT    hex_disp_type;
+      leds_red    : OUT    leds_red_type;
+      leds_green  : OUT    leds_green_type;
+      keys        : IN     keys_type
    );
 
 -- Declarations
