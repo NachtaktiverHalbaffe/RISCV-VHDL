@@ -26,6 +26,9 @@ ENTITY io_controller IS
       hex_disp1         : OUT    hex_disp_type;
       hex_disp2         : OUT    hex_disp_type;
       hex_disp3         : OUT    hex_disp_type;
+      leds_red          : OUT    leds_red_type;
+      leds_green        : OUT    leds_green_type;
+      keys              : IN     keys_type;
       io_data_out       : OUT    word
    );
 
