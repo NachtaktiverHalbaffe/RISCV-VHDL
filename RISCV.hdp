@@ -10,6 +10,8 @@ RISCV_lib = $HDS_PROJECT_DIR/RISCV_lib/hds
 default_library = RISCV_lib
 design_root = RISCV_lib.RISCV_tb(struct)@r@i@s@c@v_tb/struct.bd
 version = 2
+[library_files_inclusion]
+RISCV_lib = specify
 [library_type]
 RISCV_lib = regular
 [shared]
