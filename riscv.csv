@@ -1,4 +1,4 @@
-# Copyright (C) 2019  Intel Corporation. All rights reserved.
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions 
 # and other software and tools, and any partner logic 
 # functions, and any output files from any of the foregoing 
@@ -13,40 +13,62 @@
 # refer to the applicable agreement for further details, at
 # https://fpgasoftware.intel.com/eula.
 
-# Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
-# File: /u/home/stud/flxbrggr/dev/HDS/RISCV/riscv.csv
-# Generated on: Tue Jul  5 14:48:17 2022
+# Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# File: C:\Users\Tizian\Documents\Projekte\RISCV\riscv.csv
+# Generated on: Tue Jul 12 15:35:34 2022
 
 # Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
 
 To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Transceiver Analog Settings Protocol,VCCR_GXB/VCCT_GXB Voltage,Transceiver I/O Pin Termination,Transceiver Dedicated Refclk Pin Termination,Transmitter Common Mode Driver Voltage,Transmitter Slew Rate Control,Transmitter Differential Output Voltage,Receiver Buffer Common Mode Voltage,Strict Preservation
-clk,Input,PIN_R20,5B,B5B_N0,PIN_M10,,,,,,,,,,,,,,
-hex_disp0[6],Output,PIN_Y18,4A,B4A_N0,PIN_U22,,,,,,,,,,,,,,
-hex_disp0[5],Output,PIN_Y19,4A,B4A_N0,PIN_U24,,,,,,,,,,,,,,
-hex_disp0[4],Output,PIN_Y20,4A,B4A_N0,PIN_V25,,,,,,,,,,,,,,
-hex_disp0[3],Output,PIN_W18,4A,B4A_N0,PIN_G24,,,,,,,,,,,,,,
-hex_disp0[2],Output,PIN_V17,4A,B4A_N0,PIN_AE25,,,,,,,,,,,,,,
-hex_disp0[1],Output,PIN_V18,4A,B4A_N0,PIN_A16,,,,,,,,,,,,,,
-hex_disp0[0],Output,PIN_V19,4A,B4A_N0,PIN_H17,,,,,,,,,,,,,,
-hex_disp1[6],Output,PIN_AF24,4A,B4A_N0,PIN_T13,,,,,,,,,,,,,,
-hex_disp1[5],Output,PIN_AC19,4A,B4A_N0,PIN_C19,,,,,,,,,,,,,,
-hex_disp1[4],Output,PIN_AE25,4A,B4A_N0,PIN_C25,,,,,,,,,,,,,,
-hex_disp1[3],Output,PIN_AE26,4A,B4A_N0,PIN_V17,,,,,,,,,,,,,,
-hex_disp1[2],Output,PIN_AB19,4A,B4A_N0,PIN_K24,,,,,,,,,,,,,,
-hex_disp1[1],Output,PIN_AD26,4A,B4A_N0,PIN_AE8,,,,,,,,,,,,,,
-hex_disp1[0],Output,PIN_AA18,4A,B4A_N0,PIN_AF21,,,,,,,,,,,,,,
-hex_disp2[6],Output,PIN_W20,5A,B5A_N0,PIN_AA7,,,,,,,,,,,,,,
-hex_disp2[5],Output,PIN_W21,5A,B5A_N0,PIN_A5,,,,,,,,,,,,,,
-hex_disp2[4],Output,PIN_V20,5A,B5A_N0,PIN_L7,,,,,,,,,,,,,,
-hex_disp2[3],Output,PIN_V22,5A,B5A_N0,PIN_AA21,,,,,,,,,,,,,,
-hex_disp2[2],Output,PIN_U20,5A,B5A_N0,PIN_AE23,,,,,,,,,,,,,,
-hex_disp2[1],Output,PIN_AD6,3A,B3A_N0,PIN_B10,,,,,,,,,,,,,,
-hex_disp2[0],Output,PIN_AD7,3A,B3A_N0,PIN_H19,,,,,,,,,,,,,,
-hex_disp3[6],Output,PIN_AC22,5A,B5A_N0,PIN_H24,,,,,,,,,,,,,,
-hex_disp3[5],Output,PIN_AC23,5A,B5A_N0,PIN_W25,,,,,,,,,,,,,,
-hex_disp3[4],Output,PIN_AC24,5A,B5A_N0,PIN_P8,,,,,,,,,,,,,,
-hex_disp3[3],Output,PIN_AA22,5A,B5A_N0,PIN_E11,,,,,,,,,,,,,,
-hex_disp3[2],Output,PIN_AA23,5A,B5A_N0,PIN_G7,,,,,,,,,,,,,,
-hex_disp3[1],Output,PIN_Y23,5A,B5A_N0,PIN_AF16,,,,,,,,,,,,,,
-hex_disp3[0],Output,PIN_Y24,5A,B5A_N0,PIN_G22,,,,,,,,,,,,,,
-res_n,Input,PIN_AB24,5A,B5A_N0,PIN_H15,,,,,,,,,,,,,,
+clk,Input,PIN_R20,5B,B5B_N0,PIN_R20,2.5 V,,,,,,,,,,,,,
+hex_disp0[6],Output,PIN_Y18,4A,B4A_N0,PIN_Y18,2.5 V,,,,,,,,,,,,,
+hex_disp0[5],Output,PIN_Y19,4A,B4A_N0,PIN_Y19,2.5 V,,,,,,,,,,,,,
+hex_disp0[4],Output,PIN_Y20,4A,B4A_N0,PIN_Y20,2.5 V,,,,,,,,,,,,,
+hex_disp0[3],Output,PIN_W18,4A,B4A_N0,PIN_W18,2.5 V,,,,,,,,,,,,,
+hex_disp0[2],Output,PIN_V17,4A,B4A_N0,PIN_V17,2.5 V,,,,,,,,,,,,,
+hex_disp0[1],Output,PIN_V18,4A,B4A_N0,PIN_V18,2.5 V,,,,,,,,,,,,,
+hex_disp0[0],Output,PIN_V19,4A,B4A_N0,PIN_V19,2.5 V,,,,,,,,,,,,,
+hex_disp1[6],Output,PIN_AF24,4A,B4A_N0,PIN_AF24,2.5 V,,,,,,,,,,,,,
+hex_disp1[5],Output,PIN_AC19,4A,B4A_N0,PIN_AC19,2.5 V,,,,,,,,,,,,,
+hex_disp1[4],Output,PIN_AE25,4A,B4A_N0,PIN_AE25,2.5 V,,,,,,,,,,,,,
+hex_disp1[3],Output,PIN_AE26,4A,B4A_N0,PIN_AE26,2.5 V,,,,,,,,,,,,,
+hex_disp1[2],Output,PIN_AB19,4A,B4A_N0,PIN_AB19,2.5 V,,,,,,,,,,,,,
+hex_disp1[1],Output,PIN_AD26,4A,B4A_N0,PIN_AD26,2.5 V,,,,,,,,,,,,,
+hex_disp1[0],Output,PIN_AA18,4A,B4A_N0,PIN_AA18,2.5 V,,,,,,,,,,,,,
+hex_disp2[6],Output,PIN_W20,5A,B5A_N0,PIN_W20,2.5 V,,,,,,,,,,,,,
+hex_disp2[5],Output,PIN_W21,5A,B5A_N0,PIN_W21,2.5 V,,,,,,,,,,,,,
+hex_disp2[4],Output,PIN_V20,5A,B5A_N0,PIN_V20,2.5 V,,,,,,,,,,,,,
+hex_disp2[3],Output,PIN_V22,5A,B5A_N0,PIN_V22,2.5 V,,,,,,,,,,,,,
+hex_disp2[2],Output,PIN_U20,5A,B5A_N0,PIN_U20,2.5 V,,,,,,,,,,,,,
+hex_disp2[1],Output,PIN_AD6,3A,B3A_N0,PIN_AD6,2.5 V,,,,,,,,,,,,,
+hex_disp2[0],Output,PIN_AD7,3A,B3A_N0,PIN_AD7,2.5 V,,,,,,,,,,,,,
+hex_disp3[6],Output,PIN_AC22,5A,B5A_N0,PIN_AC22,2.5 V,,,,,,,,,,,,,
+hex_disp3[5],Output,PIN_AC23,5A,B5A_N0,PIN_AC23,2.5 V,,,,,,,,,,,,,
+hex_disp3[4],Output,PIN_AC24,5A,B5A_N0,PIN_AC24,2.5 V,,,,,,,,,,,,,
+hex_disp3[3],Output,PIN_AA22,5A,B5A_N0,PIN_AA22,2.5 V,,,,,,,,,,,,,
+hex_disp3[2],Output,PIN_AA23,5A,B5A_N0,PIN_AA23,2.5 V,,,,,,,,,,,,,
+hex_disp3[1],Output,PIN_Y23,5A,B5A_N0,PIN_Y23,2.5 V,,,,,,,,,,,,,
+hex_disp3[0],Output,PIN_Y24,5A,B5A_N0,PIN_Y24,2.5 V,,,,,,,,,,,,,
+keys[3],Input,PIN_Y16,4A,B4A_N0,PIN_Y16,2.5 V,,,,,,,,,,,,,
+keys[2],Input,PIN_Y15,4A,B4A_N0,PIN_Y15,2.5 V,,,,,,,,,,,,,
+keys[1],Input,PIN_P12,3B,B3B_N0,PIN_P12,2.5 V,,,,,,,,,,,,,
+keys[0],Input,PIN_P11,3B,B3B_N0,PIN_P11,2.5 V,,,,,,,,,,,,,
+leds_green[7],Output,PIN_H9,8A,B8A_N0,PIN_H9,2.5 V,,,,,,,,,,,,,
+leds_green[6],Output,PIN_H8,8A,B8A_N0,PIN_H8,2.5 V,,,,,,,,,,,,,
+leds_green[5],Output,PIN_B6,8A,B8A_N0,PIN_B6,2.5 V,,,,,,,,,,,,,
+leds_green[4],Output,PIN_A5,8A,B8A_N0,PIN_A5,2.5 V,,,,,,,,,,,,,
+leds_green[3],Output,PIN_E9,8A,B8A_N0,PIN_E9,2.5 V,,,,,,,,,,,,,
+leds_green[2],Output,PIN_D8,8A,B8A_N0,PIN_D8,2.5 V,,,,,,,,,,,,,
+leds_green[1],Output,PIN_K6,8A,B8A_N0,PIN_K6,2.5 V,,,,,,,,,,,,,
+leds_green[0],Output,PIN_L7,8A,B8A_N0,PIN_L7,2.5 V,,,,,,,,,,,,,
+leds_red[9],Output,PIN_J10,8A,B8A_N0,PIN_J10,2.5 V,,,,,,,,,,,,,
+leds_red[8],Output,PIN_H7,8A,B8A_N0,PIN_H7,2.5 V,,,,,,,,,,,,,
+leds_red[7],Output,PIN_K8,8A,B8A_N0,PIN_K8,2.5 V,,,,,,,,,,,,,
+leds_red[6],Output,PIN_K10,8A,B8A_N0,PIN_K10,2.5 V,,,,,,,,,,,,,
+leds_red[5],Output,PIN_J7,8A,B8A_N0,PIN_J7,2.5 V,,,,,,,,,,,,,
+leds_red[4],Output,PIN_J8,8A,B8A_N0,PIN_J8,2.5 V,,,,,,,,,,,,,
+leds_red[3],Output,PIN_G7,8A,B8A_N0,PIN_G7,2.5 V,,,,,,,,,,,,,
+leds_red[2],Output,PIN_G6,8A,B8A_N0,PIN_G6,2.5 V,,,,,,,,,,,,,
+leds_red[1],Output,PIN_F6,8A,B8A_N0,PIN_F6,2.5 V,,,,,,,,,,,,,
+leds_red[0],Output,PIN_F7,8A,B8A_N0,PIN_F7,2.5 V,,,,,,,,,,,,,
+res_n,Input,PIN_AB24,5A,B5A_N0,PIN_AB24,2.5 V,,,,,,,,,,,,,
