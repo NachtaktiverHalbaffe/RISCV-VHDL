@@ -1,5 +1,5 @@
 Timing Analyzer report for riscv
-Tue Jul 12 14:30:55 2022
+Tue Jul 12 15:12:17 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -100,14 +100,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.97        ;
+; Average used               ; 1.93        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  33.0%      ;
-;     Processor 3            ;  32.3%      ;
-;     Processor 4            ;  32.2%      ;
+;     Processor 2            ;  32.0%      ;
+;     Processor 3            ;  30.7%      ;
+;     Processor 4            ;  30.5%      ;
 +----------------------------+-------------+
 
 
@@ -126,8 +126,8 @@ https://fpgasoftware.intel.com/eula.
 +-----------+-----------------+--------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                           ; Note ;
 +-----------+-----------------+--------------------------------------+------+
-; 26.15 MHz ; 26.15 MHz       ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ;      ;
-; 60.75 MHz ; 60.75 MHz       ; clk                                  ;      ;
+; 28.87 MHz ; 28.87 MHz       ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ;      ;
+; 61.93 MHz ; 61.93 MHz       ; clk                                  ;      ;
 +-----------+-----------------+--------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -143,19 +143,19 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------+---------+---------------+
 ; Clock                                ; Slack   ; End Point TNS ;
 +--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -21.145 ; -1176.328     ;
-; clk                                  ; -15.462 ; -10287.588    ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -23.613 ; -1240.187     ;
+; clk                                  ; -16.082 ; -8679.447     ;
 +--------------------------------------+---------+---------------+
 
 
-+----------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                             ;
-+--------------------------------------+---------+---------------+
-; Clock                                ; Slack   ; End Point TNS ;
-+--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -10.017 ; -648.450      ;
-; clk                                  ; -2.068  ; -111.393      ;
-+--------------------------------------+---------+---------------+
++---------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                            ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -8.858 ; -431.944      ;
+; clk                                  ; -2.953 ; -169.667      ;
++--------------------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -175,8 +175,8 @@ No paths to report.
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -8.132 ; -6836.959     ;
-; clk                                  ; -2.636 ; -2346.153     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -6.833 ; -4554.589     ;
+; clk                                  ; -2.636 ; -2126.476     ;
 +--------------------------------------+--------+---------------+
 
 
@@ -192,8 +192,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-----------+-----------------+--------------------------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name                           ; Note ;
 +-----------+-----------------+--------------------------------------+------+
-; 26.64 MHz ; 26.64 MHz       ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ;      ;
-; 61.41 MHz ; 61.41 MHz       ; clk                                  ;      ;
+; 29.42 MHz ; 29.42 MHz       ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ;      ;
+; 62.79 MHz ; 62.79 MHz       ; clk                                  ;      ;
 +-----------+-----------------+--------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -203,19 +203,19 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------+---------+---------------+
 ; Clock                                ; Slack   ; End Point TNS ;
 +--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -20.844 ; -1179.530     ;
-; clk                                  ; -15.283 ; -10008.762    ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -23.210 ; -1236.176     ;
+; clk                                  ; -15.713 ; -8482.911     ;
 +--------------------------------------+---------+---------------+
 
 
-+----------------------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                              ;
-+--------------------------------------+---------+---------------+
-; Clock                                ; Slack   ; End Point TNS ;
-+--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -10.085 ; -652.185      ;
-; clk                                  ; -2.237  ; -205.959      ;
-+--------------------------------------+---------+---------------+
++---------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                             ;
++--------------------------------------+--------+---------------+
+; Clock                                ; Slack  ; End Point TNS ;
++--------------------------------------+--------+---------------+
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -8.999 ; -444.870      ;
+; clk                                  ; -3.062 ; -253.393      ;
++--------------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -235,8 +235,8 @@ No paths to report.
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -8.212 ; -7114.143     ;
-; clk                                  ; -2.636 ; -2430.498     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -6.931 ; -4685.679     ;
+; clk                                  ; -2.636 ; -2187.136     ;
 +--------------------------------------+--------+---------------+
 
 
@@ -252,8 +252,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------+---------+---------------+
 ; Clock                                ; Slack   ; End Point TNS ;
 +--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -11.671 ; -614.695      ;
-; clk                                  ; -8.809  ; -4891.396     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -13.349 ; -639.285      ;
+; clk                                  ; -8.732  ; -4395.110     ;
 +--------------------------------------+---------+---------------+
 
 
@@ -262,8 +262,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -5.014 ; -326.325      ;
-; clk                                  ; -0.781 ; -31.938       ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -4.508 ; -219.640      ;
+; clk                                  ; -1.386 ; -48.785       ;
 +--------------------------------------+--------+---------------+
 
 
@@ -284,8 +284,8 @@ No paths to report.
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -3.683 ; -2804.701     ;
-; clk                                  ; -2.174 ; -1349.643     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -3.386 ; -1948.558     ;
+; clk                                  ; -2.174 ; -1332.184     ;
 +--------------------------------------+--------+---------------+
 
 
@@ -301,8 +301,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------+---------+---------------+
 ; Clock                                ; Slack   ; End Point TNS ;
 +--------------------------------------+---------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -10.418 ; -554.424      ;
-; clk                                  ; -7.555  ; -4174.891     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -11.910 ; -577.589      ;
+; clk                                  ; -7.586  ; -3775.155     ;
 +--------------------------------------+---------+---------------+
 
 
@@ -311,8 +311,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -4.579 ; -294.441      ;
-; clk                                  ; -0.883 ; -69.496       ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -4.102 ; -198.016      ;
+; clk                                  ; -1.388 ; -68.766       ;
 +--------------------------------------+--------+---------------+
 
 
@@ -333,8 +333,8 @@ No paths to report.
 +--------------------------------------+--------+---------------+
 ; Clock                                ; Slack  ; End Point TNS ;
 +--------------------------------------+--------+---------------+
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -3.341 ; -2553.029     ;
-; clk                                  ; -2.174 ; -1351.819     ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -2.983 ; -1747.080     ;
+; clk                                  ; -2.174 ; -1334.143     ;
 +--------------------------------------+--------+---------------+
 
 
@@ -345,18 +345,18 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                      ;
-+---------------------------------------+------------+----------+----------+---------+---------------------+
-; Clock                                 ; Setup      ; Hold     ; Recovery ; Removal ; Minimum Pulse Width ;
-+---------------------------------------+------------+----------+----------+---------+---------------------+
-; Worst-case Slack                      ; -21.145    ; -10.085  ; N/A      ; N/A     ; -8.212              ;
-;  clk                                  ; -15.462    ; -2.237   ; N/A      ; N/A     ; -2.636              ;
-;  dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -21.145    ; -10.085  ; N/A      ; N/A     ; -8.212              ;
-; Design-wide TNS                       ; -11463.916 ; -858.144 ; 0.0      ; 0.0     ; -9544.641           ;
-;  clk                                  ; -10287.588 ; -205.959 ; N/A      ; N/A     ; -2430.498           ;
-;  dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -1179.530  ; -652.185 ; N/A      ; N/A     ; -7114.143           ;
-+---------------------------------------+------------+----------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                     ;
++---------------------------------------+-----------+----------+----------+---------+---------------------+
+; Clock                                 ; Setup     ; Hold     ; Recovery ; Removal ; Minimum Pulse Width ;
++---------------------------------------+-----------+----------+----------+---------+---------------------+
+; Worst-case Slack                      ; -23.613   ; -8.999   ; N/A      ; N/A     ; -6.931              ;
+;  clk                                  ; -16.082   ; -3.062   ; N/A      ; N/A     ; -2.636              ;
+;  dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -23.613   ; -8.999   ; N/A      ; N/A     ; -6.931              ;
+; Design-wide TNS                       ; -9919.634 ; -698.263 ; 0.0      ; 0.0     ; -6872.815           ;
+;  clk                                  ; -8679.447 ; -253.393 ; N/A      ; N/A     ; -2187.136           ;
+;  dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; -1240.187 ; -444.870 ; N/A      ; N/A     ; -4685.679           ;
++---------------------------------------+-----------+----------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -648,10 +648,10 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
 ; From Clock                           ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
-; clk                                  ; clk                                  ; 52618894 ; 0        ; 0        ; 0        ;
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; clk                                  ; 2156593  ; 2156593  ; 0        ; 0        ;
-; clk                                  ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 1038548  ; 0        ; 1038548  ; 0        ;
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 24654    ; 24654    ; 24654    ; 24654    ;
+; clk                                  ; clk                                  ; 34783947 ; 0        ; 0        ; 0        ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; clk                                  ; 414976   ; 414976   ; 0        ; 0        ;
+; clk                                  ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 432554   ; 0        ; 432554   ; 0        ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 6426     ; 6426     ; 6426     ; 6426     ;
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -661,10 +661,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
 ; From Clock                           ; To Clock                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
-; clk                                  ; clk                                  ; 52618894 ; 0        ; 0        ; 0        ;
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; clk                                  ; 2156593  ; 2156593  ; 0        ; 0        ;
-; clk                                  ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 1038548  ; 0        ; 1038548  ; 0        ;
-; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 24654    ; 24654    ; 24654    ; 24654    ;
+; clk                                  ; clk                                  ; 34783947 ; 0        ; 0        ; 0        ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; clk                                  ; 414976   ; 414976   ; 0        ; 0        ;
+; clk                                  ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 432554   ; 0        ; 432554   ; 0        ;
+; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; dec_reg:U_6|ex_alu_mode.alu_add~reg0 ; 6426     ; 6426     ; 6426     ; 6426     ;
 +--------------------------------------+--------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -689,7 +689,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 948   ; 948  ;
+; Unconstrained Input Port Paths  ; 669   ; 669  ;
 ; Unconstrained Output Ports      ; 46    ; 46   ;
 ; Unconstrained Output Port Paths ; 578   ; 578  ;
 +---------------------------------+-------+------+
@@ -845,7 +845,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul 12 14:30:38 2022
+    Info: Processing started: Tue Jul 12 15:11:55 2022
 Info: Command: quartus_sta riscv -c riscv
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -859,677 +859,393 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
     Info (332105): create_clock -period 1.000 -name dec_reg:U_6|ex_alu_mode.alu_add~reg0 dec_reg:U_6|ex_alu_mode.alu_add~reg0
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: U_7|Add0~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~101  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: dataf  to: sumout
-    Info (332098): Cell: U_7|Add0~141  from: dataf  to: combout
-    Info (332098): Cell: U_7|Add0~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: datac  to: sumout
-    Info (332098): Cell: U_7|Selector65~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datac  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~3  from: datab  to: combout
+    Info (332098): Cell: U_7|Add0~102  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~102  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: datab  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add7~35  from: datad  to: sumout
+    Info (332098): Cell: U_7|Selector65~3  from: datac  to: combout
+    Info (332098): Cell: U_7|Selector65~3  from: datae  to: combout
     Info (332098): Cell: U_7|Selector65~3  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~7  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~8  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~9  from: dataf  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datab  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datac  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataf  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -21.145
+Info (332146): Worst-case setup slack is -23.613
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -21.145           -1176.328 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):   -15.462          -10287.588 clk 
-Info (332146): Worst-case hold slack is -10.017
+    Info (332119):   -23.613           -1240.187 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):   -16.082           -8679.447 clk 
+Info (332146): Worst-case hold slack is -8.858
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.017            -648.450 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.068            -111.393 clk 
+    Info (332119):    -8.858            -431.944 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -2.953            -169.667 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -8.132
+Info (332146): Worst-case minimum pulse width slack is -6.833
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.132           -6836.959 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.636           -2346.153 clk 
+    Info (332119):    -6.833           -4554.589 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -2.636           -2126.476 clk 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: U_7|Add0~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~101  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: dataf  to: sumout
-    Info (332098): Cell: U_7|Add0~141  from: dataf  to: combout
-    Info (332098): Cell: U_7|Add0~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: datac  to: sumout
-    Info (332098): Cell: U_7|Selector65~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datac  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~3  from: datab  to: combout
+    Info (332098): Cell: U_7|Add0~102  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~102  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: datab  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add7~35  from: datad  to: sumout
+    Info (332098): Cell: U_7|Selector65~3  from: datac  to: combout
+    Info (332098): Cell: U_7|Selector65~3  from: datae  to: combout
     Info (332098): Cell: U_7|Selector65~3  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~7  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~8  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~9  from: dataf  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datab  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datac  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -20.844
+Info (332146): Worst-case setup slack is -23.210
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -20.844           -1179.530 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):   -15.283          -10008.762 clk 
-Info (332146): Worst-case hold slack is -10.085
+    Info (332119):   -23.210           -1236.176 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):   -15.713           -8482.911 clk 
+Info (332146): Worst-case hold slack is -8.999
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.085            -652.185 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.237            -205.959 clk 
+    Info (332119):    -8.999            -444.870 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -3.062            -253.393 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -8.212
+Info (332146): Worst-case minimum pulse width slack is -6.931
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.212           -7114.143 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.636           -2430.498 clk 
+    Info (332119):    -6.931           -4685.679 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -2.636           -2187.136 clk 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: U_7|Add0~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~101  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: dataf  to: sumout
-    Info (332098): Cell: U_7|Add0~141  from: dataf  to: combout
-    Info (332098): Cell: U_7|Add0~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: datac  to: sumout
-    Info (332098): Cell: U_7|Selector65~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datac  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~3  from: datab  to: combout
+    Info (332098): Cell: U_7|Add0~102  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~102  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: datab  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add7~35  from: datad  to: sumout
+    Info (332098): Cell: U_7|Selector65~3  from: datac  to: combout
+    Info (332098): Cell: U_7|Selector65~3  from: datae  to: combout
     Info (332098): Cell: U_7|Selector65~3  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~7  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~8  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~9  from: dataf  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datab  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datac  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -11.671
+Info (332146): Worst-case setup slack is -13.349
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -11.671            -614.695 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -8.809           -4891.396 clk 
-Info (332146): Worst-case hold slack is -5.014
+    Info (332119):   -13.349            -639.285 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -8.732           -4395.110 clk 
+Info (332146): Worst-case hold slack is -4.508
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.014            -326.325 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -0.781             -31.938 clk 
+    Info (332119):    -4.508            -219.640 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -1.386             -48.785 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.683
+Info (332146): Worst-case minimum pulse width slack is -3.386
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.683           -2804.701 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.174           -1349.643 clk 
+    Info (332119):    -3.386           -1948.558 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -2.174           -1332.184 clk 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: U_7|Add0~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~101  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~105  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~109  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~113  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~117  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~121  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~125  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~129  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~133  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~13  from: dataf  to: sumout
-    Info (332098): Cell: U_7|Add0~141  from: dataf  to: combout
-    Info (332098): Cell: U_7|Add0~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~1  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~21  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~25  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~29  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~33  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~37  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~41  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~45  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~49  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~53  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~57  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~5  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~61  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~65  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~69  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~73  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~77  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~81  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~85  from: datab  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~89  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~93  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~97  from: dataa  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add0~9  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~101  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~105  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~109  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~113  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~13  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~17  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~1  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~21  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~25  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~29  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~33  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~37  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~41  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~45  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~49  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~53  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~57  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~5  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~61  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~65  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~69  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~73  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~77  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~81  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~85  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~89  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~93  from: datac  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~97  from: datad  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: cin  to: sumout
-    Info (332098): Cell: U_7|Add7~9  from: datac  to: sumout
-    Info (332098): Cell: U_7|Selector65~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datac  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~0  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~3  from: datab  to: combout
+    Info (332098): Cell: U_7|Add0~102  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~102  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~106  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~110  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~114  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~118  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~122  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~126  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~130  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~134  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~138  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~142  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~146  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~150  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~154  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~158  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~162  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~166  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~170  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~174  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~178  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~182  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~186  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~190  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~210  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~62  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~66  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~74  from: datab  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~78  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~82  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~86  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~90  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~94  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: cin  to: sumout
+    Info (332098): Cell: U_7|Add0~98  from: dataa  to: sumout
+    Info (332098): Cell: U_7|Add7~35  from: datad  to: sumout
+    Info (332098): Cell: U_7|Selector65~3  from: datac  to: combout
+    Info (332098): Cell: U_7|Selector65~3  from: datae  to: combout
     Info (332098): Cell: U_7|Selector65~3  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~7  from: dataf  to: combout
-    Info (332098): Cell: U_7|Selector65~8  from: datad  to: combout
-    Info (332098): Cell: U_7|Selector65~9  from: dataf  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataa  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datab  to: combout
-    Info (332098): Cell: U_7|arith~0  from: datac  to: combout
-    Info (332098): Cell: U_7|arith~0  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.418
+Info (332146): Worst-case setup slack is -11.910
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.418            -554.424 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -7.555           -4174.891 clk 
-Info (332146): Worst-case hold slack is -4.579
+    Info (332119):   -11.910            -577.589 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -7.586           -3775.155 clk 
+Info (332146): Worst-case hold slack is -4.102
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.579            -294.441 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -0.883             -69.496 clk 
+    Info (332119):    -4.102            -198.016 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -1.388             -68.766 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -3.341
+Info (332146): Worst-case minimum pulse width slack is -2.983
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.341           -2553.029 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
-    Info (332119):    -2.174           -1351.819 clk 
+    Info (332119):    -2.983           -1747.080 dec_reg:U_6|ex_alu_mode.alu_add~reg0 
+    Info (332119):    -2.174           -1334.143 clk 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5241 megabytes
-    Info: Processing ended: Tue Jul 12 14:30:55 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 5230 megabytes
+    Info: Processing ended: Tue Jul 12 15:12:17 2022
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:36
 
 

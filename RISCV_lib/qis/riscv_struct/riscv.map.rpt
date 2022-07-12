@@ -1,5 +1,5 @@
 Analysis & Synthesis report for riscv
-Tue Jul 12 14:24:18 2022
+Tue Jul 12 15:18:11 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -68,13 +68,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jul 12 14:24:18 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jul 12 15:18:11 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; riscv                                       ;
 ; Top-level Entity Name           ; riscv                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 936                                         ;
+; Total registers                 ; 647                                         ;
 ; Total pins                      ; 52                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 114,688                                     ;
@@ -269,16 +269,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1172      ;
+; Estimate of Logic utilization (ALMs needed) ; 929       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1611      ;
-;     -- 7 input functions                    ; 29        ;
-;     -- 6 input functions                    ; 640       ;
-;     -- 5 input functions                    ; 322       ;
-;     -- 4 input functions                    ; 237       ;
-;     -- <=3 input functions                  ; 383       ;
+; Combinational ALUT usage for logic          ; 1329      ;
+;     -- 7 input functions                    ; 18        ;
+;     -- 6 input functions                    ; 475       ;
+;     -- 5 input functions                    ; 163       ;
+;     -- 4 input functions                    ; 336       ;
+;     -- <=3 input functions                  ; 337       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 936       ;
+; Dedicated logic registers                   ; 647       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 52        ;
 ; Total MLAB memory bits                      ; 0         ;
@@ -287,9 +287,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 968       ;
-; Total fan-out                               ; 11901     ;
-; Average fan-out                             ; 4.44      ;
+; Maximum fan-out                             ; 679       ;
+; Total fan-out                               ; 9305      ;
+; Average fan-out                             ; 4.41      ;
 +---------------------------------------------+-----------+
 
 
@@ -298,10 +298,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |riscv                                       ; 1611 (0)            ; 936 (0)                   ; 114688            ; 0          ; 52   ; 0            ; |riscv                                                                                                          ; riscv           ; work         ;
-;    |ALU:U_7|                                 ; 530 (530)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|ALU:U_7                                                                                                  ; ALU             ; work         ;
-;    |DBPU:U_18|                               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|DBPU:U_18                                                                                                ; DBPU            ; work         ;
-;    |Imm_Gen:U_9|                             ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|Imm_Gen:U_9                                                                                              ; Imm_Gen         ; work         ;
+; |riscv                                       ; 1329 (0)            ; 647 (0)                   ; 114688            ; 0          ; 52   ; 0            ; |riscv                                                                                                          ; riscv           ; work         ;
+;    |ALU:U_7|                                 ; 410 (410)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|ALU:U_7                                                                                                  ; ALU             ; work         ;
+;    |DBPU:U_18|                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|DBPU:U_18                                                                                                ; DBPU            ; work         ;
+;    |Imm_Gen:U_9|                             ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|Imm_Gen:U_9                                                                                              ; Imm_Gen         ; work         ;
 ;    |Memory:U_12|                             ; 156 (156)           ; 0 (0)                     ; 114688            ; 0          ; 0    ; 0            ; |riscv|Memory:U_12                                                                                              ; Memory          ; work         ;
 ;       |ram:\ram_cellarray:0:ram_cell|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:0:ram_cell                                                                ; ram             ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:0:ram_cell|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
@@ -315,25 +315,25 @@ https://fpgasoftware.intel.com/eula.
 ;       |ram:\ram_cellarray:3:ram_cell|        ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell                                                                ; ram             ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_k5v3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated ; altsyncram_k5v3 ; work         ;
-;    |RF:U_5|                                  ; 245 (245)           ; 480 (480)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|RF:U_5                                                                                                   ; RF              ; work         ;
+;    |RF:U_5|                                  ; 138 (138)           ; 224 (224)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|RF:U_5                                                                                                   ; RF              ; work         ;
 ;    |SBPU:U_19|                               ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|SBPU:U_19                                                                                                ; SBPU            ; work         ;
-;    |dec_reg:U_6|                             ; 10 (10)             ; 156 (156)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|dec_reg:U_6                                                                                              ; dec_reg         ; work         ;
-;    |decoder:U_4|                             ; 80 (80)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|decoder:U_4                                                                                              ; decoder         ; work         ;
-;    |ex_reg:U_8|                              ; 0 (0)               ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|ex_reg:U_8                                                                                               ; ex_reg          ; work         ;
-;    |if_reg:U_2|                              ; 16 (16)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|if_reg:U_2                                                                                               ; if_reg          ; work         ;
-;    |im:U_1|                                  ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|im:U_1                                                                                                   ; im              ; work         ;
-;    |io_controller:U_21|                      ; 195 (191)           ; 141 (133)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21                                                                                       ; io_controller   ; work         ;
+;    |dec_reg:U_6|                             ; 8 (8)               ; 132 (132)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|dec_reg:U_6                                                                                              ; dec_reg         ; work         ;
+;    |decoder:U_4|                             ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|decoder:U_4                                                                                              ; decoder         ; work         ;
+;    |ex_reg:U_8|                              ; 0 (0)               ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|ex_reg:U_8                                                                                               ; ex_reg          ; work         ;
+;    |if_reg:U_2|                              ; 14 (14)             ; 48 (48)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|if_reg:U_2                                                                                               ; if_reg          ; work         ;
+;    |im:U_1|                                  ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|im:U_1                                                                                                   ; im              ; work         ;
+;    |io_controller:U_21|                      ; 188 (184)           ; 141 (133)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21                                                                                       ; io_controller   ; work         ;
 ;       |button_input:\keys_sync:0:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:0:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:1:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:1:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:2:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:2:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:3:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:3:cell_key                                                    ; button_input    ; work         ;
-;    |me_reg:U_10|                             ; 0 (0)               ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|me_reg:U_10                                                                                              ; me_reg          ; work         ;
-;    |mux_alu:U_11|                            ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_alu:U_11                                                                                             ; mux_alu         ; work         ;
+;    |me_reg:U_10|                             ; 0 (0)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|me_reg:U_10                                                                                              ; me_reg          ; work         ;
+;    |mux_alu:U_11|                            ; 69 (69)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_alu:U_11                                                                                             ; mux_alu         ; work         ;
 ;    |mux_bpu:U_20|                            ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_bpu:U_20                                                                                             ; mux_bpu         ; work         ;
 ;    |mux_fw_memory:U_16|                      ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_memory:U_16                                                                                       ; mux_fw_memory   ; work         ;
-;    |mux_fw_rs1:U_14|                         ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs1:U_14                                                                                          ; mux_fw_rs1      ; work         ;
+;    |mux_fw_rs1:U_14|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs1:U_14                                                                                          ; mux_fw_rs1      ; work         ;
 ;    |mux_fw_rs2:U_15|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs2:U_15                                                                                          ; mux_fw_rs2      ; work         ;
-;    |mux_memory:U_13|                         ; 67 (67)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_memory:U_13                                                                                          ; mux_memory      ; work         ;
+;    |mux_memory:U_13|                         ; 66 (66)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_memory:U_13                                                                                          ; mux_memory      ; work         ;
 ;    |pc_inc:U_3|                              ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|pc_inc:U_3                                                                                               ; pc_inc          ; work         ;
 ;    |pc_reg:U_0|                              ; 3 (3)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|pc_reg:U_0                                                                                               ; pc_reg          ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
@@ -563,7 +563,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------+---------------------------------------------+
 ; Register name                                   ; Reason for Removal                          ;
 +-------------------------------------------------+---------------------------------------------+
-; if_reg:U_2|op_code[11]                          ; Stuck at GND due to stuck port data_in      ;
+; if_reg:U_2|op_code[10,11]                       ; Stuck at GND due to stuck port data_in      ;
 ; RF:U_5|registers[0][31]                         ; Stuck at GND due to stuck port data_in      ;
 ; RF:U_5|registers[0][30]                         ; Stuck at GND due to stuck port data_in      ;
 ; RF:U_5|registers[0][29]                         ; Stuck at GND due to stuck port data_in      ;
@@ -597,18 +597,274 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; RF:U_5|registers[0][1]                          ; Stuck at GND due to stuck port data_in      ;
 ; RF:U_5|registers[0][0]                          ; Stuck at GND due to stuck port data_in      ;
 ; if_reg:U_2|op_code[0]                           ; Merged with if_reg:U_2|op_code[1]           ;
-; if_reg:U_2|op_code[3,19]                        ; Merged with if_reg:U_2|op_code[18]          ;
-; dec_reg:U_6|ex_imm[30]                          ; Merged with dec_reg:U_6|ex_imm[27]          ;
-; dec_reg:U_6|ex_imm[28,29]                       ; Merged with dec_reg:U_6|ex_imm[26]          ;
-; dec_reg:U_6|ex_imm[19]                          ; Merged with dec_reg:U_6|ex_imm[18]          ;
-; dec_reg:U_6|ex_imm[7]                           ; Merged with dec_reg:U_6|ex_imm[10]          ;
-; dec_reg:U_6|ex_imm[8,9]                         ; Merged with dec_reg:U_6|ex_imm[6]           ;
-; if_reg:U_2|op_code[30,31]                       ; Merged with if_reg:U_2|op_code[27]          ;
-; if_reg:U_2|op_code[28,29]                       ; Merged with if_reg:U_2|op_code[26]          ;
-; dec_reg:U_6|ex_target_reg[4]                    ; Stuck at GND due to stuck port data_in      ;
-; ex_reg:U_8|me_target_reg[4]                     ; Stuck at GND due to stuck port data_in      ;
-; me_reg:U_10|wb_traget_reg[4]                    ; Stuck at GND due to stuck port data_in      ;
+; dec_reg:U_6|ex_target_reg[4]                    ; Merged with dec_reg:U_6|ex_target_reg[3]    ;
+; if_reg:U_2|op_code[2,3,18,19,25..31]            ; Merged with if_reg:U_2|op_code[14]          ;
+; if_reg:U_2|op_code[24]                          ; Merged with if_reg:U_2|op_code[12]          ;
+; ex_reg:U_8|me_target_reg[4]                     ; Merged with ex_reg:U_8|me_target_reg[3]     ;
+; dec_reg:U_6|ex_imm[26..30]                      ; Merged with dec_reg:U_6|ex_imm[25]          ;
+; dec_reg:U_6|ex_imm[18,19]                       ; Merged with dec_reg:U_6|ex_imm[14]          ;
+; dec_reg:U_6|ex_imm[5..9]                        ; Merged with dec_reg:U_6|ex_imm[10]          ;
+; me_reg:U_10|wb_traget_reg[4]                    ; Merged with me_reg:U_10|wb_traget_reg[3]    ;
+; dec_reg:U_6|ex_target_reg[3]                    ; Stuck at GND due to stuck port data_in      ;
+; ex_reg:U_8|me_target_reg[3]                     ; Stuck at GND due to stuck port data_in      ;
+; me_reg:U_10|wb_traget_reg[3]                    ; Stuck at GND due to stuck port data_in      ;
 ; RF:U_5|registers[31][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][31]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][30]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][29]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][28]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][27]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][26]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][25]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][24]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][23]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][22]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][21]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][20]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][19]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][18]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][17]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][16]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][15]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][14]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][13]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][12]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][11]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][10]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][9]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][8]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][7]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][6]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][5]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][4]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][3]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][2]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][1]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[8][0]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][31]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][30]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][29]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][28]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][27]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][26]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][25]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][24]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][23]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][22]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][21]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][20]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][19]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][18]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][17]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][16]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][15]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][14]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][13]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][12]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][11]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][10]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][9]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][8]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][7]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][6]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][5]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][4]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][3]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][2]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][1]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[9][0]                          ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[10][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[11][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[12][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[13][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[14][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[15][0]                         ; Stuck at GND due to stuck port clock_enable ;
 ; RF:U_5|registers[16][31]                        ; Stuck at GND due to stuck port clock_enable ;
 ; RF:U_5|registers[16][30]                        ; Stuck at GND due to stuck port clock_enable ;
 ; RF:U_5|registers[16][29]                        ; Stuck at GND due to stuck port clock_enable ;
@@ -1120,6 +1376,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; RF:U_5|registers[31][3]                         ; Stuck at GND due to stuck port clock_enable ;
 ; RF:U_5|registers[31][2]                         ; Stuck at GND due to stuck port clock_enable ;
 ; RF:U_5|registers[31][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; dec_reg:U_6|ex_imm[14,20..24]                   ; Merged with dec_reg:U_6|ex_imm[25]          ;
+; dec_reg:U_6|ex_imm[31]                          ; Merged with dec_reg:U_6|ex_imm[10]          ;
 ; ex_reg:U_8|me_mem_mode.mem_lh~reg0              ; Lost fanout                                 ;
 ; ex_reg:U_8|me_mem_mode.mem_lw~reg0              ; Lost fanout                                 ;
 ; ex_reg:U_8|me_mem_mode.mem_lbu~reg0             ; Lost fanout                                 ;
@@ -1132,13 +1390,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; dec_reg:U_6|ex_mux_fw_mem_sel.fwd_alu_data~reg0 ; Lost fanout                                 ;
 ; dec_reg:U_6|ex_alu_mode.alu_sub~reg0            ; Lost fanout                                 ;
 ; dec_reg:U_6|ex_alu_mode.alu_sra~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_jalr~reg0           ; Lost fanout                                 ;
 ; dec_reg:U_6|ex_mux_fw_rs2_sel.fwd_reg_data~reg0 ; Lost fanout                                 ;
 ; dec_reg:U_6|ex_mux_fw_rs1_sel.fwd_reg_data~reg0 ; Lost fanout                                 ;
-; dec_reg:U_6|ex_imm[27]                          ; Merged with dec_reg:U_6|ex_imm[31]          ;
+; dec_reg:U_6|ex_mem_mode.mem_lbu~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_mem_mode.mem_lhu~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_srl~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_and~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_or~reg0             ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_xor~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_blt~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_bge~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_bltu~reg0           ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_bgeu~reg0           ; Lost fanout                                 ;
+; dec_reg:U_6|ex_imm[10]                          ; Merged with dec_reg:U_6|ex_imm[25]          ;
 ; pc_reg:U_0|if_pc[31]                            ; Lost fanout                                 ;
 ; dec_reg:U_6|ex_sbta[31]                         ; Lost fanout                                 ;
 ; if_reg:U_2|dec_next_PC[31]                      ; Lost fanout                                 ;
-; Total Number of Removed Registers = 580         ;                                             ;
+; Total Number of Removed Registers = 869         ;                                             ;
 +-------------------------------------------------+---------------------------------------------+
 
 
@@ -1147,7 +1416,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------+---------------------------+----------------------------------------------------------------------------------+
 ; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                           ;
 +-----------------------------+---------------------------+----------------------------------------------------------------------------------+
-; ex_reg:U_8|me_target_reg[4] ; Stuck at GND              ; me_reg:U_10|wb_traget_reg[4], RF:U_5|registers[31][0], RF:U_5|registers[23][31], ;
+; ex_reg:U_8|me_target_reg[3] ; Stuck at GND              ; me_reg:U_10|wb_traget_reg[3], RF:U_5|registers[31][0], RF:U_5|registers[23][31], ;
 ;                             ; due to stuck port data_in ; RF:U_5|registers[23][30], RF:U_5|registers[23][29], RF:U_5|registers[23][28],    ;
 ;                             ;                           ; RF:U_5|registers[23][27], RF:U_5|registers[23][26], RF:U_5|registers[23][25],    ;
 ;                             ;                           ; RF:U_5|registers[23][24], RF:U_5|registers[23][23], RF:U_5|registers[23][22],    ;
@@ -1253,12 +1522,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 936   ;
-; Number of registers using Synchronous Clear  ; 107   ;
-; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 835   ;
+; Total registers                              ; 647   ;
+; Number of registers using Synchronous Clear  ; 101   ;
+; Number of registers using Synchronous Load   ; 64    ;
+; Number of registers using Asynchronous Clear ; 546   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 727   ;
+; Number of registers using Clock Enable       ; 465   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1268,39 +1537,39 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |riscv|if_reg:U_2|op_code[8]                          ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |riscv|if_reg:U_2|op_code[4]                          ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[1]                            ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[19]                           ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 128 LEs              ; 64 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_rs1[0]                          ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 320 LEs              ; 384 LEs                ; Yes        ; |riscv|dec_reg:U_6|ex_rs2[16]                         ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[7]              ;
-; 65:1               ; 4 bits    ; 172 LEs       ; 36 LEs               ; 136 LEs                ; Yes        ; |riscv|dec_reg:U_6|ex_target_reg[3]                   ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[0]              ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[11]             ;
-; 18:1               ; 16 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[30]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_sb                ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |riscv|if_reg:U_2|op_code[7]                          ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |riscv|if_reg:U_2|op_code[14]                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[0]                            ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[16]                           ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 128 LEs              ; 64 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_rs1[25]                         ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 18 LEs               ; 48 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_target_reg[0]                   ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 128 LEs              ; 576 LEs                ; Yes        ; |riscv|dec_reg:U_6|ex_rs2[10]                         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[6]              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[1]              ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[13]             ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[25]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_sw                ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_lw                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[14]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs2:U_15|Selector10                     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs1:U_14|Selector28                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[13]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs2:U_15|Selector16                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs1:U_14|Selector13                     ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mux_fw_rs2_sel.fwd_return_data ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mux_fw_rs1_sel.fwd_reg_data    ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |riscv|Memory:U_12|Selector21                         ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 25 LEs               ; 185 LEs                ; No         ; |riscv|decoder:U_4|Mux73                              ;
-; 64:1               ; 3 bits    ; 126 LEs       ; 12 LEs               ; 114 LEs                ; No         ; |riscv|decoder:U_4|Mux72                              ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[3]                   ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[29]                  ;
-; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector10                             ;
-; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector20                             ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |riscv|Memory:U_12|Selector18                         ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 16 LEs               ; 68 LEs                 ; No         ; |riscv|decoder:U_4|Mux77                              ;
+; 32:1               ; 3 bits    ; 63 LEs        ; 12 LEs               ; 51 LEs                 ; No         ; |riscv|decoder:U_4|Mux71                              ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[6]                   ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[25]                  ;
+; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector12                             ;
+; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector25                             ;
 ; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector2                              ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector28                             ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector29                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
@@ -1678,38 +1947,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 936                         ;
-;     CLR               ; 144                         ;
-;     CLR SCLR          ; 33                          ;
-;     CLR SCLR SLD      ; 32                          ;
+; arriav_ff             ; 647                         ;
+;     CLR               ; 117                         ;
+;     CLR SCLR          ; 1                           ;
+;     CLR SCLR SLD      ; 64                          ;
 ;     ENA               ; 77                          ;
-;     ENA CLR           ; 608                         ;
-;     ENA CLR SCLR      ; 18                          ;
+;     ENA CLR           ; 352                         ;
+;     ENA CLR SCLR      ; 12                          ;
 ;     ENA SCLR          ; 24                          ;
-; arriav_lcell_comb     ; 1611                        ;
-;     arith             ; 203                         ;
+; arriav_lcell_comb     ; 1329                        ;
+;     arith             ; 264                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 61                          ;
-;         4 data inputs ; 74                          ;
-;         5 data inputs ; 64                          ;
-;     extend            ; 29                          ;
-;         7 data inputs ; 29                          ;
-;     normal            ; 1348                        ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 100                         ;
-;         3 data inputs ; 207                         ;
-;         4 data inputs ; 138                         ;
-;         5 data inputs ; 258                         ;
-;         6 data inputs ; 640                         ;
+;         1 data inputs ; 59                          ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 198                         ;
+;         5 data inputs ; 2                           ;
+;     extend            ; 18                          ;
+;         7 data inputs ; 18                          ;
+;     normal            ; 1016                        ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 82                          ;
+;         3 data inputs ; 176                         ;
+;         4 data inputs ; 116                         ;
+;         5 data inputs ; 161                         ;
+;         6 data inputs ; 475                         ;
 ;     shared            ; 31                          ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 25                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 22                          ;
 ; boundary_port         ; 52                          ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 7.16                        ;
+; Max LUT depth         ; 12.00                       ;
+; Average LUT depth     ; 6.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1718,7 +1988,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1728,7 +1998,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul 12 14:24:00 2022
+    Info: Processing started: Tue Jul 12 15:17:56 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscv -c riscv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2089,8 +2359,6 @@ Warning (13012): Latch Memory:U_12|addr_offset[0] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|addr_offset[1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[3][4] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[28] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_addr[3][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[3][1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
@@ -2113,12 +2381,6 @@ Warning (13012): Latch Memory:U_12|ram_addr[3][9] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[3][10] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[3][7] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[31] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[29] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][6] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[30] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_addr[0][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[0][1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
@@ -2163,22 +2425,6 @@ Warning (13012): Latch Memory:U_12|ram_addr[1][9] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[1][10] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[1][7] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[15] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[1][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[13] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[1][6] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[14] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][3] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[27] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][2] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[26] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[25] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[3][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[24] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][7] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[23] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_addr[2][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[2][1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
@@ -2201,37 +2447,23 @@ Warning (13012): Latch Memory:U_12|ram_addr[2][9] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[2][10] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[2][6] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[22] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[21] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][4] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[20] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][3] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[19] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][2] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[18] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][1] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[17] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
-Warning (13012): Latch Memory:U_12|ram_data[2][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[16] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:0:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:1:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:2:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2414 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1883 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 2330 logic cells
+    Info (21061): Implemented 1799 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 137 warnings
-    Info: Peak virtual memory: 4905 megabytes
-    Info: Processing ended: Tue Jul 12 14:24:18 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:34
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 99 warnings
+    Info: Peak virtual memory: 4902 megabytes
+    Info: Processing ended: Tue Jul 12 15:18:11 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:31
 
 
