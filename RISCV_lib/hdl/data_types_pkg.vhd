@@ -19,6 +19,7 @@ package data_types is
   ------------------------------------------
   -- word in memory
   subtype word is std_logic_vector(WORD_WIDTH - 1 downto 0);
+  subtype byte is std_logic_vector(BYTE_WIDTH - 1 downto 0);
   type rf_storage_type is array(0 to REG_NUM - 1) of std_logic_vector(WORD_WIDTH - 1 downto 0);
   type imm_type is (R_Type, I_Type, S_Type, B_Type, U_Type, J_Type);
 

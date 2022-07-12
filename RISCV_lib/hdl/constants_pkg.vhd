@@ -17,12 +17,20 @@ PACKAGE constants IS
   constant WORD_WIDTH: integer := 32;
   constant BYTE_WIDTH: integer := 8;
   constant REG_NUM: integer := 32;
-  constant MEM_SIZE: integer := 1024;
+  constant MEM_SIZE: integer := 8192;
+  constant MEM_BYTE_WIDTH: integer := 4;
   
-  constant NOP: std_logic_vector := x"00000013"; 
+  -- Opcodes for insertion 
+  constant NOP: std_logic_vector := x"0000_0013"; 
 
   -- Reserved Mem Addresses 
-  constant HEX_DISP_ADDR: std_logic_vector := x"1000_0000";  
+  constant HEX_DISP_ADDR    : std_logic_vector  := x"1000_0000";  
+  constant LEDS_RED_ADDR    : std_logic_vector  := x"1000_0004";  
+  constant LEDS_GREEN_ADDR  : std_logic_vector  := x"1000_0008";  
+  constant KEYS_ADDR        : std_logic_vector  := x"1000_000c";  
+  constant SWITCHES_ADDR    : std_logic_vector  := x"1000_0010";  
+  
+
 
   
 
