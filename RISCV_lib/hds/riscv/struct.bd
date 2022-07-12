@@ -329,7 +329,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "15:29:25"
+value "15:58:05"
 )
 (vvPair
 variable "group"
@@ -441,7 +441,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "15:29:25"
+value "15:58:05"
 )
 (vvPair
 variable "unit"
@@ -1469,8 +1469,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,61900,8500,62800"
-st "SIGNAL if_pc              : word
-"
+st "SIGNAL if_pc              : word"
 )
 )
 *45 (Net
@@ -1488,8 +1487,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,70000,8500,70900"
-st "SIGNAL op_code            : word
-"
+st "SIGNAL op_code            : word"
 )
 )
 *46 (Net
@@ -1507,8 +1505,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,61000,8500,61900"
-st "SIGNAL if_op_code         : word
-"
+st "SIGNAL if_op_code         : word"
 )
 )
 *47 (Net
@@ -1526,8 +1523,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,72700,14000,73600"
-st "SIGNAL sel_rs1            : rf_storage_addr
-"
+st "SIGNAL sel_rs1            : rf_storage_addr"
 )
 )
 *48 (Net
@@ -1545,8 +1541,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,73600,14000,74500"
-st "SIGNAL sel_rs2            : rf_storage_addr
-"
+st "SIGNAL sel_rs2            : rf_storage_addr"
 )
 )
 *49 (Net
@@ -1564,8 +1559,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,40300,8500,41200"
-st "SIGNAL dec_rs1            : word
-"
+st "SIGNAL dec_rs1            : word"
 )
 )
 *50 (Net
@@ -1583,8 +1577,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,41200,8500,42100"
-st "SIGNAL dec_rs2            : word
-"
+st "SIGNAL dec_rs2            : word"
 )
 )
 *51 (Net
@@ -1602,8 +1595,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,55600,8500,56500"
-st "SIGNAL ex_rs1             : word
-"
+st "SIGNAL ex_rs1             : word"
 )
 )
 *52 (Blk
@@ -1702,8 +1694,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,44800,8500,45700"
-st "SIGNAL ex_alu_out         : word
-"
+st "SIGNAL ex_alu_out         : word"
 )
 )
 *57 (Net
@@ -1721,8 +1712,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,29500,13000,30400"
-st "SIGNAL dec_alu_mode       : alu_mode_type
-"
+st "SIGNAL dec_alu_mode       : alu_mode_type"
 )
 )
 *58 (Net
@@ -1740,8 +1730,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,43900,13000,44800"
-st "SIGNAL ex_alu_mode        : alu_mode_type
-"
+st "SIGNAL ex_alu_mode        : alu_mode_type"
 )
 )
 *59 (Net
@@ -1759,8 +1748,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,17800,7500,18700"
-st "clk                : std_logic
-"
+st "clk                : std_logic"
 )
 )
 *60 (Net
@@ -1778,8 +1766,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,32200,8500,33100"
-st "SIGNAL dec_imm            : word
-"
+st "SIGNAL dec_imm            : word"
 )
 )
 *61 (Blk
@@ -1878,8 +1865,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,75400,8500,76300"
-st "SIGNAL wb_data            : word
-"
+st "SIGNAL wb_data            : word"
 )
 )
 *66 (Net
@@ -1897,8 +1883,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,76300,14000,77200"
-st "SIGNAL wb_traget_reg      : rf_storage_addr
-"
+st "SIGNAL wb_traget_reg      : rf_storage_addr"
 )
 )
 *67 (Net
@@ -1916,8 +1901,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,43000,14000,43900"
-st "SIGNAL dec_target_reg     : rf_storage_addr
-"
+st "SIGNAL dec_target_reg     : rf_storage_addr"
 )
 )
 *68 (Net
@@ -1935,8 +1919,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,59200,14000,60100"
-st "SIGNAL ex_target_reg      : rf_storage_addr
-"
+st "SIGNAL ex_target_reg      : rf_storage_addr"
 )
 )
 *69 (Net
@@ -1954,8 +1937,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,68200,14000,69100"
-st "SIGNAL me_target_reg      : rf_storage_addr
-"
+st "SIGNAL me_target_reg      : rf_storage_addr"
 )
 )
 *70 (Blk
@@ -2055,8 +2037,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,48400,8500,49300"
-st "SIGNAL ex_imm             : word
-"
+st "SIGNAL ex_imm             : word"
 )
 )
 *75 (Net
@@ -2074,8 +2055,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,28600,8500,29500"
-st "SIGNAL alu_in_2           : word
-"
+st "SIGNAL alu_in_2           : word"
 )
 )
 *76 (Net
@@ -2093,8 +2073,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,51100,11000,52000"
-st "SIGNAL ex_mux_alu_sel     : std_logic
-"
+st "SIGNAL ex_mux_alu_sel     : std_logic"
 )
 )
 *77 (Net
@@ -2112,8 +2091,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,19600,7500,20500"
-st "res_n              : std_logic
-"
+st "res_n              : std_logic"
 )
 )
 *78 (Net
@@ -2131,8 +2109,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,69100,8500,70000"
-st "SIGNAL next_PC            : word
-"
+st "SIGNAL next_PC            : word"
 )
 )
 *79 (Net
@@ -2150,8 +2127,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,33100,10500,34000"
-st "SIGNAL dec_imm_type       : imm_type
-"
+st "SIGNAL dec_imm_type       : imm_type"
 )
 )
 *80 (Blk
@@ -2250,8 +2226,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,56500,8500,57400"
-st "SIGNAL ex_rs2             : word
-"
+st "SIGNAL ex_rs2             : word"
 )
 )
 *85 (PortIoIn
@@ -2523,8 +2498,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,65500,8500,66400"
-st "SIGNAL me_me_out          : word
-"
+st "SIGNAL me_me_out          : word"
 )
 )
 *96 (Net
@@ -2542,8 +2516,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,34900,10500,35800"
-st "SIGNAL dec_mem_mode       : mem_mode
-"
+st "SIGNAL dec_mem_mode       : mem_mode"
 )
 )
 *97 (Net
@@ -2561,8 +2534,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,50200,10500,51100"
-st "SIGNAL ex_mem_mode        : mem_mode
-"
+st "SIGNAL ex_mem_mode        : mem_mode"
 )
 )
 *98 (Net
@@ -2580,8 +2552,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,66400,10500,67300"
-st "SIGNAL me_mem_mode        : mem_mode
-"
+st "SIGNAL me_mem_mode        : mem_mode"
 )
 )
 *99 (Blk
@@ -2761,8 +2732,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,27700,8500,28600"
-st "SIGNAL alu_in_1           : word
-"
+st "SIGNAL alu_in_1           : word"
 )
 )
 *108 (Net
@@ -2780,8 +2750,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,57400,8500,58300"
-st "SIGNAL ex_rs2_fwd         : word
-"
+st "SIGNAL ex_rs2_fwd         : word"
 )
 )
 *109 (Net
@@ -2799,8 +2768,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,63700,8500,64600"
-st "SIGNAL me_alu_out         : word
-"
+st "SIGNAL me_alu_out         : word"
 )
 )
 *110 (Blk
@@ -2899,8 +2867,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,67300,8500,68200"
-st "SIGNAL me_store_data_fwd  : word
-"
+st "SIGNAL me_store_data_fwd  : word"
 )
 )
 *115 (Net
@@ -2918,8 +2885,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,52900,10000,53800"
-st "SIGNAL ex_mux_fw_rs1_sel  : fwd_sel
-"
+st "SIGNAL ex_mux_fw_rs1_sel  : fwd_sel"
 )
 )
 *116 (Net
@@ -2937,8 +2903,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,53800,10000,54700"
-st "SIGNAL ex_mux_fw_rs2_sel  : fwd_sel
-"
+st "SIGNAL ex_mux_fw_rs2_sel  : fwd_sel"
 )
 )
 *117 (Net
@@ -2956,8 +2921,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,52000,10000,52900"
-st "SIGNAL ex_mux_fw_mem_sel  : fwd_sel
-"
+st "SIGNAL ex_mux_fw_mem_sel  : fwd_sel"
 )
 )
 *118 (Net
@@ -2975,8 +2939,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,37600,10000,38500"
-st "SIGNAL dec_mux_fw_rs1_sel : fwd_sel
-"
+st "SIGNAL dec_mux_fw_rs1_sel : fwd_sel"
 )
 )
 *119 (Net
@@ -2994,8 +2957,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,38500,10000,39400"
-st "SIGNAL dec_mux_fw_rs2_sel : fwd_sel
-"
+st "SIGNAL dec_mux_fw_rs2_sel : fwd_sel"
 )
 )
 *120 (Net
@@ -3013,8 +2975,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,36700,10000,37600"
-st "SIGNAL dec_mux_fw_mem_sel : fwd_sel
-"
+st "SIGNAL dec_mux_fw_mem_sel : fwd_sel"
 )
 )
 *121 (Net
@@ -3032,8 +2993,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,64600,8500,65500"
-st "SIGNAL me_load_data       : word
-"
+st "SIGNAL me_load_data       : word"
 )
 )
 *122 (Net
@@ -3051,8 +3011,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,35800,11000,36700"
-st "SIGNAL dec_mux_alu_sel    : std_logic
-"
+st "SIGNAL dec_mux_alu_sel    : std_logic"
 )
 )
 *123 (Net
@@ -3070,8 +3029,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,74500,11000,75400"
-st "SIGNAL stall              : std_logic
-"
+st "SIGNAL stall              : std_logic"
 )
 )
 *124 (Blk
@@ -3170,8 +3128,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,60100,8500,61000"
-st "SIGNAL if_im_out          : word
-"
+st "SIGNAL if_im_out          : word"
 )
 )
 *129 (Blk
@@ -3351,8 +3308,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,54700,8500,55600"
-st "SIGNAL ex_next_PC         : word
-"
+st "SIGNAL ex_next_PC         : word"
 )
 )
 *138 (Net
@@ -3370,8 +3326,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,58300,8500,59200"
-st "SIGNAL ex_sbta            : word
-"
+st "SIGNAL ex_sbta            : word"
 )
 )
 *139 (Net
@@ -3389,8 +3344,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,49300,8500,50200"
-st "SIGNAL ex_jmp_target      : word
-"
+st "SIGNAL ex_jmp_target      : word"
 )
 )
 *140 (Net
@@ -3408,8 +3362,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,47500,11000,48400"
-st "SIGNAL ex_dbta_valid      : std_logic
-"
+st "SIGNAL ex_dbta_valid      : std_logic"
 )
 )
 *141 (Net
@@ -3427,8 +3380,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,39400,8500,40300"
-st "SIGNAL dec_next_PC        : word
-"
+st "SIGNAL dec_next_PC        : word"
 )
 )
 *142 (Net
@@ -3446,8 +3398,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,34000,8500,34900"
-st "SIGNAL dec_jmp_target     : word
-"
+st "SIGNAL dec_jmp_target     : word"
 )
 )
 *143 (Blk
@@ -3546,8 +3497,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,70900,8500,71800"
-st "SIGNAL pc                 : word
-"
+st "SIGNAL pc                 : word"
 )
 )
 *148 (Net
@@ -3565,8 +3515,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,42100,11000,43000"
-st "SIGNAL dec_sbta_valid     : std_logic
-"
+st "SIGNAL dec_sbta_valid     : std_logic"
 )
 )
 *149 (Net
@@ -3584,8 +3533,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,45700,11000,46600"
-st "SIGNAL ex_dbpu_addr_sel   : std_logic
-"
+st "SIGNAL ex_dbpu_addr_sel   : std_logic"
 )
 )
 *150 (Net
@@ -3603,8 +3551,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,46600,11000,47500"
-st "SIGNAL ex_dbpu_mode       : std_logic
-"
+st "SIGNAL ex_dbpu_mode       : std_logic"
 )
 )
 *151 (Net
@@ -3622,8 +3569,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,71800,11000,72700"
-st "SIGNAL sbpu_mode          : std_logic
-"
+st "SIGNAL sbpu_mode          : std_logic"
 )
 )
 *152 (Net
@@ -3641,8 +3587,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,30400,11000,31300"
-st "SIGNAL dec_dbpu_addr_sel  : std_logic
-"
+st "SIGNAL dec_dbpu_addr_sel  : std_logic"
 )
 )
 *153 (Net
@@ -3660,8 +3605,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,31300,11000,32200"
-st "SIGNAL dec_dbpu_mode      : std_logic
-"
+st "SIGNAL dec_dbpu_mode      : std_logic"
 )
 )
 *154 (Blk
@@ -3760,8 +3704,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,62800,8500,63700"
-st "SIGNAL io_data_out        : word
-"
+st "SIGNAL io_data_out        : word"
 )
 )
 *159 (Net
@@ -3779,8 +3722,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,20500,9500,21400"
-st "hex_disp0          : hex_disp_type
-"
+st "hex_disp0          : hex_disp_type"
 )
 )
 *160 (Net
@@ -3798,8 +3740,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,21400,9500,22300"
-st "hex_disp1          : hex_disp_type
-"
+st "hex_disp1          : hex_disp_type"
 )
 )
 *161 (Net
@@ -3817,8 +3758,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,22300,9500,23200"
-st "hex_disp2          : hex_disp_type
-"
+st "hex_disp2          : hex_disp_type"
 )
 )
 *162 (Net
@@ -3836,8 +3776,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,23200,9500,24100"
-st "hex_disp3          : hex_disp_type
-"
+st "hex_disp3          : hex_disp_type"
 )
 )
 *163 (Net
@@ -3855,8 +3794,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,26800,11000,27700"
-st "SIGNAL addr_reserved      : std_logic
-"
+st "SIGNAL addr_reserved      : std_logic"
 )
 )
 *164 (PortIoOut
@@ -4054,8 +3992,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,25000,9500,25900"
-st "leds_red           : leds_red_type
-"
+st "leds_red           : leds_red_type"
 )
 )
 *169 (Net
@@ -4073,8 +4010,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,24100,10500,25000"
-st "leds_green         : leds_green_type
-"
+st "leds_green         : leds_green_type"
 )
 )
 *170 (Net
@@ -4092,8 +4028,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "-8000,18700,7500,19600"
-st "keys               : keys_type
-"
+st "keys               : keys_type"
 )
 )
 *171 (PortIoIn
@@ -9239,11 +9174,11 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "-4,3,2556,1413"
-viewArea "-17067,2455,130164,82276"
+viewArea "170400,2500,310620,78520"
 cachedDiagramExtent "-10000,-2400,236400,78000"
 hasePageBreakOrigin 1
 pageBreakOrigin "-69000,-51000"
-lastUid 10492,0
+lastUid 10978,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
