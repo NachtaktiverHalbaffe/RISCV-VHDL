@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f MIXED_VERSIONS
 !s11e vcom 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
@@ -12,12 +13,12 @@ dC:/intelFPGA_lite/20.1
 Ealu
 Z0 w1657268697
 Z1 DPx9 riscv_lib 3 isa 0 22 3zbSR1eDV`6H=aiTW6Y1E2
-Z2 DPx9 riscv_lib 10 data_types 0 22 1Q7omU8Ad@jRlGR_@j9J02
-Z3 DPx9 riscv_lib 9 constants 0 22 m_QmB34AVNJBS`49T_2Wf3
+Z2 DPx9 riscv_lib 10 data_types 0 22 `Fg`7RMn6<2Y<912=1PB_0
+Z3 DPx9 riscv_lib 9 constants 0 22 ehkCE6g9ilm6M:UOVzUH31
 Z4 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 79
+!i122 208
 Z7 dC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/tizian_ModelSim
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/alu_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/alu_entity.vhd
@@ -27,16 +28,16 @@ VNAXRA[E=O7NV`HcBBKm`21
 !s100 aIXF;NHf1[O1bV:Xg;meg3
 Z9 OV;C;2020.1;71
 33
-Z10 !s110 1657288803
+Z10 !s110 1657609783
 !i10b 1
-Z11 !s108 1657288802.000000
+Z11 !s108 1657609783.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/alu_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/alu_entity.vhd|
 !i113 1
 Z12 o-work RISCV_lib -2008 -explicit
 Z13 tExplicit 1 CvgOpt 0
 Abehave
-w1657288455
+w1657375427
 R1
 R2
 R3
@@ -44,42 +45,85 @@ R4
 R5
 R6
 DEx4 work 3 alu 0 22 NAXRA[E=O7NV`HcBBKm`21
-!i122 89
-8C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\ALU_behave.vhd
-FC:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\ALU_behave.vhd
+!i122 218
+8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd
+FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd
 l11
 L10 171
-V1hQ6niKR9[<g<^4RQ>:QN1
-!s100 E2<V8LN?cGMW;om1i;BSm3
+V]6U3gWcC;X6hPTzL8LkIP3
+!s100 b?naDO_g_[P3^cMk1e:_10
 R9
 33
-Z14 !s110 1657288807
+Z14 !s110 1657609786
 !i10b 1
-Z15 !s108 1657288807.000000
-!s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\ALU_behave.vhd|
-!s107 C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\ALU_behave.vhd|
+Z15 !s108 1657609786.000000
+!s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd|
+!s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd|
 !i113 1
 R12
 R13
+Ebutton_input
+Z16 w1657375989
+R4
+R5
+R6
+!i122 218
+R7
+Z17 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd
+Z18 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd
+l0
+L7 1
+Vde2g^aG0?Ll[la;niLMnT1
+!s100 i>kamdCc?SJh8@V?;iJAG1
+R9
+33
+Z19 !s110 1657609788
+!i10b 1
+Z20 !s108 1657609788.000000
+Z21 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd|
+Z22 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd|
+!i113 1
+Z23 o-work work -2008 -explicit
+R13
+Abehav
+R4
+R5
+R6
+DEx4 work 12 button_input 0 22 de2g^aG0?Ll[la;niLMnT1
+!i122 218
+l18
+L16 16
+VhLNazeP^KETMz3lBN7_mQ1
+!s100 GnQY8j<1bcA:@AAAbWo^A0
+R9
+33
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R23
+R13
 Eclk_res_gen
-Z16 w1657269019
+Z24 w1657269019
 R2
 R3
 R5
 R6
-!i122 80
+!i122 209
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_entity.vhd
 l0
-Z17 L15 1
+Z25 L15 1
 VnAkNhSMiF4j]m41?5eFOK0
 !s100 eKKWAS0D7e<6BACV0ZZ]P2
 R9
 33
 R10
 !i10b 1
-Z18 !s108 1657288803.000000
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_entity.vhd|
 !i113 1
@@ -91,7 +135,7 @@ R3
 R5
 R6
 DEx4 work 11 clk_res_gen 0 22 nAkNhSMiF4j]m41?5eFOK0
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/clk_res_gen_behav.vhd
 l11
@@ -111,20 +155,20 @@ R13
 Pconstants
 R5
 R6
-!i122 60
-w1657288398
+!i122 189
+Z26 w1657534156
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/constants_pkg.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/constants_pkg.vhd
 l0
-Z19 L13 1
-Vm_QmB34AVNJBS`49T_2Wf3
-!s100 <;6Bb:KDhko_>AWl1_6zP1
+Z27 L13 1
+VehkCE6g9ilm6M:UOVzUH31
+!s100 YUMSRmY4bjhj:HPnbeHHN3
 R9
 33
-Z20 !s110 1657288800
+Z28 !s110 1657609780
 !i10b 1
-Z21 !s108 1657288800.000000
+Z29 !s108 1657609780.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/constants_pkg.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/constants_pkg.vhd|
 !i113 1
@@ -134,34 +178,34 @@ Pdata_types
 R3
 R5
 R6
-!i122 61
-Z22 w1657268708
+!i122 190
+R26
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd
 l0
-R17
-V1Q7omU8Ad@jRlGR_@j9J02
-!s100 jz0;z=KgCXdLZNV4=?ESz3
+R25
+V`Fg`7RMn6<2Y<912=1PB_0
+!s100 Sz?MOK;YPLUcUQN>_DUl10
 R9
 33
-R20
+R28
 !i10b 1
-R21
+R29
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd|
 !i113 1
 R12
 R13
 Edbpu
-R22
+w1657268708
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 81
+!i122 210
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dbpu_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dbpu_entity.vhd
@@ -173,14 +217,14 @@ R9
 33
 R10
 !i10b 1
-R18
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dbpu_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dbpu_entity.vhd|
 !i113 1
 R12
 R13
 Abehav
-R16
+R24
 R1
 R2
 R3
@@ -188,7 +232,7 @@ R4
 R5
 R6
 DEx4 work 4 dbpu 0 22 >E4z2f8W;gz^X0>0W:@;53
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/DBPU_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/DBPU_behav.vhd
 l11
@@ -206,14 +250,14 @@ R15
 R12
 R13
 Edec_reg
-R16
+R24
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 82
+!i122 211
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd
@@ -225,7 +269,7 @@ R9
 33
 R10
 !i10b 1
-R18
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd|
 !i113 1
@@ -239,7 +283,7 @@ R4
 DEx4 work 7 dec_reg 0 22 Q<N3=]UR[k@5NPFbbad]G0
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_behave.vhd
 l16
@@ -257,14 +301,14 @@ R15
 R12
 R13
 Edecoder
-R16
+R24
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 83
+!i122 212
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_entity.vhd
@@ -276,7 +320,7 @@ R9
 33
 R10
 !i10b 1
-R18
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_entity.vhd|
 !i113 1
@@ -290,7 +334,7 @@ R4
 R5
 R6
 DEx4 work 7 decoder 0 22 ]9e0Y5eH3nm2O^Wc>gMb[3
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_behave.vhd
 l17
@@ -315,7 +359,7 @@ R3
 R4
 R5
 R6
-!i122 84
+!i122 213
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_entity.vhd
@@ -327,7 +371,7 @@ R9
 33
 R10
 !i10b 1
-R18
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_entity.vhd|
 !i113 1
@@ -341,7 +385,7 @@ R4
 R5
 R6
 DEx4 work 6 ex_reg 0 22 IWG9A546Oe:0n;ifX[^eS0
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_behave.vhd
 l11
@@ -350,9 +394,9 @@ V>[k2JKkHDLOa`hkfe2Lz32
 !s100 MkndHV^?i]9`Y_fZ_^NDO3
 R9
 33
-R14
+Z30 !s110 1657609787
 !i10b 1
-R15
+Z31 !s108 1657609787.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ex_reg_behave.vhd|
 !i113 1
@@ -366,7 +410,7 @@ R3
 R4
 R5
 R6
-!i122 85
+!i122 214
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_entity.vhd
@@ -376,9 +420,9 @@ VKoo:fbEEz7Gl:Sm9h32ce1
 !s100 LcPdVmdz9NYcbE=S5IH@P0
 R9
 33
-Z23 !s110 1657288804
+R10
 !i10b 1
-R18
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_entity.vhd|
 !i113 1
@@ -392,7 +436,7 @@ R4
 DEx4 work 6 if_reg 0 22 Koo:fbEEz7Gl:Sm9h32ce1
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_behav.vhd
 l14
@@ -401,9 +445,9 @@ V5I38Z;>^X56MKU<43PhL`3
 !s100 H]jm8b7A@84N58jIk?PbK0
 R9
 33
-Z24 !s110 1657288808
+R30
 !i10b 1
-R15
+R31
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/if_reg_behav.vhd|
 !i113 1
@@ -417,7 +461,7 @@ R3
 R4
 R5
 R6
-!i122 86
+!i122 215
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/im_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/im_entity.vhd
@@ -427,16 +471,16 @@ VQWRjNCDTOOcc3aIfKIfY;1
 !s100 1S5BN6hi]>K2RAF9FgiE32
 R9
 33
-R23
+Z32 !s110 1657609784
 !i10b 1
-Z25 !s108 1657288804.000000
+R11
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/im_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/im_entity.vhd|
 !i113 1
 R12
 R13
 Abehav
-w1657274579
+w1657452849
 R1
 R2
 R3
@@ -444,18 +488,18 @@ R4
 DEx4 work 2 im 0 22 QWRjNCDTOOcc3aIfKIfY;1
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd
 l17
-L15 153
-VVfoeKiA6Cff2]SUj8?OgK0
-!s100 eXGo487O>QMQz?1heaQ]e3
+L15 157
+VGzYK2k1`oL[oO9e;]TD[l0
+!s100 _OC0D5=PnT:JaYRDY94ZZ3
 R9
 33
-R24
+R30
 !i10b 1
-Z26 !s108 1657288808.000000
+R31
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd|
 !i113 1
@@ -469,7 +513,7 @@ R3
 R4
 R5
 R6
-!i122 87
+!i122 216
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/imm_gen_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/imm_gen_entity.vhd
@@ -479,9 +523,9 @@ VDo_Z4h4ODS61J1mZ?:YU13
 !s100 5LIVia]nzlVoO5EE`=o8A0
 R9
 33
-R23
+R32
 !i10b 1
-R25
+Z33 !s108 1657609784.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/imm_gen_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/imm_gen_entity.vhd|
 !i113 1
@@ -495,7 +539,7 @@ R4
 R5
 R6
 DEx4 work 7 imm_gen 0 22 Do_Z4h4ODS61J1mZ?:YU13
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd
 l11
@@ -504,61 +548,62 @@ V<QYP=DQaT?7AbP<@7T88c1
 !s100 UB]F;`[HTh3QjY2ON0=VT3
 R9
 33
-R24
+R30
 !i10b 1
-R26
+R31
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd|
 !i113 1
 R12
 R13
 Eio_controller
-w1657289391
+w1657375852
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 90
+!i122 217
 R7
-8C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\io_controller_entity.vhd
-FC:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\io_controller_entity.vhd
+8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd
+FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd
 l0
 R8
-VkEeF8BUDN;3LLf[LV<CkI2
-!s100 NHXa^4Hc6H7`AfJOaka]41
+V:k7el]9la1QFjh]=@ShJl0
+!s100 FfoR8S;eFn^WIdfBNWcW;2
 R9
 33
-Z27 !s110 1657289398
+R32
 !i10b 1
-Z28 !s108 1657289398.000000
-!s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\io_controller_entity.vhd|
-!s107 C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\io_controller_entity.vhd|
+R33
+!s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd|
+!s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd|
 !i113 1
 R12
 R13
 Abehave
-w1657288775
+w1657377310
+DEx9 riscv_lib 12 button_input 0 22 ]S5kl4ma`z?`3aUT1;]=40
 R1
 R2
 R3
 R4
-DEx4 work 13 io_controller 0 22 kEeF8BUDN;3LLf[LV<CkI2
+DEx4 work 13 io_controller 0 22 :k7el]9la1QFjh]=@ShJl0
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd
-l86
-L15 155
-VO0SoXMa]]BbRCY0D;``:d1
-!s100 ^WVonE9D2a4OX_YagD8<71
+l132
+L15 217
+V^c3X1Wd99Uc1IX4b9Gg[l0
+!s100 lNDjgNSRjfBGZZQN?^`hQ0
 R9
 33
-R24
+R30
 !i10b 1
-R26
+R31
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd|
 !i113 1
@@ -567,7 +612,7 @@ R13
 Pisa
 R5
 R6
-!i122 62
+!i122 191
 R0
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ISA_pkg.vhd
@@ -578,9 +623,9 @@ V3zbSR1eDV`6H=aiTW6Y1E2
 !s100 6_SA]:ZN8Yz60Z`[><=Zz3
 R9
 33
-R20
+Z34 !s110 1657609781
 !i10b 1
-R21
+R29
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ISA_pkg.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ISA_pkg.vhd|
 !i113 1
@@ -594,7 +639,7 @@ R3
 R4
 R5
 R6
-!i122 63
+!i122 192
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd
@@ -604,9 +649,9 @@ VT:e8H=@[e^hYKGVf]UGP10
 !s100 =]Vn@TU:I0IFP9?SX:WQB2
 R9
 33
-R20
+R34
 !i10b 1
-R21
+Z35 !s108 1657609781.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd|
 !i113 1
@@ -620,18 +665,18 @@ R4
 DEx4 work 6 me_reg 0 22 T:e8H=@[e^hYKGVf]UGP10
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd
 l16
-Z29 L15 15
+Z36 L15 15
 VQefE^lKk6FLK]7[UKHGJd0
 !s100 <VAQ_LHJ_RJTNSeUD05iN2
 R9
 33
-R23
+R32
 !i10b 1
-R25
+R33
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd|
 !i113 1
@@ -645,7 +690,7 @@ R3
 R4
 R5
 R6
-!i122 64
+!i122 193
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd
@@ -655,13 +700,41 @@ VIT3QdSC>90;d0UBz?L8931
 !s100 I`NJ[3cI]V=8K<KR@BU3V2
 R9
 33
-R20
+R34
 !i10b 1
-R21
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd|
 !i113 1
 R12
+R13
+Aip_ram
+w1657609879
+Z37 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
+DEx9 riscv_lib 3 ram 0 22 C^41c3gL<KGQS_3cc4EBJ0
+R1
+R2
+R3
+R4
+Z38 DEx4 work 6 memory 0 22 IT3QdSC>90;d0UBz?L8931
+R5
+R6
+!i122 220
+8C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\Memory_IP_ram.vhd
+FC:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\Memory_IP_ram.vhd
+l40
+L18 63
+VjXjJ=4=Oo1`7EU<4elEZW0
+!s100 Gb?PXULD_^DNVK;gz;dF43
+R9
+33
+!s110 1657609884
+!i10b 1
+!s108 1657609884.000000
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\Memory_IP_ram.vhd|
+!s107 C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\Memory_IP_ram.vhd|
+!i113 1
+R23
 R13
 Abehave
 w1657269481
@@ -669,10 +742,10 @@ R1
 R2
 R3
 R4
-DEx4 work 6 memory 0 22 IT3QdSC>90;d0UBz?L8931
+R38
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_behav.vhd
 l18
@@ -681,9 +754,9 @@ VolcB0fYLiW6CZWO:PA;OX3
 !s100 KR^z]O;EPU_lZWeLT=dWB2
 R9
 33
-Z30 !s110 1657288805
+R32
 !i10b 1
-R25
+R33
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_behav.vhd|
 !i113 1
@@ -697,7 +770,7 @@ R3
 R4
 R5
 R6
-!i122 65
+!i122 194
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd
@@ -707,9 +780,9 @@ VI1Ih80lNfBa7b=Cb?kH6V2
 !s100 LYCSi>0ga^Y[O9Um57oNa1
 R9
 33
-Z31 !s110 1657288801
+R34
 !i10b 1
-R21
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd|
 !i113 1
@@ -723,18 +796,18 @@ R4
 R5
 R6
 DEx4 work 7 mux_alu 0 22 I1Ih80lNfBa7b=Cb?kH6V2
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_behave.vhd
 l11
-Z32 L10 11
+Z39 L10 11
 VUXMPB2[aUT9^z?A6KOZ=n2
 !s100 5WViAkcU9STIn:gZlJQnl0
 R9
 33
-R30
+R32
 !i10b 1
-Z33 !s108 1657288805.000000
+R33
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_behave.vhd|
 !i113 1
@@ -748,7 +821,7 @@ R3
 R4
 R5
 R6
-!i122 66
+!i122 195
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd
@@ -758,9 +831,9 @@ VU:K;^M;`SLd;:k9RndV0g1
 !s100 1NQk4BUn[8cRRQOlHjRl50
 R9
 33
-R31
+R34
 !i10b 1
-Z34 !s108 1657288801.000000
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd|
 !i113 1
@@ -774,7 +847,7 @@ R4
 R5
 R6
 DEx4 work 7 mux_bpu 0 22 U:K;^M;`SLd;:k9RndV0g1
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd
 l12
@@ -783,7 +856,7 @@ VXb[EjBX?cIb4U4CP`V8hG1
 !s100 zcA?eUfnFMR;lKcjFZ7@]2
 R9
 33
-R30
+R32
 !i10b 1
 R33
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd|
@@ -799,7 +872,7 @@ R3
 R4
 R5
 R6
-!i122 67
+!i122 196
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_entity.vhd
@@ -809,9 +882,9 @@ VS37@IP__W0COnnQhLz4WM0
 !s100 IbL4C;[MTVPhNF:V?oj2U1
 R9
 33
-R31
-!i10b 1
 R34
+!i10b 1
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_entity.vhd|
 !i113 1
@@ -825,7 +898,7 @@ R4
 R5
 R6
 DEx4 work 10 mux_bpu_ra 0 22 S37@IP__W0COnnQhLz4WM0
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_behav.vhd
 l11
@@ -834,7 +907,7 @@ Vz[JaITA[E5M`PO?1PUh<L2
 !s100 9RCPoBVJX@HdNVRA9K6:l1
 R9
 33
-R30
+R32
 !i10b 1
 R33
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_ra_behav.vhd|
@@ -850,7 +923,7 @@ R3
 R4
 R5
 R6
-!i122 68
+!i122 197
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_entity.vhd
@@ -860,9 +933,9 @@ V@`M[9JSEM^bZ<6b`C8hEB2
 !s100 [Vj=SK5W@_c=^ocSm>WMe1
 R9
 33
-R31
-!i10b 1
 R34
+!i10b 1
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_entity.vhd|
 !i113 1
@@ -876,7 +949,7 @@ R4
 R5
 R6
 DEx4 work 13 mux_fw_memory 0 22 @`M[9JSEM^bZ<6b`C8hEB2
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_behav.vhd
 l11
@@ -885,9 +958,9 @@ V87Ea5IFO8InN?2[giJ]=Q0
 !s100 1O4:WC5kAcB<c[zc]BHmV2
 R9
 33
-R30
+Z40 !s110 1657609785
 !i10b 1
-R33
+Z41 !s108 1657609785.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_memory_behav.vhd|
 !i113 1
@@ -901,7 +974,7 @@ R3
 R4
 R5
 R6
-!i122 69
+!i122 198
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd
@@ -911,9 +984,9 @@ V@QVc:B?m;WGM`LW<V1ZM22
 !s100 e]P1=^^5R2];`AW3K`^F00
 R9
 33
-R31
-!i10b 1
 R34
+!i10b 1
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd|
 !i113 1
@@ -927,18 +1000,18 @@ R4
 R5
 R6
 DEx4 work 10 mux_fw_rs1 0 22 @QVc:B?m;WGM`LW<V1ZM22
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_behav.vhd
 l11
-R32
+R39
 VMOFSTORiDbnK;GWjQ_fd30
 !s100 HUPdB7He`1[QaQ:j>;V==0
 R9
 33
-R30
+R40
 !i10b 1
-R33
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_behav.vhd|
 !i113 1
@@ -952,7 +1025,7 @@ R3
 R4
 R5
 R6
-!i122 70
+!i122 199
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd
@@ -962,9 +1035,9 @@ VFlA]3^2SUo_eeigKc`>0[0
 !s100 LG9zPVQ_AjUib<RP_@dV;2
 R9
 33
-R31
+Z42 !s110 1657609782
 !i10b 1
-R34
+R35
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd|
 !i113 1
@@ -978,7 +1051,7 @@ R4
 R5
 R6
 DEx4 work 10 mux_fw_rs2 0 22 FlA]3^2SUo_eeigKc`>0[0
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_behav.vhd
 l11
@@ -987,23 +1060,23 @@ V60VFPKaz4T9`W=NO>Z1Bm1
 !s100 CG:C??l6=5zHzPfOU9Bk40
 R9
 33
-R30
+R40
 !i10b 1
-R33
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_behav.vhd|
 !i113 1
 R12
 R13
 Emux_memory
-R16
+R24
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 71
+!i122 200
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_entity.vhd
@@ -1013,9 +1086,9 @@ VQB`[^NT2WQ9eM<V`jkAI]3
 !s100 87zdDkQk^GFKlW`>?FFeF1
 R9
 33
-R31
+R42
 !i10b 1
-R34
+Z43 !s108 1657609782.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_entity.vhd|
 !i113 1
@@ -1029,7 +1102,7 @@ R4
 R5
 R6
 DEx4 work 10 mux_memory 0 22 QB`[^NT2WQ9eM<V`jkAI]3
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd
 l11
@@ -1038,9 +1111,9 @@ Vjb:zEYbmKY?d<M:TdQlLN1
 !s100 0zej@=WTcUclXcWj]X4l>2
 R9
 33
-Z35 !s110 1657288806
+R40
 !i10b 1
-Z36 !s108 1657288806.000000
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd|
 !i113 1
@@ -1054,7 +1127,7 @@ R3
 R4
 R5
 R6
-!i122 72
+!i122 201
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd
@@ -1064,9 +1137,9 @@ V7<G;31FOZoLL:F4`RDK?51
 !s100 JdDNfJ_aedhB5C5SojccJ3
 R9
 33
-Z37 !s110 1657288802
+R42
 !i10b 1
-R34
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd|
 !i113 1
@@ -1080,7 +1153,7 @@ DEx4 work 7 mux_nop 0 22 7<G;31FOZoLL:F4`RDK?51
 R3
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_behav.vhd
 l16
@@ -1089,23 +1162,23 @@ VKL9@;N`TSm:a3Q@@T<W8?3
 !s100 EiZ<3BOhG>fE8IQ5`YR[<1
 R9
 33
-R35
+R40
 !i10b 1
-R36
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_behav.vhd|
 !i113 1
 R12
 R13
 Epc_inc
-Z38 w1657268698
+Z44 w1657268698
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 73
+!i122 202
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_entity.vhd
@@ -1115,9 +1188,9 @@ VokR`D@<S`MWA_SKCPVn7j0
 !s100 NJQBHUgDL54iB13WIf[;83
 R9
 33
-R37
+R42
 !i10b 1
-R11
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_entity.vhd|
 !i113 1
@@ -1131,7 +1204,7 @@ R4
 DEx4 work 6 pc_inc 0 22 okR`D@<S`MWA_SKCPVn7j0
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd
 l14
@@ -1140,23 +1213,23 @@ VgnFVgZ[=W1T[UgX<GjY@N2
 !s100 3]g[mmc^N:VFGj0DVKVF12
 R9
 33
-R35
+R40
 !i10b 1
-R36
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd|
 !i113 1
 R12
 R13
 Epc_reg
-R38
+R44
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 74
+!i122 203
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd
@@ -1166,9 +1239,9 @@ VO_E8_oNCcT[[jc^`?5V3o1
 !s100 58Z:1i5hi1a3;:1o<]NmL1
 R9
 33
-R37
+R42
 !i10b 1
-R11
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd|
 !i113 1
@@ -1182,32 +1255,75 @@ R4
 DEx4 work 6 pc_reg 0 22 O_E8_oNCcT[[jc^`?5V3o1
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_behave.vhd
 l16
-R29
+R36
 V[G]O5zHC`<K=KiOJXHK^m1
 !s100 YP92N<do]9Po4F?=djJ4Z1
 R9
 33
-R35
+R40
 !i10b 1
-R36
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_behave.vhd|
 !i113 1
 R12
 R13
+Eram
+Z45 w1657542895
+R37
+R5
+R6
+!i122 219
+R7
+Z46 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd
+Z47 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd
+l0
+L43 1
+VC^41c3gL<KGQS_3cc4EBJ0
+!s100 Z6BOgi0L6MK8>5UHeEi3o1
+R9
+33
+R19
+!i10b 1
+R20
+Z48 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd|
+Z49 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd|
+!i113 1
+R23
+R13
+Asyn
+R37
+R5
+R6
+DEx4 work 3 ram 0 22 C^41c3gL<KGQS_3cc4EBJ0
+!i122 219
+l59
+L55 35
+V1Q_f=iRXkJh:ONHc@PQTH1
+!s100 K3JnIHjnDD_TYCPH?cd0b2
+R9
+33
+R19
+!i10b 1
+R20
+R48
+R49
+!i113 1
+R23
+R13
 Erf
-R38
+R44
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 75
+!i122 204
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/rf_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/rf_entity.vhd
@@ -1217,9 +1333,9 @@ VEb8R`CV8zc3n?=Mi=3@Xf0
 !s100 ^T=lX4:G3g1V@N_6`_bj>2
 R9
 33
-R37
+R42
 !i10b 1
-R11
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/rf_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/rf_entity.vhd|
 !i113 1
@@ -1233,7 +1349,7 @@ R4
 DEx4 work 2 rf 0 22 Eb8R`CV8zc3n?=Mi=3@Xf0
 R5
 R6
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd
 l16
@@ -1242,39 +1358,40 @@ VBYW0aHM3YjJR<EaaS>MKD0
 !s100 YdP^X1BVbW>MCGH9Z3S]g3
 R9
 33
-R35
+R14
 !i10b 1
-R36
+R41
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd|
 !i113 1
 R12
 R13
 Eriscv
-Z39 w1657289393
+w1657377407
 R2
 R3
 R5
 R6
-!i122 89
+!i122 205
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd
 l0
-R17
-VL<hL^PbkNM@m:ZXRQ9FW43
-!s100 6E63JSCcEJ6b5ojcSPo830
+R25
+Vin3dTZXfKEXllh1]RiU[c3
+!s100 k9Jm^oReQb`E?j6Sm3A?E0
 R9
 33
-R27
+R42
 !i10b 1
-R28
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd|
 !i113 1
 R12
 R13
 Astruct
+w1657545577
 DEx9 riscv_lib 6 pc_reg 0 22 O_E8_oNCcT[[jc^`?5V3o1
 DEx9 riscv_lib 6 pc_inc 0 22 okR`D@<S`MWA_SKCPVn7j0
 DEx9 riscv_lib 7 mux_nop 0 22 7<G;31FOZoLL:F4`RDK?51
@@ -1285,7 +1402,7 @@ DEx9 riscv_lib 13 mux_fw_memory 0 22 @`M[9JSEM^bZ<6b`C8hEB2
 DEx9 riscv_lib 7 mux_bpu 0 22 U:K;^M;`SLd;:k9RndV0g1
 DEx9 riscv_lib 7 mux_alu 0 22 I1Ih80lNfBa7b=Cb?kH6V2
 DEx9 riscv_lib 6 me_reg 0 22 T:e8H=@[e^hYKGVf]UGP10
-DEx9 riscv_lib 13 io_controller 0 22 kEeF8BUDN;3LLf[LV<CkI2
+DEx9 riscv_lib 13 io_controller 0 22 :k7el]9la1QFjh]=@ShJl0
 DEx9 riscv_lib 2 im 0 22 QWRjNCDTOOcc3aIfKIfY;1
 DEx9 riscv_lib 6 if_reg 0 22 Koo:fbEEz7Gl:Sm9h32ce1
 DEx9 riscv_lib 6 ex_reg 0 22 IWG9A546Oe:0n;ifX[^eS0
@@ -1297,61 +1414,61 @@ DEx9 riscv_lib 6 memory 0 22 IT3QdSC>90;d0UBz?L8931
 DEx9 riscv_lib 7 imm_gen 0 22 Do_Z4h4ODS61J1mZ?:YU13
 DEx9 riscv_lib 4 dbpu 0 22 >E4z2f8W;gz^X0>0W:@;53
 DEx9 riscv_lib 3 alu 0 22 NAXRA[E=O7NV`HcBBKm`21
-DEx4 work 5 riscv 0 22 L<hL^PbkNM@m:ZXRQ9FW43
+DEx4 work 5 riscv 0 22 in3dTZXfKEXllh1]RiU[c3
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 91
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd
-l367
-L19 583
-V0^Kz14fB`]lbFZ@?9<<dn3
-!s100 m`a;56Y?fT^SjRKIgj@:W0
+l368
+L19 585
+V>?iPT?^Yai:M2?TDJ>Nd[1
+!s100 0^Cnh=FQ_NgHo;fl?>GFY3
 R9
 33
-R27
+R30
 !i10b 1
-R28
+R31
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd|
 !i113 1
 R12
 R13
 Eriscv_tb
-R38
+R44
 R4
 R5
 R6
-!i122 77
+!i122 206
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_entity.vhd
 l0
-R19
+R27
 V:g>J@@KJmR[RQk^?GZP742
 !s100 g>1aoLJET7U32<7lSk1X40
 R9
 33
-R37
+R42
 !i10b 1
-R11
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_entity.vhd|
 !i113 1
 R12
 R13
 Astruct
-R16
+R24
 DEx9 riscv_lib 5 riscv 0 22 Kj1i6iPiDKfW;f[4ghFYG1
 DEx9 riscv_lib 11 clk_res_gen 0 22 nAkNhSMiF4j]m41?5eFOK0
 R4
 DEx4 work 8 riscv_tb 0 22 :g>J@@KJmR[RQk^?GZP742
-R2
-R3
+DPx9 riscv_lib 10 data_types 0 22 1Q7omU8Ad@jRlGR_@j9J02
+DPx9 riscv_lib 9 constants 0 22 m_QmB34AVNJBS`49T_2Wf3
 R5
 R6
 !i122 89
@@ -1363,23 +1480,23 @@ VLQNi2MHcF[IBnG1TLHPCL0
 !s100 YPYa6D5M>[kFKGXL[0JO:1
 R9
 33
-R35
+!s110 1657288806
 !i10b 1
-R36
+!s108 1657288806.000000
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd|
 !i113 1
 R12
 R13
 Esbpu
-R38
+R44
 R1
 R2
 R3
 R4
 R5
 R6
-!i122 78
+!i122 207
 R7
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/sbpu_entity.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/sbpu_entity.vhd
@@ -1389,16 +1506,16 @@ V=TV7hiW<B7QTDCQIdl_M71
 !s100 CR<@BdH2K@I]J5LZRXBOd3
 R9
 33
-R37
+R10
 !i10b 1
-R11
+R43
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/sbpu_entity.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/sbpu_entity.vhd|
 !i113 1
 R12
 R13
 Abehav
-R16
+R24
 R1
 R2
 R3
@@ -1406,7 +1523,7 @@ R4
 R5
 R6
 DEx4 work 4 sbpu 0 22 =TV7hiW<B7QTDCQIdl_M71
-!i122 89
+!i122 218
 8C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd
 FC:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd
 l12
@@ -1417,7 +1534,7 @@ R9
 33
 R14
 !i10b 1
-R36
+R15
 !s90 -reportprogress|300|-work|RISCV_lib|-2008|-explicit|-stats=none|C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd|
 !s107 C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd|
 !i113 1

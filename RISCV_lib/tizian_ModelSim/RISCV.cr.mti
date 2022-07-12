@@ -19,6 +19,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Loading entity if_reg
 
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Loading package data_types
+-- Loading package ISA
+-- Compiling entity pc_reg
+
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -30,16 +41,18 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity mux_bpu
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_reg_entity.vhd
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Compiling architecture behave of io_controller
 -- Loading package NUMERIC_STD
 -- Loading package constants
 -- Loading package data_types
 -- Loading package ISA
--- Compiling entity pc_reg
+-- Loading entity io_controller
+-- Loading entity button_input
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_memory_behav.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -52,6 +65,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package data_types
 -- Loading package ISA
 -- Loading entity mux_memory
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package altera_mf_components
+-- Compiling entity ram
+-- Compiling architecture SYN of ram
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/decoder_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -89,16 +111,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Loading entity mux_bpu_ra
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd {1 {vcom -work work -2008 -explicit -stats=none {C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\Memory_IP_ram.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Compiling architecture ip_ram of Memory
 -- Loading package NUMERIC_STD
 -- Loading package constants
 -- Loading package data_types
 -- Loading package ISA
--- Compiling entity mux_nop
+-- Loading entity Memory
+-- Loading package altera_mf_components
+-- Loading entity ram
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/RF_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -111,6 +136,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package data_types
 -- Loading package ISA
 -- Loading entity RF
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_nop_entity.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Loading package data_types
+-- Loading package ISA
+-- Compiling entity mux_nop
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/memory_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -134,6 +170,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity SBPU
 
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package constants
+-- Compiling package data_types
+
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_alu_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -144,14 +188,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package data_types
 -- Loading package ISA
 -- Compiling entity mux_alu
-
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/data_types_pkg.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package constants
--- Compiling package data_types
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs2_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -194,7 +230,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity Imm_Gen
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd {0 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -206,6 +242,8 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading entity RISCV_tb
 -- Loading entity clk_res_gen
 -- Loading entity riscv
+** Error (suppressible): C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd(51): (vcom-1130) Port "keys" of entity "riscv" is not in the component being instantiated.
+** Note: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_tb_struct.vhd(73): VHDL Compiler exiting
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/DBPU_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/DBPU_behav.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -264,7 +302,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity mux_memory
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none {C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\io_controller_entity.vhd}
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/io_controller_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -297,6 +335,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package data_types
 -- Loading package ISA
 -- Compiling entity decoder
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/button_input.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity button_input
+-- Compiling architecture behav of button_input
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -396,7 +443,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Loading entity pc_reg
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none {C:\Users\Tizian\Documents\Projekte\RISCV\RISCV_lib\hdl\ALU_behave.vhd}
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Compiling architecture behave of ALU
@@ -442,15 +489,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity im
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package constants
--- Loading package data_types
--- Compiling entity riscv
-
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_struct.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -484,6 +522,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading entity mux_nop
 -- Loading entity pc_inc
 -- Loading entity pc_reg
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/riscv_entity.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package constants
+-- Loading package data_types
+-- Compiling entity riscv
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -526,6 +573,30 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Compiling entity DBPU
 
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/IM_behav.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling architecture behav of im
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Loading package data_types
+-- Loading package ISA
+-- Loading entity im
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling architecture behav of mux_bpu
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Loading package data_types
+-- Loading package ISA
+-- Loading entity mux_bpu
+
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/dec_reg_entity.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -549,17 +620,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Loading entity mux_alu
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_bpu_behav.vhd
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
--- Compiling architecture behav of mux_bpu
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Compiling architecture behave of pc_inc
 -- Loading package NUMERIC_STD
 -- Loading package constants
 -- Loading package data_types
 -- Loading package ISA
--- Loading entity mux_bpu
+-- Loading entity pc_inc
 
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Imm_Gen_behave.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -573,29 +644,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package ISA
 -- Loading entity Imm_Gen
 
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/pc_inc_behave.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling architecture behave of pc_inc
--- Loading package NUMERIC_STD
--- Loading package constants
--- Loading package data_types
--- Loading package ISA
--- Loading entity pc_inc
-
-} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package constants
--- Loading package data_types
--- Loading package ISA
--- Compiling entity mux_fw_rs1
-
 } {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/SBPU_behav.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -607,5 +655,16 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package data_types
 -- Loading package ISA
 -- Loading entity SBPU
+
+} {} {}} C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd {1 {vcom -work RISCV_lib -2008 -explicit -stats=none C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/mux_fw_rs1_entity.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Loading package data_types
+-- Loading package ISA
+-- Compiling entity mux_fw_rs1
 
 } {} {}}

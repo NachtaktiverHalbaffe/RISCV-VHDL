@@ -17,7 +17,8 @@ PACKAGE constants IS
   constant WORD_WIDTH: integer := 32;
   constant BYTE_WIDTH: integer := 8;
   constant REG_NUM: integer := 32;
-  constant MEM_SIZE: integer := 1024;
+  constant MEM_SIZE: integer := 8192;
+  constant MEM_BYTE_WIDTH: integer := 4;
   
   -- Opcodes for insertion 
   constant NOP: std_logic_vector := x"0000_0013"; 

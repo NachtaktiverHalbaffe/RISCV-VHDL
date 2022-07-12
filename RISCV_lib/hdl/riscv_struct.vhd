@@ -343,7 +343,7 @@ ARCHITECTURE struct OF riscv IS
    FOR ALL : ALU USE ENTITY RISCV_lib.ALU;
    FOR ALL : DBPU USE ENTITY RISCV_lib.DBPU;
    FOR ALL : Imm_Gen USE ENTITY RISCV_lib.Imm_Gen;
-   FOR ALL : Memory USE ENTITY RISCV_lib.Memory;
+   FOR ALL : Memory USE ENTITY RISCV_lib.Memory(ip_ram);
    FOR ALL : RF USE ENTITY RISCV_lib.RF;
    FOR ALL : SBPU USE ENTITY RISCV_lib.SBPU;
    FOR ALL : dec_reg USE ENTITY RISCV_lib.dec_reg;
