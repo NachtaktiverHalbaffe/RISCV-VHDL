@@ -1,5 +1,5 @@
 Analysis & Synthesis report for riscv
-Tue Jul 12 10:38:59 2022
+Tue Jul 12 14:24:18 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -68,13 +68,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jul 12 10:38:59 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jul 12 14:24:18 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; riscv                                       ;
 ; Top-level Entity Name           ; riscv                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1442                                        ;
+; Total registers                 ; 936                                         ;
 ; Total pins                      ; 52                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 114,688                                     ;
@@ -189,7 +189,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -269,16 +269,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1512      ;
+; Estimate of Logic utilization (ALMs needed) ; 1172      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1954      ;
-;     -- 7 input functions                    ; 25        ;
-;     -- 6 input functions                    ; 925       ;
-;     -- 5 input functions                    ; 236       ;
-;     -- 4 input functions                    ; 391       ;
-;     -- <=3 input functions                  ; 377       ;
+; Combinational ALUT usage for logic          ; 1611      ;
+;     -- 7 input functions                    ; 29        ;
+;     -- 6 input functions                    ; 640       ;
+;     -- 5 input functions                    ; 322       ;
+;     -- 4 input functions                    ; 237       ;
+;     -- <=3 input functions                  ; 383       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 1442      ;
+; Dedicated logic registers                   ; 936       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 52        ;
 ; Total MLAB memory bits                      ; 0         ;
@@ -287,9 +287,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1474      ;
-; Total fan-out                               ; 15831     ;
-; Average fan-out                             ; 4.48      ;
+; Maximum fan-out                             ; 968       ;
+; Total fan-out                               ; 11901     ;
+; Average fan-out                             ; 4.44      ;
 +---------------------------------------------+-----------+
 
 
@@ -298,10 +298,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                             ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |riscv                                       ; 1954 (0)            ; 1442 (0)                  ; 114688            ; 0          ; 52   ; 0            ; |riscv                                                                                                          ; riscv           ; work         ;
-;    |ALU:U_7|                                 ; 599 (599)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|ALU:U_7                                                                                                  ; ALU             ; work         ;
-;    |Imm_Gen:U_9|                             ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|Imm_Gen:U_9                                                                                              ; Imm_Gen         ; work         ;
-;    |Memory:U_12|                             ; 155 (155)           ; 0 (0)                     ; 114688            ; 0          ; 0    ; 0            ; |riscv|Memory:U_12                                                                                              ; Memory          ; work         ;
+; |riscv                                       ; 1611 (0)            ; 936 (0)                   ; 114688            ; 0          ; 52   ; 0            ; |riscv                                                                                                          ; riscv           ; work         ;
+;    |ALU:U_7|                                 ; 530 (530)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|ALU:U_7                                                                                                  ; ALU             ; work         ;
+;    |DBPU:U_18|                               ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|DBPU:U_18                                                                                                ; DBPU            ; work         ;
+;    |Imm_Gen:U_9|                             ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|Imm_Gen:U_9                                                                                              ; Imm_Gen         ; work         ;
+;    |Memory:U_12|                             ; 156 (156)           ; 0 (0)                     ; 114688            ; 0          ; 0    ; 0            ; |riscv|Memory:U_12                                                                                              ; Memory          ; work         ;
 ;       |ram:\ram_cellarray:0:ram_cell|        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:0:ram_cell                                                                ; ram             ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:0:ram_cell|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_k5v3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:0:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated ; altsyncram_k5v3 ; work         ;
@@ -314,23 +315,23 @@ https://fpgasoftware.intel.com/eula.
 ;       |ram:\ram_cellarray:3:ram_cell|        ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell                                                                ; ram             ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_k5v3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |riscv|Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated ; altsyncram_k5v3 ; work         ;
-;    |RF:U_5|                                  ; 520 (520)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|RF:U_5                                                                                                   ; RF              ; work         ;
+;    |RF:U_5|                                  ; 245 (245)           ; 480 (480)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|RF:U_5                                                                                                   ; RF              ; work         ;
 ;    |SBPU:U_19|                               ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|SBPU:U_19                                                                                                ; SBPU            ; work         ;
-;    |dec_reg:U_6|                             ; 11 (11)             ; 148 (148)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|dec_reg:U_6                                                                                              ; dec_reg         ; work         ;
-;    |decoder:U_4|                             ; 77 (77)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|decoder:U_4                                                                                              ; decoder         ; work         ;
-;    |ex_reg:U_8|                              ; 0 (0)               ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|ex_reg:U_8                                                                                               ; ex_reg          ; work         ;
-;    |if_reg:U_2|                              ; 14 (14)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|if_reg:U_2                                                                                               ; if_reg          ; work         ;
-;    |im:U_1|                                  ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|im:U_1                                                                                                   ; im              ; work         ;
-;    |io_controller:U_21|                      ; 194 (190)           ; 141 (133)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21                                                                                       ; io_controller   ; work         ;
+;    |dec_reg:U_6|                             ; 10 (10)             ; 156 (156)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|dec_reg:U_6                                                                                              ; dec_reg         ; work         ;
+;    |decoder:U_4|                             ; 80 (80)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|decoder:U_4                                                                                              ; decoder         ; work         ;
+;    |ex_reg:U_8|                              ; 0 (0)               ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|ex_reg:U_8                                                                                               ; ex_reg          ; work         ;
+;    |if_reg:U_2|                              ; 16 (16)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|if_reg:U_2                                                                                               ; if_reg          ; work         ;
+;    |im:U_1|                                  ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|im:U_1                                                                                                   ; im              ; work         ;
+;    |io_controller:U_21|                      ; 195 (191)           ; 141 (133)                 ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21                                                                                       ; io_controller   ; work         ;
 ;       |button_input:\keys_sync:0:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:0:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:1:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:1:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:2:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:2:cell_key                                                    ; button_input    ; work         ;
 ;       |button_input:\keys_sync:3:cell_key|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|io_controller:U_21|button_input:\keys_sync:3:cell_key                                                    ; button_input    ; work         ;
-;    |me_reg:U_10|                             ; 0 (0)               ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|me_reg:U_10                                                                                              ; me_reg          ; work         ;
-;    |mux_alu:U_11|                            ; 79 (79)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_alu:U_11                                                                                             ; mux_alu         ; work         ;
+;    |me_reg:U_10|                             ; 0 (0)               ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |riscv|me_reg:U_10                                                                                              ; me_reg          ; work         ;
+;    |mux_alu:U_11|                            ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_alu:U_11                                                                                             ; mux_alu         ; work         ;
 ;    |mux_bpu:U_20|                            ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_bpu:U_20                                                                                             ; mux_bpu         ; work         ;
 ;    |mux_fw_memory:U_16|                      ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_memory:U_16                                                                                       ; mux_fw_memory   ; work         ;
-;    |mux_fw_rs1:U_14|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs1:U_14                                                                                          ; mux_fw_rs1      ; work         ;
+;    |mux_fw_rs1:U_14|                         ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs1:U_14                                                                                          ; mux_fw_rs1      ; work         ;
 ;    |mux_fw_rs2:U_15|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_fw_rs2:U_15                                                                                          ; mux_fw_rs2      ; work         ;
 ;    |mux_memory:U_13|                         ; 67 (67)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|mux_memory:U_13                                                                                          ; mux_memory      ; work         ;
 ;    |pc_inc:U_3|                              ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |riscv|pc_inc:U_3                                                                                               ; pc_inc          ; work         ;
@@ -482,8 +483,8 @@ Encoding Type:  One-Hot
 ; Memory:U_12|ram_addr[3][8]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[3][9]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[3][10]                         ; Memory:U_12|LessThan0 ; yes                    ;
-; Memory:U_12|ram_data[3][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[3][7]                          ; Memory:U_12|LessThan0 ; yes                    ;
+; Memory:U_12|ram_data[3][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[3][6]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_w_en[0]                             ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[0][4]                          ; Memory:U_12|LessThan0 ; yes                    ;
@@ -499,8 +500,8 @@ Encoding Type:  One-Hot
 ; Memory:U_12|ram_addr[0][9]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[0][10]                         ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[0][11]                         ; Memory:U_12|LessThan0 ; yes                    ;
-; Memory:U_12|ram_data[0][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[0][7]                          ; Memory:U_12|LessThan0 ; yes                    ;
+; Memory:U_12|ram_data[0][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[0][6]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_w_en[1]                             ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[1][4]                          ; Memory:U_12|LessThan0 ; yes                    ;
@@ -516,8 +517,8 @@ Encoding Type:  One-Hot
 ; Memory:U_12|ram_addr[1][9]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[1][10]                         ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_addr[1][11]                         ; Memory:U_12|LessThan0 ; yes                    ;
-; Memory:U_12|ram_data[1][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[1][7]                          ; Memory:U_12|LessThan0 ; yes                    ;
+; Memory:U_12|ram_data[1][5]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[1][6]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[3][3]                          ; Memory:U_12|LessThan0 ; yes                    ;
 ; Memory:U_12|ram_data[3][2]                          ; Memory:U_12|LessThan0 ; yes                    ;
@@ -557,80 +558,694 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                       ;
-+-------------------------------------------------+----------------------------------------+
-; Register name                                   ; Reason for Removal                     ;
-+-------------------------------------------------+----------------------------------------+
-; RF:U_5|registers[0][31]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][30]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][29]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][28]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][27]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][26]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][25]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][24]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][23]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][22]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][21]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][20]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][19]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][18]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][17]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][16]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][15]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][14]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][13]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][12]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][11]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][10]                         ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][9]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][8]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][7]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][6]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][5]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][4]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][3]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][2]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][1]                          ; Stuck at GND due to stuck port data_in ;
-; RF:U_5|registers[0][0]                          ; Stuck at GND due to stuck port data_in ;
-; if_reg:U_2|op_code[0]                           ; Merged with if_reg:U_2|op_code[1]      ;
-; if_reg:U_2|op_code[2,3]                         ; Merged with if_reg:U_2|op_code[19]     ;
-; dec_reg:U_6|ex_imm[27..30]                      ; Merged with dec_reg:U_6|ex_imm[26]     ;
-; dec_reg:U_6|ex_imm[6..9]                        ; Merged with dec_reg:U_6|ex_imm[10]     ;
-; if_reg:U_2|op_code[27..31]                      ; Merged with if_reg:U_2|op_code[26]     ;
-; dec_reg:U_6|ex_imm[20..25]                      ; Merged with dec_reg:U_6|ex_imm[26]     ;
-; dec_reg:U_6|ex_imm[31]                          ; Merged with dec_reg:U_6|ex_imm[10]     ;
-; ex_reg:U_8|me_mem_mode.mem_lh~reg0              ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_lw~reg0              ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_lbu~reg0             ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_lhu~reg0             ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_sb~reg0              ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_sh~reg0              ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_sw~reg0              ; Lost fanout                            ;
-; ex_reg:U_8|me_mem_mode.mem_lb~reg0              ; Lost fanout                            ;
-; dec_reg:U_6|ex_mux_fw_mem_sel.fwd_reg_data~reg0 ; Lost fanout                            ;
-; dec_reg:U_6|ex_mux_fw_mem_sel.fwd_alu_data~reg0 ; Lost fanout                            ;
-; dec_reg:U_6|ex_alu_mode.alu_sub~reg0            ; Lost fanout                            ;
-; dec_reg:U_6|ex_alu_mode.alu_sra~reg0            ; Lost fanout                            ;
-; dec_reg:U_6|ex_alu_mode.alu_jalr~reg0           ; Lost fanout                            ;
-; dec_reg:U_6|ex_mux_fw_rs2_sel.fwd_reg_data~reg0 ; Lost fanout                            ;
-; dec_reg:U_6|ex_mux_fw_rs1_sel.fwd_reg_data~reg0 ; Lost fanout                            ;
-; dec_reg:U_6|ex_imm[26]                          ; Merged with dec_reg:U_6|ex_imm[10]     ;
-; pc_reg:U_0|if_pc[31]                            ; Lost fanout                            ;
-; dec_reg:U_6|ex_sbta[31]                         ; Lost fanout                            ;
-; if_reg:U_2|dec_next_PC[31]                      ; Lost fanout                            ;
-; Total Number of Removed Registers = 74          ;                                        ;
-+-------------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                            ;
++-------------------------------------------------+---------------------------------------------+
+; Register name                                   ; Reason for Removal                          ;
++-------------------------------------------------+---------------------------------------------+
+; if_reg:U_2|op_code[11]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][31]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][30]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][29]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][28]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][27]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][26]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][25]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][24]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][23]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][22]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][21]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][20]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][19]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][18]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][17]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][16]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][15]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][14]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][13]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][12]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][11]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][10]                         ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][9]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][8]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][7]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][6]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][5]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][4]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][3]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][2]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][1]                          ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[0][0]                          ; Stuck at GND due to stuck port data_in      ;
+; if_reg:U_2|op_code[0]                           ; Merged with if_reg:U_2|op_code[1]           ;
+; if_reg:U_2|op_code[3,19]                        ; Merged with if_reg:U_2|op_code[18]          ;
+; dec_reg:U_6|ex_imm[30]                          ; Merged with dec_reg:U_6|ex_imm[27]          ;
+; dec_reg:U_6|ex_imm[28,29]                       ; Merged with dec_reg:U_6|ex_imm[26]          ;
+; dec_reg:U_6|ex_imm[19]                          ; Merged with dec_reg:U_6|ex_imm[18]          ;
+; dec_reg:U_6|ex_imm[7]                           ; Merged with dec_reg:U_6|ex_imm[10]          ;
+; dec_reg:U_6|ex_imm[8,9]                         ; Merged with dec_reg:U_6|ex_imm[6]           ;
+; if_reg:U_2|op_code[30,31]                       ; Merged with if_reg:U_2|op_code[27]          ;
+; if_reg:U_2|op_code[28,29]                       ; Merged with if_reg:U_2|op_code[26]          ;
+; dec_reg:U_6|ex_target_reg[4]                    ; Stuck at GND due to stuck port data_in      ;
+; ex_reg:U_8|me_target_reg[4]                     ; Stuck at GND due to stuck port data_in      ;
+; me_reg:U_10|wb_traget_reg[4]                    ; Stuck at GND due to stuck port data_in      ;
+; RF:U_5|registers[31][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[16][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[17][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[18][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[19][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[20][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[21][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[22][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[23][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[24][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[25][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[26][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[27][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[28][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[29][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[30][0]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][31]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][30]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][29]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][28]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][27]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][26]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][25]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][24]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][23]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][22]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][21]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][20]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][19]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][18]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][17]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][16]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][15]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][14]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][13]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][12]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][11]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][10]                        ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][9]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][8]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][7]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][6]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][5]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][4]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][3]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][2]                         ; Stuck at GND due to stuck port clock_enable ;
+; RF:U_5|registers[31][1]                         ; Stuck at GND due to stuck port clock_enable ;
+; ex_reg:U_8|me_mem_mode.mem_lh~reg0              ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_lw~reg0              ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_lbu~reg0             ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_lhu~reg0             ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_sb~reg0              ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_sh~reg0              ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_sw~reg0              ; Lost fanout                                 ;
+; ex_reg:U_8|me_mem_mode.mem_lb~reg0              ; Lost fanout                                 ;
+; dec_reg:U_6|ex_mux_fw_mem_sel.fwd_reg_data~reg0 ; Lost fanout                                 ;
+; dec_reg:U_6|ex_mux_fw_mem_sel.fwd_alu_data~reg0 ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_sub~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_alu_mode.alu_sra~reg0            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_mux_fw_rs2_sel.fwd_reg_data~reg0 ; Lost fanout                                 ;
+; dec_reg:U_6|ex_mux_fw_rs1_sel.fwd_reg_data~reg0 ; Lost fanout                                 ;
+; dec_reg:U_6|ex_imm[27]                          ; Merged with dec_reg:U_6|ex_imm[31]          ;
+; pc_reg:U_0|if_pc[31]                            ; Lost fanout                                 ;
+; dec_reg:U_6|ex_sbta[31]                         ; Lost fanout                                 ;
+; if_reg:U_2|dec_next_PC[31]                      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 580         ;                                             ;
++-------------------------------------------------+---------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                     ;
-+----------------------+--------------------+-----------------------------------------------------+
-; Register name        ; Reason for Removal ; Registers Removed due to This Register              ;
-+----------------------+--------------------+-----------------------------------------------------+
-; pc_reg:U_0|if_pc[31] ; Lost Fanouts       ; dec_reg:U_6|ex_sbta[31], if_reg:U_2|dec_next_PC[31] ;
-+----------------------+--------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                ;
++-----------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                           ;
++-----------------------------+---------------------------+----------------------------------------------------------------------------------+
+; ex_reg:U_8|me_target_reg[4] ; Stuck at GND              ; me_reg:U_10|wb_traget_reg[4], RF:U_5|registers[31][0], RF:U_5|registers[23][31], ;
+;                             ; due to stuck port data_in ; RF:U_5|registers[23][30], RF:U_5|registers[23][29], RF:U_5|registers[23][28],    ;
+;                             ;                           ; RF:U_5|registers[23][27], RF:U_5|registers[23][26], RF:U_5|registers[23][25],    ;
+;                             ;                           ; RF:U_5|registers[23][24], RF:U_5|registers[23][23], RF:U_5|registers[23][22],    ;
+;                             ;                           ; RF:U_5|registers[23][21], RF:U_5|registers[23][20], RF:U_5|registers[23][19],    ;
+;                             ;                           ; RF:U_5|registers[23][18], RF:U_5|registers[23][17], RF:U_5|registers[23][16],    ;
+;                             ;                           ; RF:U_5|registers[23][15], RF:U_5|registers[23][14], RF:U_5|registers[23][13],    ;
+;                             ;                           ; RF:U_5|registers[23][12], RF:U_5|registers[23][11], RF:U_5|registers[23][10],    ;
+;                             ;                           ; RF:U_5|registers[23][9], RF:U_5|registers[23][8], RF:U_5|registers[23][7],       ;
+;                             ;                           ; RF:U_5|registers[23][6], RF:U_5|registers[23][5], RF:U_5|registers[23][4],       ;
+;                             ;                           ; RF:U_5|registers[23][3], RF:U_5|registers[23][2], RF:U_5|registers[23][1],       ;
+;                             ;                           ; RF:U_5|registers[23][0], RF:U_5|registers[24][31], RF:U_5|registers[24][30],     ;
+;                             ;                           ; RF:U_5|registers[24][29], RF:U_5|registers[24][28], RF:U_5|registers[24][27],    ;
+;                             ;                           ; RF:U_5|registers[24][26], RF:U_5|registers[24][25], RF:U_5|registers[24][24],    ;
+;                             ;                           ; RF:U_5|registers[24][23], RF:U_5|registers[24][22], RF:U_5|registers[24][21],    ;
+;                             ;                           ; RF:U_5|registers[24][20], RF:U_5|registers[24][19], RF:U_5|registers[24][18],    ;
+;                             ;                           ; RF:U_5|registers[24][17], RF:U_5|registers[24][16], RF:U_5|registers[24][15],    ;
+;                             ;                           ; RF:U_5|registers[24][14], RF:U_5|registers[24][13], RF:U_5|registers[24][12],    ;
+;                             ;                           ; RF:U_5|registers[24][11], RF:U_5|registers[24][10], RF:U_5|registers[24][9],     ;
+;                             ;                           ; RF:U_5|registers[24][8], RF:U_5|registers[24][7], RF:U_5|registers[24][6],       ;
+;                             ;                           ; RF:U_5|registers[24][5], RF:U_5|registers[24][4], RF:U_5|registers[24][3],       ;
+;                             ;                           ; RF:U_5|registers[24][2], RF:U_5|registers[24][1], RF:U_5|registers[24][0],       ;
+;                             ;                           ; RF:U_5|registers[25][31], RF:U_5|registers[25][30], RF:U_5|registers[25][29],    ;
+;                             ;                           ; RF:U_5|registers[25][28], RF:U_5|registers[25][27], RF:U_5|registers[25][26],    ;
+;                             ;                           ; RF:U_5|registers[25][25], RF:U_5|registers[25][24], RF:U_5|registers[25][23],    ;
+;                             ;                           ; RF:U_5|registers[25][22], RF:U_5|registers[25][21], RF:U_5|registers[25][20],    ;
+;                             ;                           ; RF:U_5|registers[25][19], RF:U_5|registers[25][18], RF:U_5|registers[25][17],    ;
+;                             ;                           ; RF:U_5|registers[25][16], RF:U_5|registers[25][15], RF:U_5|registers[25][14],    ;
+;                             ;                           ; RF:U_5|registers[25][13], RF:U_5|registers[25][12], RF:U_5|registers[25][11],    ;
+;                             ;                           ; RF:U_5|registers[25][10], RF:U_5|registers[25][9], RF:U_5|registers[25][8],      ;
+;                             ;                           ; RF:U_5|registers[25][7], RF:U_5|registers[25][6], RF:U_5|registers[25][5],       ;
+;                             ;                           ; RF:U_5|registers[25][4], RF:U_5|registers[25][3], RF:U_5|registers[25][2],       ;
+;                             ;                           ; RF:U_5|registers[25][1], RF:U_5|registers[25][0], RF:U_5|registers[26][31],      ;
+;                             ;                           ; RF:U_5|registers[26][30], RF:U_5|registers[26][29], RF:U_5|registers[26][28],    ;
+;                             ;                           ; RF:U_5|registers[26][27], RF:U_5|registers[26][26], RF:U_5|registers[26][25],    ;
+;                             ;                           ; RF:U_5|registers[26][24], RF:U_5|registers[26][23], RF:U_5|registers[26][22],    ;
+;                             ;                           ; RF:U_5|registers[26][21], RF:U_5|registers[26][20], RF:U_5|registers[26][19],    ;
+;                             ;                           ; RF:U_5|registers[26][18], RF:U_5|registers[26][17], RF:U_5|registers[26][16],    ;
+;                             ;                           ; RF:U_5|registers[26][15], RF:U_5|registers[26][14], RF:U_5|registers[26][13],    ;
+;                             ;                           ; RF:U_5|registers[26][12], RF:U_5|registers[26][11], RF:U_5|registers[26][10],    ;
+;                             ;                           ; RF:U_5|registers[26][9], RF:U_5|registers[26][8], RF:U_5|registers[26][7],       ;
+;                             ;                           ; RF:U_5|registers[26][6], RF:U_5|registers[26][5], RF:U_5|registers[26][4],       ;
+;                             ;                           ; RF:U_5|registers[26][3], RF:U_5|registers[26][2], RF:U_5|registers[26][1],       ;
+;                             ;                           ; RF:U_5|registers[26][0], RF:U_5|registers[27][31], RF:U_5|registers[27][30],     ;
+;                             ;                           ; RF:U_5|registers[27][29], RF:U_5|registers[27][28], RF:U_5|registers[27][27],    ;
+;                             ;                           ; RF:U_5|registers[27][26], RF:U_5|registers[27][25], RF:U_5|registers[27][24],    ;
+;                             ;                           ; RF:U_5|registers[27][23], RF:U_5|registers[27][22], RF:U_5|registers[27][21],    ;
+;                             ;                           ; RF:U_5|registers[27][20], RF:U_5|registers[27][19], RF:U_5|registers[27][18],    ;
+;                             ;                           ; RF:U_5|registers[27][17], RF:U_5|registers[27][16], RF:U_5|registers[27][15],    ;
+;                             ;                           ; RF:U_5|registers[27][14], RF:U_5|registers[27][13], RF:U_5|registers[27][12],    ;
+;                             ;                           ; RF:U_5|registers[27][11], RF:U_5|registers[27][10], RF:U_5|registers[27][9],     ;
+;                             ;                           ; RF:U_5|registers[27][8], RF:U_5|registers[27][7], RF:U_5|registers[27][6],       ;
+;                             ;                           ; RF:U_5|registers[27][5], RF:U_5|registers[27][4], RF:U_5|registers[27][3],       ;
+;                             ;                           ; RF:U_5|registers[27][2], RF:U_5|registers[27][1], RF:U_5|registers[27][0],       ;
+;                             ;                           ; RF:U_5|registers[28][31], RF:U_5|registers[28][30], RF:U_5|registers[28][29],    ;
+;                             ;                           ; RF:U_5|registers[28][28], RF:U_5|registers[28][27], RF:U_5|registers[28][26],    ;
+;                             ;                           ; RF:U_5|registers[28][25], RF:U_5|registers[28][24], RF:U_5|registers[28][23],    ;
+;                             ;                           ; RF:U_5|registers[28][22], RF:U_5|registers[28][21], RF:U_5|registers[28][20],    ;
+;                             ;                           ; RF:U_5|registers[28][19], RF:U_5|registers[28][18], RF:U_5|registers[28][17],    ;
+;                             ;                           ; RF:U_5|registers[28][16], RF:U_5|registers[28][15], RF:U_5|registers[28][14],    ;
+;                             ;                           ; RF:U_5|registers[28][13], RF:U_5|registers[28][12], RF:U_5|registers[28][11],    ;
+;                             ;                           ; RF:U_5|registers[28][10], RF:U_5|registers[28][9], RF:U_5|registers[28][8],      ;
+;                             ;                           ; RF:U_5|registers[28][7], RF:U_5|registers[28][6], RF:U_5|registers[28][5],       ;
+;                             ;                           ; RF:U_5|registers[28][4], RF:U_5|registers[28][3], RF:U_5|registers[28][2],       ;
+;                             ;                           ; RF:U_5|registers[28][1], RF:U_5|registers[28][0], RF:U_5|registers[29][31],      ;
+;                             ;                           ; RF:U_5|registers[29][30], RF:U_5|registers[29][29], RF:U_5|registers[29][28],    ;
+;                             ;                           ; RF:U_5|registers[29][27], RF:U_5|registers[29][26], RF:U_5|registers[29][25],    ;
+;                             ;                           ; RF:U_5|registers[29][24], RF:U_5|registers[29][23], RF:U_5|registers[29][22],    ;
+;                             ;                           ; RF:U_5|registers[29][21], RF:U_5|registers[29][20], RF:U_5|registers[29][19],    ;
+;                             ;                           ; RF:U_5|registers[29][18], RF:U_5|registers[29][17], RF:U_5|registers[29][16],    ;
+;                             ;                           ; RF:U_5|registers[29][15], RF:U_5|registers[29][14], RF:U_5|registers[29][13],    ;
+;                             ;                           ; RF:U_5|registers[29][12], RF:U_5|registers[29][11], RF:U_5|registers[29][10],    ;
+;                             ;                           ; RF:U_5|registers[29][9], RF:U_5|registers[29][8], RF:U_5|registers[29][7],       ;
+;                             ;                           ; RF:U_5|registers[29][6], RF:U_5|registers[29][5], RF:U_5|registers[29][4],       ;
+;                             ;                           ; RF:U_5|registers[29][3], RF:U_5|registers[29][2], RF:U_5|registers[29][1],       ;
+;                             ;                           ; RF:U_5|registers[29][0], RF:U_5|registers[30][31], RF:U_5|registers[30][30],     ;
+;                             ;                           ; RF:U_5|registers[30][29], RF:U_5|registers[30][28], RF:U_5|registers[30][27],    ;
+;                             ;                           ; RF:U_5|registers[30][26], RF:U_5|registers[30][25], RF:U_5|registers[30][24],    ;
+;                             ;                           ; RF:U_5|registers[30][23], RF:U_5|registers[30][22], RF:U_5|registers[30][21],    ;
+;                             ;                           ; RF:U_5|registers[30][20], RF:U_5|registers[30][19], RF:U_5|registers[30][18],    ;
+;                             ;                           ; RF:U_5|registers[30][17], RF:U_5|registers[30][16], RF:U_5|registers[30][15],    ;
+;                             ;                           ; RF:U_5|registers[30][14], RF:U_5|registers[30][13], RF:U_5|registers[30][12],    ;
+;                             ;                           ; RF:U_5|registers[30][11], RF:U_5|registers[30][10], RF:U_5|registers[30][9],     ;
+;                             ;                           ; RF:U_5|registers[30][8], RF:U_5|registers[30][7], RF:U_5|registers[30][6],       ;
+;                             ;                           ; RF:U_5|registers[30][5], RF:U_5|registers[30][4], RF:U_5|registers[30][3],       ;
+;                             ;                           ; RF:U_5|registers[30][2], RF:U_5|registers[30][1], RF:U_5|registers[30][0],       ;
+;                             ;                           ; RF:U_5|registers[31][31], RF:U_5|registers[31][30], RF:U_5|registers[31][29],    ;
+;                             ;                           ; RF:U_5|registers[31][28], RF:U_5|registers[31][27], RF:U_5|registers[31][26],    ;
+;                             ;                           ; RF:U_5|registers[31][25], RF:U_5|registers[31][24], RF:U_5|registers[31][23],    ;
+;                             ;                           ; RF:U_5|registers[31][22], RF:U_5|registers[31][21], RF:U_5|registers[31][20],    ;
+;                             ;                           ; RF:U_5|registers[31][19], RF:U_5|registers[31][18], RF:U_5|registers[31][17],    ;
+;                             ;                           ; RF:U_5|registers[31][16], RF:U_5|registers[31][15], RF:U_5|registers[31][14],    ;
+;                             ;                           ; RF:U_5|registers[31][13], RF:U_5|registers[31][12], RF:U_5|registers[31][11],    ;
+;                             ;                           ; RF:U_5|registers[31][10], RF:U_5|registers[31][9], RF:U_5|registers[31][8],      ;
+;                             ;                           ; RF:U_5|registers[31][7], RF:U_5|registers[31][6], RF:U_5|registers[31][5],       ;
+;                             ;                           ; RF:U_5|registers[31][4], RF:U_5|registers[31][3], RF:U_5|registers[31][2],       ;
+;                             ;                           ; RF:U_5|registers[31][1]                                                          ;
+; pc_reg:U_0|if_pc[31]        ; Lost Fanouts              ; dec_reg:U_6|ex_sbta[31], if_reg:U_2|dec_next_PC[31]                              ;
++-----------------------------+---------------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -638,12 +1253,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1442  ;
-; Number of registers using Synchronous Clear  ; 108   ;
+; Total registers                              ; 936   ;
+; Number of registers using Synchronous Clear  ; 107   ;
 ; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 1341  ;
+; Number of registers using Asynchronous Clear ; 835   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1240  ;
+; Number of registers using Clock Enable       ; 727   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -653,39 +1268,39 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |riscv|if_reg:U_2|op_code[20]                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |riscv|if_reg:U_2|op_code[6]                          ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[0]                            ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[25]                           ;
-; 17:1               ; 32 bits   ; 352 LEs       ; 320 LEs              ; 32 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_rs1[0]                          ;
-; 33:1               ; 5 bits    ; 110 LEs       ; 30 LEs               ; 80 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_target_reg[0]                   ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 640 LEs              ; 64 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_rs2[12]                         ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |riscv|if_reg:U_2|op_code[8]                          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |riscv|if_reg:U_2|op_code[4]                          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[1]                            ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |riscv|pc_reg:U_0|if_pc[19]                           ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 128 LEs              ; 64 LEs                 ; Yes        ; |riscv|dec_reg:U_6|ex_rs1[0]                          ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 320 LEs              ; 384 LEs                ; Yes        ; |riscv|dec_reg:U_6|ex_rs2[16]                         ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[7]              ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[3]              ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[12]             ;
-; 18:1               ; 16 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[31]             ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_sh                ;
+; 65:1               ; 4 bits    ; 172 LEs       ; 36 LEs               ; 136 LEs                ; Yes        ; |riscv|dec_reg:U_6|ex_target_reg[3]                   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |riscv|io_controller:U_21|io_data_out[0]              ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[11]             ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 96 LEs               ; 96 LEs                 ; Yes        ; |riscv|io_controller:U_21|io_data_out[30]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_sb                ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftLeft0                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
 ; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|ShiftRight0                            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_lb                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[13]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs2:U_15|Selector23                     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs1:U_14|Selector12                     ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mux_fw_rs1_sel.fwd_reg_data    ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mem_mode.mem_lw                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[14]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs2:U_15|Selector10                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv|mux_fw_rs1:U_14|Selector28                     ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mux_fw_rs2_sel.fwd_return_data ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv|decoder:U_4|dec_mux_fw_rs1_sel.fwd_reg_data    ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |riscv|Memory:U_12|Selector21                         ;
-; 32:1               ; 5 bits    ; 105 LEs       ; 20 LEs               ; 85 LEs                 ; No         ; |riscv|decoder:U_4|Mux75                              ;
-; 32:1               ; 4 bits    ; 84 LEs        ; 16 LEs               ; 68 LEs                 ; No         ; |riscv|decoder:U_4|Mux70                              ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[4]                   ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[16]                  ;
-; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector4                              ;
-; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector21                             ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector0                              ;
-; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector30                             ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 25 LEs               ; 185 LEs                ; No         ; |riscv|decoder:U_4|Mux73                              ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 12 LEs               ; 114 LEs                ; No         ; |riscv|decoder:U_4|Mux72                              ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[3]                   ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |riscv|mux_memory:U_13|me_me_out[29]                  ;
+; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector10                             ;
+; 14:1               ; 12 bits   ; 108 LEs       ; 108 LEs              ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector20                             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector2                              ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |riscv|ALU:U_7|Selector28                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
@@ -1063,39 +1678,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1442                        ;
-;     CLR               ; 137                         ;
+; arriav_ff             ; 936                         ;
+;     CLR               ; 144                         ;
 ;     CLR SCLR          ; 33                          ;
 ;     CLR SCLR SLD      ; 32                          ;
 ;     ENA               ; 77                          ;
-;     ENA CLR           ; 1120                        ;
-;     ENA CLR SCLR      ; 19                          ;
+;     ENA CLR           ; 608                         ;
+;     ENA CLR SCLR      ; 18                          ;
 ;     ENA SCLR          ; 24                          ;
-; arriav_lcell_comb     ; 1954                        ;
-;     arith             ; 266                         ;
+; arriav_lcell_comb     ; 1611                        ;
+;     arith             ; 203                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 59                          ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 199                         ;
-;         5 data inputs ; 2                           ;
-;     extend            ; 25                          ;
-;         7 data inputs ; 25                          ;
-;     normal            ; 1632                        ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 118                         ;
-;         3 data inputs ; 185                         ;
-;         4 data inputs ; 166                         ;
-;         5 data inputs ; 234                         ;
-;         6 data inputs ; 925                         ;
+;         1 data inputs ; 61                          ;
+;         4 data inputs ; 74                          ;
+;         5 data inputs ; 64                          ;
+;     extend            ; 29                          ;
+;         7 data inputs ; 29                          ;
+;     normal            ; 1348                        ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 100                         ;
+;         3 data inputs ; 207                         ;
+;         4 data inputs ; 138                         ;
+;         5 data inputs ; 258                         ;
+;         6 data inputs ; 640                         ;
 ;     shared            ; 31                          ;
-;         2 data inputs ; 4                           ;
+;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 1                           ;
-;         4 data inputs ; 26                          ;
+;         4 data inputs ; 25                          ;
 ; boundary_port         ; 52                          ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.20                       ;
-; Average LUT depth     ; 6.27                        ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 7.16                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1104,7 +1718,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1114,7 +1728,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul 12 10:38:33 2022
+    Info: Processing started: Tue Jul 12 14:24:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscv -c riscv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1499,10 +2113,10 @@ Warning (13012): Latch Memory:U_12|ram_addr[3][9] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[3][10] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[3][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[29] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_data[3][7] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[31] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
+Warning (13012): Latch Memory:U_12|ram_data[3][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[29] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_data[3][6] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[30] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_addr[0][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
@@ -1549,10 +2163,10 @@ Warning (13012): Latch Memory:U_12|ram_addr[1][9] has unsafe behavior File: C:/U
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
 Warning (13012): Latch Memory:U_12|ram_addr[1][10] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU:U_7|WideNor0 File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/ALU_behave.vhd Line: 132
-Warning (13012): Latch Memory:U_12|ram_data[1][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[13] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_data[1][7] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[15] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
+Warning (13012): Latch Memory:U_12|ram_data[1][5] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[13] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_data[1][6] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[14] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Warning (13012): Latch Memory:U_12|ram_data[3][3] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
@@ -1602,22 +2216,22 @@ Warning (13012): Latch Memory:U_12|ram_data[2][1] has unsafe behavior File: C:/U
 Warning (13012): Latch Memory:U_12|ram_data[2][0] has unsafe behavior File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/Memory_IP_ram.vhd Line: 54
     Warning (13013): Ports D and ENA on the latch are fed by the same signal me_reg:U_10|wb_data[16] File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/hdl/me_reg_behave.vhd Line: 23
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:0:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:1:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:2:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "Memory:U_12|ram:\ram_cellarray:3:ram_cell|altsyncram:altsyncram_component|altsyncram_k5v3:auto_generated|ALTSYNCRAM" File: C:/Users/Tizian/Documents/Projekte/RISCV/RISCV_lib/qis/riscv_struct/db/altsyncram_k5v3.tdf Line: 33
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3271 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2414 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 3187 logic cells
+    Info (21061): Implemented 2330 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 137 warnings
-    Info: Peak virtual memory: 4899 megabytes
-    Info: Processing ended: Tue Jul 12 10:38:59 2022
-    Info: Elapsed time: 00:00:26
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 4905 megabytes
+    Info: Processing ended: Tue Jul 12 14:24:18 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:34
 
 
