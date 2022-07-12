@@ -149,6 +149,7 @@ BEGIN
 			io_keys_buffer <= (others => '0');
 		else
 			if clk'event and clk = '1' then
+				io_keys_buffer <= (others => '0');
 				io_keys_buffer(io_keys_sync'range) <= io_keys_sync;
 			end if;
 		end if;
