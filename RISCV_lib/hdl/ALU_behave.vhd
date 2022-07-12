@@ -72,7 +72,7 @@ begin
         compute_result := std_logic_vector(shift_left(unsigned(x), to_integer(unsigned(y))));
         c := x(x'left);
         v := x(x'left) xor x(x'left - 1);
-      when alu_srl => --ex_alu_out <= x;
+      when alu_srl => ex_alu_out <= x;
         compute_result := std_logic_vector(shift_right(unsigned(x), to_integer(unsigned(y))));
         c := x(x'right);
         v := x(x'left) xor '0';

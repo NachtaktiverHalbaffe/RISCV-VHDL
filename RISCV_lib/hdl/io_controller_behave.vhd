@@ -10,7 +10,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 library RISCV_lib;
-use RISCV_lib.all;
 
 ARCHITECTURE behave OF io_controller IS
 	signal io_hex_buffer			: word := (others => '0');
@@ -150,6 +149,7 @@ BEGIN
 			io_keys_buffer <= (others => '0');
 		else
 			if clk'event and clk = '1' then
+				io_keys_buffer <= (others => '0');
 				io_keys_buffer(io_keys_sync'range) <= io_keys_sync;
 			end if;
 		end if;
