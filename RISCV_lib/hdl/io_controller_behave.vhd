@@ -10,7 +10,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 library RISCV_lib;
-use RISCV_lib.all;
 
 ARCHITECTURE behave OF io_controller IS
 	signal io_hex_buffer			: word := (others => '0');
