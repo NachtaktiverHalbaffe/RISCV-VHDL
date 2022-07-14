@@ -74,6 +74,8 @@ package data_types is
   subtype leds_green_type is std_logic_vector(7 downto 0);
   subtype keys_type is std_logic_vector(3 downto 0);
   subtype switches_type is std_logic_vector(9 downto 0);
+  -- SD Card
+  type CardType_t is (SD_CARD_E, SDHC_CARD_E); -- Define the different types of SD cards.
   
 
 end data_types;

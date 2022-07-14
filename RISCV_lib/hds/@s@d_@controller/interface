@@ -559,19 +559,19 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/SD_Controller"
 )
 (vvPair
 variable "date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "day"
-value "Tue"
+value "Thu"
 )
 (vvPair
 variable "day_long"
-value "Tuesday"
+value "Thursday"
 )
 (vvPair
 variable "dd"
-value "12"
+value "14"
 )
 (vvPair
 variable "entity_name"
@@ -599,7 +599,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -611,7 +611,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:12:40"
+value "16:08:26"
 )
 (vvPair
 variable "group"
@@ -723,7 +723,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "18:12:40"
+value "16:08:26"
 )
 (vvPair
 variable "unit"
@@ -1886,6 +1886,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 811,0
+lastUid 880,0
 activeModelName "Symbol:CDM"
 )

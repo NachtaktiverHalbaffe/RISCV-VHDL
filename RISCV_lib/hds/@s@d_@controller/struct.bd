@@ -12,6 +12,10 @@ library "IEEE"
 unitName "numeric_std"
 )
 (DmPackageRef
+library "IEEE"
+unitName "math_real"
+)
+(DmPackageRef
 library "RISCV_lib"
 unitName "constants"
 )
@@ -103,19 +107,19 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/SD_Controller"
 )
 (vvPair
 variable "date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "day"
-value "Tue"
+value "Thu"
 )
 (vvPair
 variable "day_long"
-value "Tuesday"
+value "Thursday"
 )
 (vvPair
 variable "dd"
-value "12"
+value "14"
 )
 (vvPair
 variable "entity_name"
@@ -143,7 +147,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -155,7 +159,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:12:40"
+value "16:08:26"
 )
 (vvPair
 variable "group"
@@ -267,7 +271,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "18:12:40"
+value "16:08:26"
 )
 (vvPair
 variable "unit"
@@ -2824,10 +2828,11 @@ uid 171,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,15000,7200"
+xt "0,900,15000,8100"
 st "LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
 USE IEEE.numeric_std.all;
+USE IEEE.math_real.all;
 LIBRARY RISCV_lib;
 USE RISCV_lib.constants.all;
 USE RISCV_lib.data_types.all;
@@ -2913,11 +2918,11 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "-4,3,2556,1413"
-viewArea "-48000,-3400,94557,73887"
+viewArea "-48000,-3400,87546,70086"
 cachedDiagramExtent "-12400,0,87000,66000"
 hasePageBreakOrigin 1
-pageBreakOrigin "-6000,0"
-lastUid 806,0
+pageBreakOrigin "-75000,0"
+lastUid 927,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0

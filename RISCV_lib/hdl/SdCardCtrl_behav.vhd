@@ -115,12 +115,10 @@
 --     * Allow host to send/receive SPI commands/data directly to
 --       the SD card through the controller.
 -- *********************************************************************
-17 : 19 : 50 07/12/22
 --
 -- using Mentor Graphics HDL Designer(TM) 2020.2 Built on 12 Apr 2020 at 11:28:22
 --
 architecture behav of SdCardCtrl is
-  type CardType_t is (SD_CARD_E, SDHC_CARD_E); -- Define the different types of SD cards.
   signal sclk_r : std_logic := ZERO; -- Register output drives SD card clock.
   signal hndShk_r : std_logic := NO; -- Register output drives handshake output to host.
 
