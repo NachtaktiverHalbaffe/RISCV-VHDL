@@ -13,35 +13,50 @@ library RISCV_lib;
 use RISCV_lib.all;
 
 ARCHITECTURE behav OF im IS
-signal op_code_mnemonic : op_code_mnemonics;
+  signal op_code_mnemonic : op_code_mnemonics;
+  signal is_loading_opcode, finished_loading: boolean;
+  signal loaded_word: word;
 BEGIN
- rom: process(if_pc) is
+ rom: process(if_pc, res_n) is
     variable word_pc_int : integer := 0;
-    constant rom_content: im_rom_type(0 to 1023) := (
-      NOP,
-      NOP,
-      x"00000113",
-      x"00100193",
-      x"01c19193",
-      x"00818213",
-      x"00c18293",
-      x"0021a023",
-      x"0022a023",
-      x"0002a103",
-      x"0021a023",
-      x"00222023",
-      x"ff5ff06f",
-      x"00000073",
+    variable words_loaded: integer := 0; -- Number of loaded words
+    variable rom_content: im_rom_type(0 to 1023) := (
       others => NOP
     );
+
   begin
-    word_pc_int := to_integer(unsigned(if_pc))/4;
-    if word_pc_int < rom_content'right then
-      if_im_out <= rom_content(  to_integer(unsigned(if_pc))/4 );
+    if res_n='0' then
+       word_pc_int := 0;
+       load_op_mem <='1';
     else
-      if_im_out <= NOP;
-    end if;
+      load_op_mem<= '1';
+      if not is_loading_opcode then 
+        load_op_mem<= '0';
+          word_pc_int := to_integer(unsigned(if_pc))/4;
+          if word_pc_int < rom_content'right then
+                  if_im_out <= rom_content(to_integer(unsigned(if_pc))/4);
+          else
+          if_im_out <= NOP;
+          end if;
+        else 
+          -- TODO Load opcode
+      end if;
+  end if;
   end process rom;
+
+  load_word: process (data_valid, loading, sp_op_code, is_loading_opcode) is 
+  begin
+    is_loading_opcode <= false;
+      if loading = '1' then
+         is_loading_opcode <= true;
+        if data_valid = '1' then 
+          loaded_word <= sp_op_code;
+        else 
+          loaded_word<= (others => '0');
+        end if;
+      end if;
+
+  end process load_word;
 
 --   translate: process(if_im_out) is
 --    variable sliced_opcode  : std_logic_vector(6 downto 0);
