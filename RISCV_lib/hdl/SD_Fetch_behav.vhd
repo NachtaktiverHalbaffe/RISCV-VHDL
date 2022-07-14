@@ -51,9 +51,12 @@ begin
       sp_op_code <= (others => '0');
       data_valid <= '0';
       loading <= '0';
+      continue_i <= '0';
 
       if busy_o = '1' then
         loading <= '1';
+        hndShk_i <= '0';
+        continue_i <= '1';
         ---------------------------------------------------------------------------------------------------
         -- Data block available from SD card
         ---------------------------------------------------------------------------------------------------
@@ -62,20 +65,28 @@ begin
             when 0 =>
               -- Reset word before reading new word
               read_word := (others => '0');
+              read_word(31 downto 23) := data_o;
+              addr := addr + 1;
+            when 1 =>
+              read_word(22 downto 15) := data_o;
+              addr := addr + 1;
+            when 2 =>
+              read_word(14 downto 18) := data_o;
+              addr := addr + 1;
+            when 3 =>
               read_word(7 downto 0) := data_o;
-              -- TODO Detect when no op_code needs to be loaded again (Improvement possible?)
+              addr := addr + 1;
+              -- Detectif no op_code needs to be loaded again (Improvement possible?)
               if read_word(0) = '0' and read_word(1) = '0' then
                 loading <= '0';
                 finished := true;
+                continue_i <= '0';
               end if;
-            when 1 => read_word(15 downto 8) := data_o;
-            when 2 => read_word(22 downto 15) := data_o;
-            when 3 =>
-              read_word(31 downto 23) := data_o;
               -- Only send op_code to IM if it still receives op_codes
               if not finished then
                 sp_op_code <= read_word;
                 data_valid <= '1';
+                continue_i <= '1';
               end if;
             when others => null;
           end case;

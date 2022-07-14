@@ -14,10 +14,10 @@ use RISCV_lib.all;
 
 ARCHITECTURE behav OF im IS
   signal op_code_mnemonic : op_code_mnemonics;
-  signal is_loading_opcode, finished_loading: boolean;
+  signal finished_loading: boolean;
   signal loaded_word: word;
 BEGIN
- rom: process(if_pc, res_n) is
+ rom: process(if_pc, res_n, loaded_word) is
     variable word_pc_int : integer := 0;
     variable words_loaded: integer := 0; -- Number of loaded words
     variable rom_content: im_rom_type(0 to 1023) := (
@@ -30,7 +30,7 @@ BEGIN
        load_op_mem <='1';
     else
       load_op_mem<= '1';
-      if not is_loading_opcode then 
+      if finished_loading then 
         load_op_mem<= '0';
           word_pc_int := to_integer(unsigned(if_pc))/4;
           if word_pc_int < rom_content'right then
@@ -39,21 +39,26 @@ BEGIN
           if_im_out <= NOP;
           end if;
         else 
-          -- TODO Load opcode
+if to_integer(unsigned(loaded_word)) /= 0 then
+  words_loaded := words_loaded + 1;
+  rom_content(words_loaded-1) := load_word;
+end if;
       end if;
   end if;
   end process rom;
 
-  load_word: process (data_valid, loading, sp_op_code, is_loading_opcode) is 
+  load_word: process (data_valid, loading, sp_op_code) is 
   begin
-    is_loading_opcode <= false;
-      if loading = '1' then
-         is_loading_opcode <= true;
+      finished_loading <= false;
+      if loading = '1'   then
+          finished_loading <= false;
         if data_valid = '1' then 
           loaded_word <= sp_op_code;
         else 
           loaded_word<= (others => '0');
         end if;
+      else 
+       finished_loading <= true;
       end if;
 
   end process load_word;
