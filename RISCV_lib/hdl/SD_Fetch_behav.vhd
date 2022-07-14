@@ -24,22 +24,22 @@ begin
     addr_i <= (others => '0');
     if load_op_mem = '1' then
       if busy_o = '0' then
-        rs_i <= '1';
+        rd_i <= '1';
       else
-        rs_i <= '0';
+        rd_i <= '0';
       end if;
     else
-      rs_i <= '0';
+      rd_i <= '0';
     end if;
   end process init_read;
 
   read_word : process (busy_o, hndShk_o, data_o, res_n) is
     variable addr : std_logic_vector(31 downto 0);
     variable read_word : word;
-    variable finished : bool;
+    variable finished : boolean;
   begin
     if res_n = '0' then
-      addri <= (others => '0');
+      addr_i <= (others => '0');
       addr := (others => '0');
       hndShk_i <= '0';
       sp_op_code <= (others => '0');

@@ -84,7 +84,7 @@ m 1
 decl (Decl
 n "hex_disp0"
 t "hex_disp_type"
-o 3
+o 4
 suid 106,0
 )
 )
@@ -97,7 +97,7 @@ m 1
 decl (Decl
 n "hex_disp1"
 t "hex_disp_type"
-o 3
+o 5
 suid 107,0
 )
 )
@@ -110,7 +110,7 @@ m 1
 decl (Decl
 n "hex_disp2"
 t "hex_disp_type"
-o 3
+o 6
 suid 108,0
 )
 )
@@ -123,7 +123,7 @@ m 1
 decl (Decl
 n "hex_disp3"
 t "hex_disp_type"
-o 3
+o 7
 suid 109,0
 )
 )
@@ -135,7 +135,7 @@ lang 11
 decl (Decl
 n "keys"
 t "keys_type"
-o 9
+o 2
 suid 110,0
 )
 )
@@ -161,7 +161,7 @@ m 1
 decl (Decl
 n "leds_red"
 t "leds_red_type"
-o 7
+o 9
 suid 112,0
 )
 )
@@ -173,7 +173,7 @@ lang 11
 decl (Decl
 n "res_n"
 t "std_logic"
-o 2
+o 3
 suid 113,0
 )
 )
@@ -552,19 +552,19 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/riscv"
 )
 (vvPair
 variable "date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "day"
-value "Tue"
+value "Thu"
 )
 (vvPair
 variable "day_long"
-value "Tuesday"
+value "Thursday"
 )
 (vvPair
 variable "dd"
-value "12"
+value "14"
 )
 (vvPair
 variable "entity_name"
@@ -592,7 +592,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "07/12/22"
+value "07/14/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -604,7 +604,7 @@ value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "18:35:19"
+value "16:16:07"
 )
 (vvPair
 variable "group"
@@ -716,7 +716,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "18:35:19"
+value "16:16:07"
 )
 (vvPair
 variable "unit"
@@ -782,6 +782,9 @@ uid 1967,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,1800,60500,2700"
+st "clk        : IN     std_logic  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -826,6 +829,9 @@ uid 1972,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,4500,62500,5400"
+st "hex_disp0  : OUT    hex_disp_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -833,7 +839,7 @@ m 1
 decl (Decl
 n "hex_disp0"
 t "hex_disp_type"
-o 3
+o 4
 suid 106,0
 )
 )
@@ -871,6 +877,9 @@ uid 1977,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,5400,62500,6300"
+st "hex_disp1  : OUT    hex_disp_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -878,7 +887,7 @@ m 1
 decl (Decl
 n "hex_disp1"
 t "hex_disp_type"
-o 3
+o 5
 suid 107,0
 )
 )
@@ -916,6 +925,9 @@ uid 1982,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,6300,62500,7200"
+st "hex_disp2  : OUT    hex_disp_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -923,7 +935,7 @@ m 1
 decl (Decl
 n "hex_disp2"
 t "hex_disp_type"
-o 3
+o 6
 suid 108,0
 )
 )
@@ -961,6 +973,9 @@ uid 1987,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,7200,62500,8100"
+st "hex_disp3  : OUT    hex_disp_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -968,7 +983,7 @@ m 1
 decl (Decl
 n "hex_disp3"
 t "hex_disp_type"
-o 3
+o 7
 suid 109,0
 )
 )
@@ -1005,13 +1020,16 @@ uid 1992,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,2700,60500,3600"
+st "keys       : IN     keys_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "keys"
 t "keys_type"
-o 9
+o 2
 suid 110,0
 )
 )
@@ -1049,6 +1067,9 @@ uid 1997,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,8100,63500,9000"
+st "leds_green : OUT    leds_green_type  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -1094,6 +1115,9 @@ uid 2002,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,9000,61500,9900"
+st "leds_red   : OUT    leds_red_type 
+"
 )
 thePort (LogicalPort
 lang 11
@@ -1101,7 +1125,7 @@ m 1
 decl (Decl
 n "leds_red"
 t "leds_red_type"
-o 7
+o 9
 suid 112,0
 )
 )
@@ -1138,13 +1162,16 @@ uid 2007,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,3600,60500,4500"
+st "res_n      : IN     std_logic  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "res_n"
 t "std_logic"
-o 2
+o 3
 suid 113,0
 )
 )
@@ -1861,6 +1888,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 2025,0
+lastUid 2048,0
 activeModelName "Symbol:CDM"
 )
