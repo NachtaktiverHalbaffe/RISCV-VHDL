@@ -122,6 +122,17 @@ architecture behav of SdCardCtrl is
   signal sclk_r : std_logic := ZERO; -- Register output drives SD card clock.
   signal hndShk_r : std_logic := NO; -- Register output drives handshake output to host.
 
+  -- Find the maximum of two integers.
+  function IntMax(a : in integer; b : in integer) return integer is
+  begin
+    if a > b then
+      return a;
+    else
+      return b;
+    end if;
+    return a;
+  end function IntMax;
+
 begin
 
   process (clk) -- FSM process for the SD card controller.
