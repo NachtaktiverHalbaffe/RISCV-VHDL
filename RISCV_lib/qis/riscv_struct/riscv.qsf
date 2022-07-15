@@ -41,7 +41,7 @@ set_global_assignment -name FAMILY "cyclone v"
 set_global_assignment -name DEVICE 5cgxfc5c6f27c7
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:58:28  JULY 05, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Standard Edition"
 set_global_assignment -name FMAX_REQUIREMENT "50 MHz"
 set_global_assignment -name TOP_LEVEL_ENTITY riscv
 set_location_assignment PIN_R20 -to clk

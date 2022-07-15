@@ -41,7 +41,7 @@ BEGIN
         else 
 if to_integer(unsigned(loaded_word)) /= 0 then
   words_loaded := words_loaded + 1;
-  rom_content(words_loaded-1) := load_word;
+  rom_content(words_loaded-1) := loaded_word;
 end if;
       end if;
   end if;

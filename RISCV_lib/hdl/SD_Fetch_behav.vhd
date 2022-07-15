@@ -66,16 +66,16 @@ begin
               -- Reset word before reading new word
               read_word := (others => '0');
               read_word(31 downto 23) := data_o;
-              addr := addr + 1;
+              addr := std_logic_vector(unsigned(addr) + 1);
             when 1 =>
               read_word(22 downto 15) := data_o;
-              addr := addr + 1;
+              addr := std_logic_vector(unsigned(addr) + 1);
             when 2 =>
               read_word(14 downto 18) := data_o;
-              addr := addr + 1;
+              addr := std_logic_vector(unsigned(addr) + 1);
             when 3 =>
               read_word(7 downto 0) := data_o;
-              addr := addr + 1;
+              addr := std_logic_vector(unsigned(addr) + 1);
               -- Detectif no op_code needs to be loaded again (Improvement possible?)
               if read_word(0) = '0' and read_word(1) = '0' then
                 loading <= '0';
