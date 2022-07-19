@@ -26,7 +26,7 @@ appVersion "2020.2 Built on 12 Apr 2020 at 11:28:22"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 125,0
+suid 126,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -209,13 +209,13 @@ port (LogicalPort
 lang 11
 m 1
 decl (Decl
-n "sclk"
+n "sclk_o"
 t "std_logic"
 o 12
-suid 125,0
+suid 126,0
 )
 )
-uid 2154,0
+uid 2203,0
 )
 ]
 )
@@ -275,7 +275,7 @@ uid 2133,0
 )
 *32 (MRCItem
 litem &15
-pos 11
+pos 10
 dimension 20
 uid 2135,0
 )
@@ -323,7 +323,7 @@ uid 2149,0
 )
 *40 (MRCItem
 litem &23
-pos 10
+pos 9
 dimension 20
 uid 2151,0
 )
@@ -335,9 +335,9 @@ uid 2153,0
 )
 *42 (MRCItem
 litem &25
-pos 9
+pos 11
 dimension 20
-uid 2155,0
+uid 2202,0
 )
 ]
 )
@@ -608,19 +608,19 @@ value "/u/home/stud/flxbrggr/dev/HDS/RISCV/RISCV_lib/hds/riscv"
 )
 (vvPair
 variable "date"
-value "07/15/22"
+value "07/19/22"
 )
 (vvPair
 variable "day"
-value "Fri"
+value "Tue"
 )
 (vvPair
 variable "day_long"
-value "Friday"
+value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "15"
+value "19"
 )
 (vvPair
 variable "entity_name"
@@ -648,7 +648,7 @@ value "flxbrggr"
 )
 (vvPair
 variable "graphical_source_date"
-value "07/15/22"
+value "07/19/22"
 )
 (vvPair
 variable "graphical_source_group"
@@ -656,11 +656,11 @@ value "meyer"
 )
 (vvPair
 variable "graphical_source_host"
-value "pc087"
+value "pc084"
 )
 (vvPair
 variable "graphical_source_time"
-value "14:21:17"
+value "13:55:27"
 )
 (vvPair
 variable "group"
@@ -668,7 +668,7 @@ value "meyer"
 )
 (vvPair
 variable "host"
-value "pc087"
+value "pc084"
 )
 (vvPair
 variable "language"
@@ -772,7 +772,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "14:21:17"
+value "13:55:27"
 )
 (vvPair
 variable "unit"
@@ -862,7 +862,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,15625,23750,16375"
+xt "25000,15625,25750,16375"
 )
 tg (CPTG
 uid 2079,0
@@ -873,10 +873,10 @@ uid 2080,0
 va (VaSet
 font "courier,8,0"
 )
-xt "19500,15550,22000,16450"
+xt "21500,15550,24000,16450"
 st "cs_bo"
 ju 2
-blo "22000,16250"
+blo "24000,16250"
 tm "CptPortNameMgr"
 )
 )
@@ -910,7 +910,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,7625,23750,8375"
+xt "25000,7625,25750,8375"
 )
 tg (CPTG
 uid 2084,0
@@ -921,10 +921,10 @@ uid 2085,0
 va (VaSet
 font "courier,8,0"
 )
-xt "17500,7550,22000,8450"
+xt "19500,7550,24000,8450"
 st "hex_disp0"
 ju 2
-blo "22000,8250"
+blo "24000,8250"
 tm "CptPortNameMgr"
 )
 )
@@ -958,7 +958,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,8625,23750,9375"
+xt "25000,8625,25750,9375"
 )
 tg (CPTG
 uid 2089,0
@@ -969,10 +969,10 @@ uid 2090,0
 va (VaSet
 font "courier,8,0"
 )
-xt "17500,8550,22000,9450"
+xt "19500,8550,24000,9450"
 st "hex_disp1"
 ju 2
-blo "22000,9250"
+blo "24000,9250"
 tm "CptPortNameMgr"
 )
 )
@@ -1006,7 +1006,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,9625,23750,10375"
+xt "25000,9625,25750,10375"
 )
 tg (CPTG
 uid 2094,0
@@ -1017,10 +1017,10 @@ uid 2095,0
 va (VaSet
 font "courier,8,0"
 )
-xt "17500,9550,22000,10450"
+xt "19500,9550,24000,10450"
 st "hex_disp2"
 ju 2
-blo "22000,10250"
+blo "24000,10250"
 tm "CptPortNameMgr"
 )
 )
@@ -1054,7 +1054,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,10625,23750,11375"
+xt "25000,10625,25750,11375"
 )
 tg (CPTG
 uid 2099,0
@@ -1065,10 +1065,10 @@ uid 2100,0
 va (VaSet
 font "courier,8,0"
 )
-xt "17500,10550,22000,11450"
+xt "19500,10550,24000,11450"
 st "hex_disp3"
 ju 2
-blo "22000,11250"
+blo "24000,11250"
 tm "CptPortNameMgr"
 )
 )
@@ -1148,7 +1148,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,13625,23750,14375"
+xt "25000,13625,25750,14375"
 )
 tg (CPTG
 uid 2109,0
@@ -1159,10 +1159,10 @@ uid 2110,0
 va (VaSet
 font "courier,8,0"
 )
-xt "16500,13550,22000,14450"
+xt "18500,13550,24000,14450"
 st "leds_green"
 ju 2
-blo "22000,14250"
+blo "24000,14250"
 tm "CptPortNameMgr"
 )
 )
@@ -1196,7 +1196,7 @@ va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,12625,23750,13375"
+xt "25000,12625,25750,13375"
 )
 tg (CPTG
 uid 2114,0
@@ -1207,10 +1207,10 @@ uid 2115,0
 va (VaSet
 font "courier,8,0"
 )
-xt "18000,12550,22000,13450"
+xt "20000,12550,24000,13450"
 st "leds_red"
 ju 2
-blo "22000,13250"
+blo "24000,13250"
 tm "CptPortNameMgr"
 )
 )
@@ -1327,50 +1327,50 @@ suid 124,0
 )
 )
 *87 (CptPort
-uid 2127,0
+uid 2204,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 2128,0
+uid 2205,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "23000,17625,23750,18375"
+xt "25000,16625,25750,17375"
 )
 tg (CPTG
-uid 2129,0
+uid 2206,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 2130,0
+uid 2207,0
 va (VaSet
 font "courier,8,0"
 )
-xt "20000,17550,22000,18450"
-st "sclk"
+xt "21000,16550,24000,17450"
+st "sclk_o"
 ju 2
-blo "22000,18250"
+blo "24000,17250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 2131,0
+uid 2208,0
 va (VaSet
 font "courier,8,0"
 )
 xt "44000,11700,59500,12600"
-st "sclk       : OUT    std_logic 
+st "sclk_o     : OUT    std_logic 
 "
 )
 thePort (LogicalPort
 lang 11
 m 1
 decl (Decl
-n "sclk"
+n "sclk_o"
 t "std_logic"
 o 12
-suid 125,0
+suid 126,0
 )
 )
 )
@@ -1383,7 +1383,7 @@ fg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "15000,6000,23000,19000"
+xt "15000,6000,25000,19000"
 )
 oxt "15000,6000,23000,16000"
 biTextGroup (BiTextGroup
@@ -2086,6 +2086,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 2178,0
+lastUid 2208,0
 activeModelName "Symbol:CDM"
 )
