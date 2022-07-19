@@ -41,7 +41,7 @@ set_global_assignment -name FAMILY "cyclone v"
 set_global_assignment -name DEVICE 5cgxfc5c6f27c7
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:58:28  JULY 05, 2022"
-set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
 set_global_assignment -name FMAX_REQUIREMENT "50 MHz"
 set_global_assignment -name TOP_LEVEL_ENTITY riscv
 set_location_assignment PIN_R20 -to clk
@@ -85,6 +85,14 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name PROJECT_IP_REGENERATION_POLICY ALWAYS_REGENERATE_IP
 set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name VHDL_FILE ../../hdl/sdcardctrl_entity.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/sd_fetch_entity.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/SdCardCtrl_behav.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/SD_Fetch_behav.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/sd_controller_struct.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/sd_controller_entity.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/ram.vhd
+set_global_assignment -name VHDL_FILE ../../hdl/Memory_IP_ram.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/button_input.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/sbpu_entity.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/SBPU_behav.vhd
@@ -115,7 +123,6 @@ set_global_assignment -name VHDL_FILE ../../hdl/mux_bpu_behav.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/mux_alu_entity.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/mux_alu_behave.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/memory_entity.vhd
-set_global_assignment -name VHDL_FILE ../../hdl/Memory_behav.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/me_reg_entity.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/me_reg_behave.vhd
 set_global_assignment -name VHDL_FILE ../../hdl/ISA_pkg.vhd

@@ -39,7 +39,6 @@ begin
     variable finished : boolean;
   begin
     if res_n = '0' then
-      addr_i <= (others => '0');
       addr := (others => '0');
       hndShk_i <= '0';
       sp_op_code <= (others => '0');
@@ -65,13 +64,13 @@ begin
             when 0 =>
               -- Reset word before reading new word
               read_word := (others => '0');
-              read_word(31 downto 23) := data_o;
+              read_word(31 downto 24) := data_o;
               addr := std_logic_vector(unsigned(addr) + 1);
             when 1 =>
-              read_word(22 downto 15) := data_o;
+              read_word(23 downto 16) := data_o;
               addr := std_logic_vector(unsigned(addr) + 1);
             when 2 =>
-              read_word(14 downto 18) := data_o;
+              read_word(15 downto 8) := data_o;
               addr := std_logic_vector(unsigned(addr) + 1);
             when 3 =>
               read_word(7 downto 0) := data_o;
