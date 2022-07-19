@@ -44,13 +44,16 @@ begin
       sp_op_code <= (others => '0');
       data_valid <= '0';
       loading <= '0';
+      continue_i <= '0';
       finished := false;
+      read_word := (others => '0');
     else
       hndShk_i <= '0';
       sp_op_code <= (others => '0');
       data_valid <= '0';
       loading <= '0';
       continue_i <= '0';
+      finished := false;
 
       if busy_o = '1' then
         loading <= '1';
@@ -75,11 +78,12 @@ begin
             when 3 =>
               read_word(7 downto 0) := data_o;
               addr := std_logic_vector(unsigned(addr) + 1);
-              -- Detectif no op_code needs to be loaded again (Improvement possible?)
+              -- Detect if no op_code needs to be loaded again (Improvement possible?)
               if read_word(0) = '0' and read_word(1) = '0' then
                 loading <= '0';
                 finished := true;
                 continue_i <= '0';
+                hndShk_i <= '1';
               end if;
               -- Only send op_code to IM if it still receives op_codes
               if not finished then
@@ -89,18 +93,16 @@ begin
               end if;
             when others => null;
           end case;
-          hndShk_i <= '1';
+          
+          ---------------------------------------------------------------------------------------------------
+          -- Controller recognised handshake
+          ---------------------------------------------------------------------------------------------------
+          if hndShk_o = '0' and finished then
+            hndShk_i <= '0';
+          end if;
+        else
+          finished := false;
         end if;
-
-        ---------------------------------------------------------------------------------------------------
-        -- Controller recognised handshake
-        ---------------------------------------------------------------------------------------------------
-        if hndShk_o = '0' then
-          hndShk_i <= '0';
-        end if;
-
-      else
-        finished := false;
       end if;
     end if;
   end process read_word;

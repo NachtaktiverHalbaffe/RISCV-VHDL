@@ -17,27 +17,27 @@ architecture behav of im is
   signal finished_loading : boolean;
   signal loaded_word : word;
 begin
-  rom : process (if_pc, res_n, loaded_word) is
+  rom : process (if_pc, res_n, loaded_word, finished_loading) is
     variable word_pc_int : integer := 0;
     variable words_loaded : integer range 0 to 1023 := 0; -- Number of loaded words
-    variable rom_content : im_rom_type(0 to 1023) := (others => NOP);
+    variable rom_content : im_rom_type(0 to 1023);
   begin
     if res_n = '0' then
+      rom_content:= (others => NOP);
       word_pc_int := 0;
       words_loaded := 0;
       load_op_mem <= '1';
+      if_im_out <= NOP;
     else
       load_op_mem <= '1';
       word_pc_int := to_integer(unsigned(if_pc))/4;
-      words_loaded := words_loaded;
+      if_im_out <= NOP;
 
       if finished_loading then
         load_op_mem <= '0';
         words_loaded := 0;
         if word_pc_int < rom_content'right then
           if_im_out <= rom_content(to_integer(unsigned(if_pc))/4);
-        else
-          if_im_out <= NOP;
         end if;
       else
         if to_integer(unsigned(loaded_word)) /= 0 then
@@ -51,6 +51,7 @@ begin
   load_word : process (data_valid, loading, sp_op_code) is
   begin
     finished_loading <= false;
+    loaded_word <= (others => '0');
     if loading = '1' then
       finished_loading <= false;
       if data_valid = '1' then
